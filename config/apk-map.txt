@@ -1,0 +1,18 @@
+# APK map — src = file in assets/apks, dst = path in partition (no prefix)
+# format: partition|dst|src|remove_oat
+product|priv-app/MiuiHome/MiuiHome.apk|MiuiHome.apk|1
+product|priv-app/MIUISecurityCenter/MIUISecurityCenter.apk|SecurityMod_v13.5.3_PeaceModss.apk|1
+product|pangu/system/app/Joyose/Joyose.apk|JoyoseMod_v2.5.20_PeaceModss.apk|1
+product|app/MIUIFileExplorer/MIUIFileExplorer.apk|[LLions] HyperOS File Manager Mod v9.2.3.2.apk|1
+product|priv-app/MIUIGallery/MIUIGallery.apk|[LLions] HyperOS Gallery Mod v4.3.1.16.apk|1
+product|data-app/MIMediaEditor/MIMediaEditor.apk|[LLions] HyperOS Gallery Editor Mod v2.10.39.3.apk|1
+product|data-app/MIUISoundRecorderTargetSdk30/MIUISoundRecorderTargetSdk30.apk|[LLions] HyperOS Recorder Mod v8.1.4.apk|1
+product|app/AiasstVision/AiasstVision.apk|[LLions] HyperOS AI Engine Mod v4.11.28.apk|1
+product|priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk|[LLions] HyperOS Bokeh Mod v2.2.1.0.1.apk|1
+product|priv-app/MiuiCamera/MiuiCamera.apk|HolyBear_5.0.230706.0_release.apk|1
+product|priv-app/MIUIPersonalAssistantPhoneOS2NoBeta/MIUIPersonalAssistantPhoneOS2NoBeta.apk|AppVault.apk|1
+product|priv-app/MIUIPackageInstaller/MIUIPackageInstaller.apk|MiuiPackageInstaller.apk|1
+product|app/MIUIThemeManager/MIUIThemeManager.apk|MIUIThemeManager.apk|1
+product|app/MIUIFrequentPhrase/MIUIFrequentPhrase.apk|MIUIFrequentPhrase.apk|1
+product|overlay/GestureLineOverlay.apk|GestureLineOverlay.apk|0
+system|system/priv-app/PackageInstaller/PackageInstaller.apk|GooglePackageInstaller.apk|1
