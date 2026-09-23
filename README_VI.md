@@ -48,3 +48,31 @@ product|priv-app/TenApp/TenApp.apk|file_mod.apk|1
 ```
 
 3. Chạy `.\build.ps1` lại
+
+## APK trên driver (không push Git)
+
+1. Đẩy APK lên Google Drive / OneDrive → link share
+2. Dán link vào `config/apk-sources.txt`
+3. Chạy `.\setup.ps1` → tự tải về `assets/apks`
+4. `.\build <url-rom>`
+
+APK nặng (50–200MB) nên để driver; Git chỉ chứa code + config.
+
+## Git tu build (GitHub Actions)
+
+1. Push repo len GitHub
+2. **Actions -> Build ROM -> Run workflow** -> nhap om_url
+3. Tai ROM .7z trong **Artifacts** (hoac **Release** khi tag)
+
+CI chay tren windows-latest — dung dung uild.ps1.
+
+### Toan bo tren Git (APK + tool)
+
+```powershell
+git lfs install
+# sua .gitignore: bo comment assets/apks + tools neu muon all-in-git
+git add .
+git commit -m "full: rom-kitchen + APK LFS"
+```
+
+Mac dinh: APK/tai tu config/apk-sources.txt cho nhe repo.
