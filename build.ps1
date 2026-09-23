@@ -35,30 +35,38 @@ if ($PackOnly) {
     exit 0
 }
 
-# ========== 0. Resolve OTA ==========
+# ========== 0. Resolve OTA (skip download if payload/images cached) ==========
 Write-Step '0. RESOLVE OTA'
-if (-not $OtaZip) {
-    if (-not $RomUrl) { Fail 'Cần -RomUrl (link) hoặc -OtaZip (đường dẫn file)' }
-    if (Test-Path -LiteralPath $RomUrl) {
-        $OtaZip = $RomUrl
-        Write-Ok "Local OTA: $OtaZip"
-    } else {
-        $OtaZip = Join-Path $cache 'rom_ota.zip'
-        if ($SkipFetch -and (Test-Path -LiteralPath $OtaZip)) {
-            Write-Ok "Skip fetch, dùng cache: $OtaZip"
+$payload = Join-Path $cache 'payload.bin'
+$images = Join-Path $cache 'images'
+$cacheReady = (Test-Path $payload) -and (Test-Path (Join-Path $images 'system.img'))
+if ($cacheReady -and -not $OtaZip) {
+    Write-Ok 'cache payload+images sẵn — bỏ qua download'
+} else {
+    if (-not $OtaZip) {
+        if (-not $RomUrl) { Fail 'Cần -RomUrl (link) hoặc -OtaZip (đường dẫn file)' }
+        if (Test-Path -LiteralPath $RomUrl) {
+            $OtaZip = $RomUrl
+            Write-Ok "Local OTA: $OtaZip"
         } else {
-            Write-Ok "Downloading $RomUrl ..."
-            curl.exe -L --fail -o $OtaZip $RomUrl
-            if ($LASTEXITCODE -ne 0) { Fail 'Download failed' }
+            $OtaZip = Join-Path $cache 'rom_ota.zip'
+            if ((Test-Path -LiteralPath $OtaZip) -and $SkipFetch) {
+                Write-Ok "Skip fetch, dùng cache: $OtaZip"
+            } else {
+                Write-Ok "Downloading $RomUrl ..."
+                curl.exe -L --fail --retry 3 --retry-delay 2 -o $OtaZip $RomUrl
+                if ($LASTEXITCODE -ne 0) { Fail 'Download failed' }
+                Write-Ok "Downloaded $([math]::Round((Get-Item $OtaZip).Length/1GB,2)) GB"
+            }
         }
     }
+    if (-not (Test-Path -LiteralPath $OtaZip)) { Fail "OTA not found: $OtaZip" }
 }
-if (-not (Test-Path -LiteralPath $OtaZip)) { Fail "OTA not found: $OtaZip" }
 
 # ========== 1. Extract payload.bin ==========
 Write-Step '1. EXTRACT PAYLOAD'
-$payload = Join-Path $cache 'payload.bin'
 if (-not (Test-Path $payload)) {
+    if (-not $OtaZip) { Fail 'payload.bin cache miss và không có OTA' }
     & $env:MIMO_PYTHON -c @"
 import zipfile, shutil, os
 src = r'''$OtaZip'''
@@ -124,6 +132,12 @@ if (($cfg.install_mods -eq 'true') -and (-not $SkipMods)) {
             if (Test-Path -LiteralPath $oat) { Remove-Item -LiteralPath $oat -Recurse -Force }
         }
     }
+}
+
+# ========== 4b. Debloat app rác ==========
+if (Test-Path (Join-Path $Root 'config\debloat.txt')) {
+    Write-Step '4b. DEBLOAT'
+    & "$PSScriptRoot\debloat.ps1"
 }
 
 # ========== 5. Patch framework ==========

@@ -1,0 +1,88 @@
+# rom-kitchen CI — Windows runner, build ROM từ link
+# Chạy tay: Actions → Build ROM → nhập rom_url
+# Hoặc tag release để auto-build
+
+name: Build ROM
+
+on:
+  workflow_dispatch:
+    inputs:
+      rom_url:
+        description: 'URL OTA Xiaomi (zip) hoặc bản local đã cache'
+        required: true
+        type: string
+      debloat:
+        description: 'Debloat app rác'
+        required: false
+        default: true
+        type: boolean
+      compress:
+        description: 'Nén 7z output'
+        required: false
+        default: true
+        type: boolean
+
+  push:
+    branches: [main]
+    paths:
+      - 'config/**'
+      - 'scripts/**'
+      - 'build.ps1'
+      - 'packROM.ps1'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true   # kéo APK nếu dùng Git LFS
+
+      - name: Setup tools + APK
+        shell: powershell
+        run: |
+          .\setup.ps1
+        continue-on-error: true
+
+      - name: Download APKs from sources
+        shell: powershell
+        run: |
+          if (Test-Path config\apk-sources.txt) {
+            Get-Content config\apk-sources.txt | Where-Object { $_ -and -not $_.StartsWith('#') } | ForEach-Object {
+              $u = $_.Trim()
+              if ($u) {
+                Write-Host "fetch $u"
+                if ($u -match 'drive\.google\.com/file/d/([a-zA-Z0-9_-]+)') {
+                  $u = "https://drive.google.com/uc?export=download&id=$($Matches[1])"
+                }
+                $name = [guid]::NewGuid().ToString('N').Substring(0,8) + '.apk'
+                curl.exe -L --fail --retry 3 -o "assets\apks\$name" $u
+              }
+            }
+          }
+
+      - name: Build ROM
+        shell: powershell
+        run: |
+          $url = "${{ github.event.inputs.rom_url }}"
+          if (-not $url) { $url = "https://cdnorg.d.miui.com/OS2.0.16.0.UKOCNXM/lisa-ota_full-OS2.0.16.0.UKOCNXM-user-14.0-6326c122fd.zip" }
+          .\build.ps1 -RomUrl $url
+
+      - name: Upload ROM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LISA_OS_MOD
+          path: |
+            out/*.7z
+            out/LISA_OS_MOD_*/
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: out/*.7z
+          generate_release_notes: true

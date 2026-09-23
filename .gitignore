@@ -1,0 +1,34 @@
+# rom-kitchen — không commit build artifacts
+cache/
+work/
+out/
+
+# Tools binary: để setup.ps1 tải — KHÔNG commit (trừ khi muốn all-in-git)
+tools/*.exe
+tools/*.dll
+tools/*.jar
+tools/payload-dumper-go/
+
+# APK: CHỌN 1 trong 2
+# A) Muốn "toàn bộ trên Git" → BỎ COMMENT 2 dòng dưới + git lfs install
+# assets/apks/*.apk
+# assets/kaorios/*.apk
+#
+# B) Mặc định: APK không commit — setup.ps1 tải từ config/apk-sources.txt
+assets/apks/*.apk
+assets/apks/*/
+assets/kaorios/*.apk
+assets/lang/
+
+# giữ config + script + docs + CI
+!config/
+!scripts/
+!docs/
+!.github/
+!*.ps1
+!*.cmd
+!*.md
+!Version
+!config.env
+!.gitignore
+!.gitattributes

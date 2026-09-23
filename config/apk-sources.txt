@@ -1,0 +1,12 @@
+# apk-sources.txt — link tải APK mod (mỗi dòng 1 URL)
+# Hỗ trợ: link trực tiếp .apk / Google Drive share / OneDrive
+# setup.ps1 sẽ tải về assets/apks/
+# Dòng # là ghi chú
+
+# Ví dụ Google Drive (đặt quyền Anyone with link):
+# https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+#
+# Ví dụ link trực tiếp:
+# https://example.com/MiuiHome.apk
+
+# === Dán link APK của anh vào đây ===
