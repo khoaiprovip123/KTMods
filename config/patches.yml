@@ -1,0 +1,31 @@
+# Patch config — lisa framework/services
+signature_bypass: true
+kaorios: true
+cn_notification_fix: false
+disable_secure_flag: false
+
+# Sau khi patch, VERIFY các method phải return đúng giá trị
+must_pass:
+  framework:
+    - { method: getMinimumSignatureSchemeVersionForTargetSdk, return: "0x0" }
+    - { method: checkCapability, return: "0x1" }
+    - { method: checkCapabilityRecover, return: "0x1" }
+    - { method: verifyMessageDigest, return: "0x1" }
+    - { method: isPackageWhitelistedForHiddenApis, return: "0x1" }
+  services:
+    - { method: checkDowngrade, return: "void" }
+    - { method: verifySignatures, return: "0x0" }
+    - { method: matchSignaturesCompat, return: "0x1" }
+    - { method: shouldCheckUpgradeKeySetLocked, return: "0x0" }
+
+# Method instance — FrameworkPatcher hay bỏ sót, phải patch tay
+manual_instance_methods:
+  - checkCapability
+  - checkCapabilityRecover
+
+# Kaorios hooks phải hiện diện trong framework
+kaorios_hooks:
+  - ApplicationPackageManager.hasSystemFeature
+  - Instrumentation.newApplication
+  - KeyStore2.getKeyEntry
+  - AndroidKeyStoreSpi.engineGetCertificateChain

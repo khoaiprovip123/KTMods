@@ -1,0 +1,73 @@
+# Device + ROM + super layout — lisa (BẮT BUỘC khớp stock)
+device:
+  codename: lisa
+  model: Mi 11 Lite 5G NE
+  platform: sm7325
+  android: 14
+
+rom:
+  version: OS2.0.16.0.UKOCNXM
+  region: cn
+  android: 14
+  # override bằng -RomUrl khi build
+  url: ""
+  local_ota: "D:\\LISA\\lisa-ota_full-OS2.0.16.0.UKOCNXM-user-14.0-6326c122fd.zip"
+  sha256: ""
+
+payload:
+  erofs:
+    - system
+    - product
+    - system_ext
+    - vendor
+    - odm
+    - mi_ext
+  firmware:
+    - abl
+    - aop
+    - bluetooth
+    - boot
+    - cpucp
+    - devcfg
+    - dsp
+    - dtbo
+    - featenabler
+    - hyp
+    - imagefv
+    - keymaster
+    - modem
+    - qupfw
+    - shrm
+    - tz
+    - uefisecapp
+    - vbmeta
+    - vbmeta_system
+    - vendor_boot
+    - xbl
+    - xbl_config
+
+# Rebuild chỉ 3 partition này (system/product/system_ext)
+rebuild_erofs:
+  - system
+  - product
+  - system_ext
+
+super:
+  device_size: 9126805504      # 8.5 GiB — KHÔNG được đổi
+  metadata_size: 65536
+  metadata_slots: 3
+  virtual_ab: true
+  super_name: super
+  group_size: 9126805504
+  partitions:
+    system:     720371712
+    system_ext: 591396864
+    product:    4322230272
+    vendor:     1553989632
+    odm:        34603008
+    mi_ext:     17825792
+
+flash:
+  vbmeta_flags: "--disable-verity --disable-verification"
+  format_data_script: flash_format_data.bat
+  keep_data_script: flash_keep_data.bat

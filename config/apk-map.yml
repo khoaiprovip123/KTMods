@@ -1,0 +1,72 @@
+# APK map — lisa HyperOS 2.0.16.0
+# src: tên file trong ApkDir
+# dst: path trong partition (không prefix partition)
+# partition: product | system | system_ext
+
+apks:
+  - src: MiuiHome.apk
+    partition: product
+    dst: priv-app/MiuiHome/MiuiHome.apk
+    remove_oat: true
+    role: launcher
+
+  - src: SecurityMod_v13.5.3_PeaceModss.apk
+    partition: product
+    dst: priv-app/MIUISecurityCenter/MIUISecurityCenter.apk
+    remove_oat: true
+    role: security
+
+  - src: JoyoseMod_v2.5.20_PeaceModss.apk
+    partition: product
+    dst: pangu/system/app/Joyose/Joyose.apk
+    remove_oat: true
+    role: game-turbo
+
+  - src: "[LLions] HyperOS File Manager Mod v9.2.3.2.apk"
+    partition: product
+    dst: app/MIUIFileExplorer/MIUIFileExplorer.apk
+    remove_oat: true
+    role: file-manager
+
+  - src: "[LLions] HyperOS Gallery Mod v4.3.1.16.apk"
+    partition: product
+    dst: priv-app/MIUIGallery/MIUIGallery.apk
+    remove_oat: true
+    role: gallery
+
+  - src: "[LLions] HyperOS Gallery Editor Mod v2.10.39.3.apk"
+    partition: product
+    dst: data-app/MIMediaEditor/MIMediaEditor.apk
+    remove_oat: true
+    role: gallery-editor
+
+  - src: "[LLions] HyperOS Recorder Mod v8.1.4.apk"
+    partition: product
+    dst: data-app/MIUISoundRecorderTargetSdk30/MIUISoundRecorderTargetSdk30.apk
+    remove_oat: true
+    role: recorder
+
+  - src: "[LLions] HyperOS AI Engine Mod v4.11.28.apk"
+    partition: product
+    dst: app/AiasstVision/AiasstVision.apk
+    remove_oat: true
+    role: ai-engine
+
+  - src: "[LLions] HyperOS Bokeh Mod v2.2.1.0.1.apk"
+    partition: product
+    dst: priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
+    remove_oat: true
+    role: bokeh
+    note: "map suy đoán — verify package name trên máy"
+
+kaorios:
+  enabled: true
+  apk: KaoriosToolbox.apk
+  apk_dst: priv-app/KaoriosToolbox/KaoriosToolbox.apk
+  permission_xml:
+    - com.kousei.kaorios.xml
+    - privapp_whitelist_com.kousei.kaorios.xml
+  permission_dst: etc/permissions/
+  build_props:
+    persist.sys.kaorios: kousei
+    ro.control_privapp_permissions: ""
