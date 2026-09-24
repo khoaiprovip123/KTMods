@@ -2,7 +2,8 @@
   packROM.ps1 — đóng gói ROM flashable + nén 7z
 #>
 param(
-    [switch]$Compress
+    [switch]$Compress,
+    [switch]$NoCompress
 )
 . "$PSScriptRoot\scripts\tools.ps1"
 $cfg = Get-KitchenConfig
@@ -119,7 +120,7 @@ Built by rom-kitchen $(Get-Date -Format 'yyyy-MM-dd HH:mm')
 $total = (Get-ChildItem $pkg -Recurse -File | Measure-Object Length -Sum).Sum
 Write-Ok "package: $([math]::Round($total/1GB,2)) GB -> $pkg"
 
-if ($Compress -or $cfg.compress -eq '7z') {
+if ((-not $NoCompress) -and ($Compress -or $cfg.compress -eq '7z')) {
     $seven = $null
     $pf = $env:ProgramFiles
     if (-not $pf) { $pf = 'C:\Program Files' }

@@ -1,6 +1,5 @@
 # rom-kitchen CI — Windows runner, build ROM từ link
 # Chạy tay: Actions → Build ROM → nhập rom_url
-# Hoặc tag release để auto-build
 
 name: Build ROM
 
@@ -8,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       rom_url:
-        description: 'URL OTA Xiaomi (zip) hoặc bản local đã cache'
+        description: 'URL OTA Xiaomi (zip)'
         required: true
         type: string
       debloat:
@@ -22,14 +21,6 @@ on:
         default: true
         type: boolean
 
-  push:
-    branches: [main]
-    paths:
-      - 'config/**'
-      - 'scripts/**'
-      - 'build.ps1'
-      - 'packROM.ps1'
-
 jobs:
   build:
     runs-on: windows-latest
@@ -38,12 +29,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          lfs: true   # kéo APK nếu dùng Git LFS
+          lfs: true
 
       - name: Setup tools + APK
         shell: powershell
-        run: |
-          .\setup.ps1
+        run: .\setup.ps1
         continue-on-error: true
 
       - name: Download APKs from sources
@@ -65,19 +55,24 @@ jobs:
 
       - name: Build ROM
         shell: powershell
+        env:
+          ROM_URL: ${{ github.event.inputs.rom_url }}
+          DEBOUNCE: ${{ github.event.inputs.debloat }}
+          COMPRESS: ${{ github.event.inputs.compress }}
         run: |
-          $url = "${{ github.event.inputs.rom_url }}"
-          if (-not $url) { $url = "https://cdnorg.d.miui.com/OS2.0.16.0.UKOCNXM/lisa-ota_full-OS2.0.16.0.UKOCNXM-user-14.0-6326c122fd.zip" }
-          $args = @('-RomUrl', $url)
-          if ("${{ github.event.inputs.debloat }}" -eq 'false') { $args += '-SkipDebloat' }
-          if ("${{ github.event.inputs.compress }}" -eq 'false') { $args += '-NoCompress' }
-          .\build.ps1 @args
+          $psArgs = @{ RomUrl = $env:ROM_URL }
+          if ($env:DEBOUNCE -eq 'false') { $psArgs.SkipDebloat = $true }
+          if ($env:COMPRESS -eq 'false') { $psArgs.SkipCompress = $true }
+          Write-Host "Building from $env:ROM_URL"
+          .\build.ps1 @psArgs
 
       - name: Verify package
+        if: success()
         shell: powershell
         run: .\verify.ps1
 
       - name: Upload ROM artifact
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: LISA_OS_MOD

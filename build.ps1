@@ -16,7 +16,8 @@ param(
     [switch]$SkipLang,
     [switch]$SkipDebloat,
     [switch]$PackOnly,
-    [switch]$NoVerify
+    [switch]$NoVerify,
+    [switch]$SkipCompress
 )
 
 . "$PSScriptRoot\scripts\tools.ps1"
@@ -276,7 +277,8 @@ Write-Ok "super.img = $((Get-Item $superOut).Length) bytes"
 
 # ========== 10. Package flashable ==========
 Write-Step '10. PACKAGE FLASHABLE'
-& "$PSScriptRoot\packROM.ps1"
+if ($SkipCompress) { & "$PSScriptRoot\packROM.ps1" -NoCompress }
+else { & "$PSScriptRoot\packROM.ps1" }
 
 # ========== 11. Verify ==========
 if (-not $NoVerify) {
