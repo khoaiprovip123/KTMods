@@ -1,0 +1,46 @@
+# debloat.txt — app rác gỡ khỏi ROM (mỗi dòng = tên thư mục app)
+# Sửa file này rồi chạy lại .\build.ps1 (hoặc .\debloat.ps1 + pack)
+# Dòng bắt đầu bằng # là ghi chú
+
+# --- Quảng cáo / theo dõi ---
+MSA
+AnalyticsCore
+HybridPlatform
+ContentCatcherOS2
+MetokNLP
+MIUIgreenguard
+MiBugReportOS2
+CatchLog
+MIUIReporter
+SecurityOnetrackService
+com.xiaomi.macro
+com.xiaomi.ugd
+
+# --- Cửa hàng / game / nội dung TQ ---
+MIUISuperMarket
+MIUIYellowPage
+MiGameCenterSDKService
+MIUIGameCenter
+MIUIDuokanReader
+MIUIYoupin
+MiShop
+OS2VipAccount
+MiLinkOS2CN
+MIUINewHome_Removable
+XiaoaiRecommendation
+
+# --- Tiện ích rác ---
+MIUICleanMaster
+MiuiScanner
+MiuiCit
+DeviceInfoQR
+ConferenceDialer
+CarWith
+MiDevAuthService
+AutoRegistration
+RegService
+
+# --- IME TQ (bỏ nếu không dùng) ---
+BaiduIME
+SogouIME
+iFlytekIME

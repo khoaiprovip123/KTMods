@@ -14,7 +14,9 @@ param(
     [switch]$SkipFetch,
     [switch]$SkipMods,
     [switch]$SkipLang,
-    [switch]$PackOnly
+    [switch]$SkipDebloat,
+    [switch]$PackOnly,
+    [switch]$NoVerify
 )
 
 . "$PSScriptRoot\scripts\tools.ps1"
@@ -67,7 +69,8 @@ if ($cacheReady -and -not $OtaZip) {
 Write-Step '1. EXTRACT PAYLOAD'
 if (-not (Test-Path $payload)) {
     if (-not $OtaZip) { Fail 'payload.bin cache miss và không có OTA' }
-    & $env:MIMO_PYTHON -c @"
+    $py = Get-Python
+    & $py -c @"
 import zipfile, shutil, os
 src = r'''$OtaZip'''
 dst = r'''$payload'''
@@ -135,7 +138,7 @@ if (($cfg.install_mods -eq 'true') -and (-not $SkipMods)) {
 }
 
 # ========== 4b. Debloat app rác ==========
-if (Test-Path (Join-Path $Root 'config\debloat.txt')) {
+if (($cfg.debloat -eq 'true') -and (-not $SkipDebloat) -and (Test-Path (Join-Path $Root 'config\debloat.txt'))) {
     Write-Step '4b. DEBLOAT'
     & "$PSScriptRoot\debloat.ps1"
 }
@@ -146,8 +149,12 @@ if ($cfg.disable_signature -eq 'true' -or $cfg.install_toolbox -eq 'true' -or $c
     $fw  = Join-Path $work 'system\system\system\framework\framework.jar'
     $sv  = Join-Path $work 'system\system\system\framework\services.jar'
     $msv = Join-Path $work 'system_ext\system_ext\framework\miui-services.jar'
-    $fpDir = 'D:\LISA\build\tools\FrameworkPatcher\FrameworkPatcher-master'
-    $bash = 'C:\Program Files\Git\bin\bash.exe'
+    # FrameworkPatcher optional (tools/FrameworkPatcher) — fallback = Python auto_patch
+    $fpDir = Join-Path (Join-Path $Root 'tools') 'FrameworkPatcher\FrameworkPatcher-master'
+    $bash = $null
+    foreach ($b in @('C:\Program Files\Git\bin\bash.exe', (Join-Path $env:ProgramFiles 'Git\bin\bash.exe'))) {
+        if (Test-Path $b) { $bash = $b; break }
+    }
 
     # 5a. FrameworkPatcher: signature + kaorios (copy jars in, run, copy out)
     if ((Test-Path $fpDir) -and (Test-Path $bash) -and ($cfg.disable_signature -eq 'true' -or $cfg.install_toolbox -eq 'true')) {
@@ -258,7 +265,8 @@ print("AUTO_PATCH_DONE")
     $apktool = Get-Apktool
     $doSecure = if ($cfg.disable_secure_flag -eq 'true') { '1' } else { '0' }
     $doCn = if ($cfg.cn_notification_fix -eq 'true') { '1' } else { '0' }
-    & $env:MIMO_PYTHON $pyPatch $apktool $work $doSecure $doCn
+    $py = Get-Python
+    & $py $pyPatch $apktool $work $doSecure $doCn
     if ($LASTEXITCODE -ne 0) { Write-Warn 'auto_patch.py có lỗi — kiểm tra jar' }
 }
 
@@ -286,18 +294,65 @@ if ($cfg.install_toolbox -eq 'true') {
     }
 }
 
-# ========== 7. Vietnamese language ==========
+# ========== 7. Vietnamese language (merge values-vi into Settings + framework-res) ==========
 if (($cfg.add_vietnamese -eq 'true') -and (-not $SkipLang)) {
     Write-Step '7. VIETNAMESE LANGUAGE'
-    $langSrc = Join-Path $Root $cfg.lang_dir
-    # expected: lang\framework-res\values-vi\, lang\Settings\values-vi\
-    $fwresDir = Join-Path $work 'lang_check\cn_fwres'
-    $setDir   = Join-Path $work 'lang_check\cn_settings'
-    if ((Test-Path (Join-Path $langSrc 'framework-res\values-vi')) -and (Test-Path $fwresDir)) {
-        Write-Ok 'values-vi đã có sẵn trong work/lang_check — dùng lại'
-    } else {
-        Write-Warn 'Chưa có assets/lang/values-vi — bỏ qua (copy từ ROM Global vào assets/lang/)'
-    }
+    $py = Get-Python
+    $apktool = Get-Apktool
+    $langDir = Join-Path $Root $cfg.lang_dir
+    & $py -c @"
+import os, shutil, subprocess, sys
+from pathlib import Path
+
+apktool = r'''$apktool'''
+work = Path(r'''$work''')
+lang = Path(r'''$langDir''')
+java = 'java'
+
+def rebuild_with_vi(apk, vi_src, tag):
+    if not Path(apk).exists():
+        print('skip', tag, 'apk missing'); return
+    if not Path(vi_src).exists():
+        print('skip', tag, 'values-vi missing'); return
+    out = work / f'vi_{tag}'
+    if out.exists(): shutil.rmtree(out, ignore_errors=True)
+    subprocess.check_call([java, '-jar', apktool, 'd', '-q', '-f', '-s', '-o', str(out), apk])
+    res = out / 'res'
+    # copy values-vi (+ values-vi-rVN if present)
+    for name in ('values-vi', 'values-vi-rVN'):
+        src = Path(vi_src)
+        if src.name != name:
+            src = Path(vi_src).parent / name if (Path(vi_src).parent / name).exists() else src
+        dst = res / name
+        if src.exists() and src.is_dir():
+            if dst.exists(): shutil.rmtree(dst, ignore_errors=True)
+            shutil.copytree(src, dst)
+            print(tag, 'copied', name)
+    # remove invalid mcc folders that break aapt2
+    import re
+    for d in list(res.glob('values-mcc*')):
+        if re.search(r'mcc(9460|9998|9999)', d.name):
+            shutil.rmtree(d, ignore_errors=True)
+            print(tag, 'removed', d.name)
+    rebuilt = work / f'{tag}_vi.apk'
+    subprocess.check_call([java, '-jar', apktool, 'b', '-q', '-f', str(out), str(rebuilt)])
+    shutil.copy2(rebuilt, apk)
+    print(tag, 'OK ->', apk)
+
+# Settings (system_ext)
+rebuild_with_vi(
+    str(work / 'system_ext/system_ext/priv-app/Settings/Settings.apk'),
+    str(lang / 'Settings' / 'values-vi'),
+    'settings')
+# framework-res (system)
+rebuild_with_vi(
+    str(work / 'system/system/system/framework/framework-res.apk'),
+    str(lang / 'framework-res' / 'values-vi'),
+    'fwres')
+print('VIETNAMESE_DONE')
+"@
+    if ($LASTEXITCODE -eq 0) { Write-Ok 'values-vi merged into Settings + framework-res' }
+    else { Write-Warn 'merge values-vi lỗi — kiểm tra assets/lang' }
 }
 
 # ========== 8. Strip fs_config prefix + rebuild EROFS ==========
@@ -310,7 +365,8 @@ foreach ($part in @('system','product','system_ext')) {
     $stripped = Join-Path $cfgd "$($part)_fs_config.stripped"
     $strippedFc = Join-Path $cfgd "$($part)_file_contexts.stripped"
     if (-not (Test-Path $stripped)) {
-        & $env:MIMO_PYTHON -c @"
+        $py = Get-Python
+        & $py -c @"
 from pathlib import Path
 prefix = '$part'
 cfg = Path(r'$cfgd')
@@ -402,6 +458,12 @@ Write-Ok "super.img = $((Get-Item $superOut).Length) bytes"
 # ========== 10. Package flashable ==========
 Write-Step '10. PACKAGE FLASHABLE'
 & "$PSScriptRoot\packROM.ps1"
+
+# ========== 11. Verify ==========
+if (-not $NoVerify) {
+    Write-Step '11. VERIFY'
+    & "$PSScriptRoot\verify.ps1"
+}
 
 Write-Step 'DONE'
 Write-Host "  Output: $outDir" -ForegroundColor Green

@@ -1,5 +1,7 @@
 <#
-  setup.ps1 — tải tool + link APK/Kaorios vào rom-kitchen
+  setup.ps1 — portable: tải/copy tool + APK + Kaorios + lang
+  Nguồn tùy chọn (có thì dùng): $env:KITCHEN_SRC_TOOLS, $env:KITCHEN_SRC_APK
+  Mặc định không hardcode ổ D — CI chỉ cần tools/ đã có trong repo (LFS).
 #>
 . "$PSScriptRoot\scripts\tools.ps1"
 $Root = $script:Root
@@ -10,19 +12,19 @@ Ensure-Dir (Join-Path $Root 'assets\lang')
 
 Write-Step 'SETUP rom-kitchen'
 
-# Copy tools from previous build workspace if present
-$srcTools = 'D:\LISA\build\tools'
-if (Test-Path $srcTools) {
-    foreach ($t in @('lpmake.exe','lpunpack.exe','lpdumps.exe','simg2img.exe')) {
+# --- tools từ KITCHEN_SRC_TOOLS (optional) ---
+$srcTools = $env:KITCHEN_SRC_TOOLS
+if ($srcTools -and (Test-Path $srcTools)) {
+    Write-Ok "copy tools from $srcTools"
+    foreach ($t in @('lpmake.exe','lpunpack.exe','lpdumps.exe','simg2img.exe','extract.erofs.exe','mkfs.erofs.exe','cygwin1.dll','apktool.jar')) {
         $s = Join-Path $srcTools $t
+        if (-not (Test-Path $s)) {
+            $s = Join-Path (Join-Path $srcTools 'erofs\erofs_tool_win-main\engine') $t
+        }
+        if (-not (Test-Path $s)) {
+            $s = Join-Path (Join-Path $srcTools 'FrameworkPatcher\FrameworkPatcher-master\tools') $t
+        }
         if (Test-Path $s) { Copy-Item -Force $s (Join-Path $Root "tools\$t"); Write-Ok $t }
-    }
-    $erofs = Join-Path $srcTools 'erofs\erofs_tool_win-main\engine'
-    if (Test-Path $erofs) {
-        Copy-Item -Force "$erofs\extract.erofs.exe" (Join-Path $Root 'tools')
-        Copy-Item -Force "$erofs\mkfs.erofs.exe" (Join-Path $Root 'tools')
-        Copy-Item -Force "$erofs\cygwin1.dll" (Join-Path $Root 'tools')
-        Write-Ok 'erofs tools'
     }
     $pd = Join-Path $srcTools 'payload-dumper-go\payload-dumper-go.exe'
     if (Test-Path $pd) {
@@ -30,19 +32,17 @@ if (Test-Path $srcTools) {
         Copy-Item -Force $pd (Join-Path $Root 'tools\payload-dumper-go')
         Write-Ok 'payload-dumper-go'
     }
-    $apk = Join-Path $srcTools 'FrameworkPatcher\FrameworkPatcher-master\tools\apktool.jar'
-    if (Test-Path $apk) { Copy-Item -Force $apk (Join-Path $Root 'tools\apktool.jar'); Write-Ok 'apktool.jar' }
 }
 
-# Copy APKs from D:\LISA\APk
-$apkSrc = 'D:\LISA\APk'
-if (Test-Path $apkSrc) {
+# --- APK từ KITCHEN_SRC_APK (optional) ---
+$apkSrc = $env:KITCHEN_SRC_APK
+if ($apkSrc -and (Test-Path $apkSrc)) {
+    Write-Ok "copy APKs from $apkSrc"
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
     Get-ChildItem $apkSrc -Filter *.apk | ForEach-Object {
         Copy-Item -Force $_.FullName (Join-Path $Root 'assets\apks')
         Write-Ok "apk $($_.Name)"
     }
-    # extract zip modules to get inner APKs
-    Add-Type -AssemblyName System.IO.Compression.FileSystem
     Get-ChildItem $apkSrc -Filter *.zip | ForEach-Object {
         $dest = Join-Path $Root ("assets\apks\" + ($_.BaseName -replace '@.*',''))
         if (-not (Test-Path $dest)) {
@@ -55,32 +55,39 @@ if (Test-Path $apkSrc) {
     }
 }
 
-# Kaorios
-$kSrc = 'D:\LISA\build\tools\kaorios'
-$kFp = 'D:\LISA\build\tools\FrameworkPatcher\FrameworkPatcher-master\kaorios_toolbox'
-if (Test-Path (Join-Path $kFp 'KaoriosToolbox.apk')) {
-    Copy-Item -Force (Join-Path $kFp 'KaoriosToolbox.apk') (Join-Path $Root 'assets\kaorios')
-    Copy-Item -Force (Join-Path $kFp 'privapp_whitelist_com.kousei.kaorios.xml') (Join-Path $Root 'assets\kaorios') -EA 0
-    Write-Ok 'KaoriosToolbox.apk'
-}
-if (Test-Path (Join-Path $kSrc 'com.kousei.kaorios.xml')) {
-    Copy-Item -Force (Join-Path $kSrc 'com.kousei.kaorios.xml') (Join-Path $Root 'assets\kaorios')
+# --- Kaorios từ KITCHEN_SRC_TOOLS hoặc assets/kaorios đã LFS ---
+$k = Join-Path $Root 'assets\kaorios\KaoriosToolbox.apk'
+if (-not (Test-Path $k) -and $srcTools) {
+    $kFp = Join-Path $srcTools 'FrameworkPatcher\FrameworkPatcher-master\kaorios_toolbox\KaoriosToolbox.apk'
+    if (Test-Path $kFp) { Copy-Item -Force $kFp $k; Write-Ok 'KaoriosToolbox.apk' }
 }
 
-# Vietnamese values-vi from previous lang_check
-$viFw = 'D:\LISA\build\work\lang_check\global_fwres\res\values-vi'
-$viSet = 'D:\LISA\build\work\lang_check\global_settings\res\values-vi'
-if (Test-Path $viFw) {
-    Ensure-Dir (Join-Path $Root 'assets\lang\framework-res')
-    Copy-Item -Recurse -Force $viFw (Join-Path $Root 'assets\lang\framework-res')
-    Write-Ok 'lang framework-res values-vi'
-}
-if (Test-Path $viSet) {
-    Ensure-Dir (Join-Path $Root 'assets\lang\Settings')
-    Copy-Item -Recurse -Force $viSet (Join-Path $Root 'assets\lang\Settings')
-    Write-Ok 'lang Settings values-vi'
+# --- Download APKs from config/apk-sources.txt ---
+$sources = Join-Path $Root 'config\apk-sources.txt'
+if (Test-Path $sources) {
+    Write-Step 'DOWNLOAD APKs from apk-sources.txt'
+    $apkOut = Join-Path $Root 'assets\apks'
+    Ensure-Dir $apkOut
+    foreach ($line in Get-Content $sources) {
+        $url = $line.Trim()
+        if (-not $url -or $url.StartsWith('#')) { continue }
+        $fname = ($url -split '[/?]')[-1]
+        if ($fname -match 'usp=|download' -or $fname.Length -gt 80) {
+            $fname = 'apk_' + [guid]::NewGuid().ToString('N').Substring(0,8) + '.apk'
+        }
+        if ($fname -notmatch '\.apk$') { $fname = "$fname.apk" }
+        $dest = Join-Path $apkOut $fname
+        if (Test-Path -LiteralPath $dest) { Write-Ok "skip $fname"; continue }
+        Write-Ok "get $url"
+        if ($url -match 'drive\.google\.com/file/d/([a-zA-Z0-9_-]+)') {
+            $url = "https://drive.google.com/uc?export=download&id=$($Matches[1])"
+        }
+        curl.exe -L --fail --retry 3 -o $dest $url
+        if ($LASTEXITCODE -eq 0) { Write-Ok "saved $fname" }
+        else { Write-Warn "download failed: $url" }
+    }
 }
 
 Write-Step 'SETUP DONE'
 Write-Host '  Build:  .\build.ps1 -RomUrl "<link OTA>"' -ForegroundColor Green
-Write-Host '  Hoac:   .\build.ps1 -OtaZip "D:\LISA\lisa-ota_full-....zip"' -ForegroundColor Green
+Write-Host '  Verify: .\verify.ps1' -ForegroundColor Green

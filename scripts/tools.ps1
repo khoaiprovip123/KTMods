@@ -1,20 +1,12 @@
-# tools.ps1 — shared helpers for rom-kitchen
-# Dot-source: . "$PSScriptRoot\tools.ps1"
-
+# tools.ps1 — shared helpers (portable: không hardcode D:\LISA)
 $ErrorActionPreference = 'Stop'
 $script:Root = Split-Path $PSScriptRoot -Parent
 if (-not $script:Root) { $script:Root = (Get-Location).Path }
 
-function Write-Step([string]$msg) {
-    Write-Host ""
-    Write-Host "==== $msg ====" -ForegroundColor Cyan
-}
-function Write-Ok([string]$msg) { Write-Host "  OK  $msg" -ForegroundColor Green }
+function Write-Step([string]$msg) { Write-Host ""; Write-Host "==== $msg ====" -ForegroundColor Cyan }
+function Write-Ok([string]$msg)   { Write-Host "  OK  $msg" -ForegroundColor Green }
 function Write-Warn([string]$msg) { Write-Host "  !!  $msg" -ForegroundColor Yellow }
-function Fail([string]$msg) {
-    Write-Host "  XX  $msg" -ForegroundColor Red
-    exit 1
-}
+function Fail([string]$msg) { Write-Host "  XX  $msg" -ForegroundColor Red; exit 1 }
 
 function Get-KitchenConfig {
     $cfg = @{}
@@ -22,34 +14,53 @@ function Get-KitchenConfig {
     foreach ($line in Get-Content $path) {
         $line = $line.Trim()
         if (-not $line -or $line.StartsWith('#')) { continue }
+        # strip inline comment:  key=value  # note
+        $hash = $line.IndexOf('#')
+        if ($hash -gt 0) { $line = $line.Substring(0, $hash).TrimEnd() }
         $i = $line.IndexOf('=')
         if ($i -lt 1) { continue }
-        $k = $line.Substring(0, $i).Trim()
-        $v = $line.Substring($i + 1).Trim()
-        $cfg[$k] = $v
+        $cfg[$line.Substring(0, $i).Trim()] = $line.Substring($i + 1).Trim()
     }
     return $cfg
 }
 
+# Tool lookup: tools/ rồi PATH (CI download về tools/)
 function Get-Tool([string]$name) {
     $tools = Join-Path $script:Root 'tools'
-    $p = Join-Path $tools $name
-    if (Test-Path -LiteralPath $p) { return $p }
-    # fallback: D:\LISA\build\tools (bộ tool đã tải từ lần build trước)
-    $fallback = "D:\LISA\build\tools\$name"
-    if (Test-Path -LiteralPath $fallback) { return $fallback }
-    $erofs = "D:\LISA\build\tools\erofs\erofs_tool_win-main\engine\$name"
-    if (Test-Path -LiteralPath $erofs) { return $erofs }
-    Fail "Tool not found: $name (chạy setup.ps1 hoặc copy vào tools\)"
+    foreach ($cand in @(
+        (Join-Path $tools $name),
+        (Join-Path (Join-Path $tools 'erofs') $name),
+        (Join-Path (Join-Path $tools 'payload-dumper-go') $name),
+        $name
+    )) {
+        if ($cand -and (Test-Path -LiteralPath $cand)) { return $cand }
+        $cmd = Get-Command $name -EA 0
+        if ($cmd) { return $cmd.Source }
+    }
+    Fail "Tool not found: $name (chạy setup.ps1 hoặc đưa vào tools/)"
 }
 
 function Get-Apktool {
-    $cands = @(
-        (Join-Path $script:Root 'tools\apktool.jar'),
-        'D:\LISA\build\tools\FrameworkPatcher\FrameworkPatcher-master\tools\apktool.jar'
-    )
-    foreach ($c in $cands) { if (Test-Path -LiteralPath $c) { return $c } }
-    Fail 'apktool.jar not found'
+    foreach ($cand in @(
+        (Join-Path (Join-Path $script:Root 'tools') 'apktool.jar'),
+        (Join-Path $script:Root 'tools\apktool\apktool.jar')
+    )) {
+        if (Test-Path -LiteralPath $cand) { return $cand }
+    }
+    Fail 'apktool.jar not found in tools/'
+}
+
+function Get-Java {
+    $j = Get-Command java -EA 0
+    if ($j) { return $j.Source }
+    Fail 'java not found in PATH (cần JDK 17+)'
+}
+
+function Get-Python {
+    if ($env:MIMO_PYTHON -and (Test-Path $env:MIMO_PYTHON)) { return $env:MIMO_PYTHON }
+    $p = Get-Command python -EA 0
+    if ($p) { return $p.Source }
+    Fail 'python not found'
 }
 
 function Pad-MB([string]$path, [int]$headroomMB = 16) {
@@ -57,10 +68,5 @@ function Pad-MB([string]$path, [int]$headroomMB = 16) {
     return [int64](([math]::Ceiling($s / 1MB) + $headroomMB) * 1MB)
 }
 
-function Copy-Literal([string]$src, [string]$dst) {
-    Copy-Item -LiteralPath $src -Destination $dst -Force
-}
-
-function Ensure-Dir([string]$p) {
-    New-Item -ItemType Directory -Force -Path $p | Out-Null
-}
+function Copy-Literal([string]$src, [string]$dst) { Copy-Item -LiteralPath $src -Destination $dst -Force }
+function Ensure-Dir([string]$p) { New-Item -ItemType Directory -Force -Path $p | Out-Null }

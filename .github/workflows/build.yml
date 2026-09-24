@@ -68,7 +68,14 @@ jobs:
         run: |
           $url = "${{ github.event.inputs.rom_url }}"
           if (-not $url) { $url = "https://cdnorg.d.miui.com/OS2.0.16.0.UKOCNXM/lisa-ota_full-OS2.0.16.0.UKOCNXM-user-14.0-6326c122fd.zip" }
-          .\build.ps1 -RomUrl $url
+          $args = @('-RomUrl', $url)
+          if ("${{ github.event.inputs.debloat }}" -eq 'false') { $args += '-SkipDebloat' }
+          if ("${{ github.event.inputs.compress }}" -eq 'false') { $args += '-NoCompress' }
+          .\build.ps1 @args
+
+      - name: Verify package
+        shell: powershell
+        run: .\verify.ps1
 
       - name: Upload ROM artifact
         uses: actions/upload-artifact@v4
