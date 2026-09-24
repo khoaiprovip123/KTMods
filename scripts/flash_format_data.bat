@@ -100,20 +100,16 @@ pause
 exit /B 0
 
 :do
-echo.
 echo [%TIME%] FLASH %*
 echo [%TIME%] %* >> "%LOG%"
-for /f "delims=" %%L in ('%fastboot% %* 2^>^&1') do (
-  echo   %%L
-  echo %%L >> "%LOG%"
-)
+%fastboot% %* >> "%LOG%" 2>&1
 set "RC=!ERRORLEVEL!"
 echo [%TIME%]   exit=!RC! >> "%LOG%"
 if not "!RC!"=="0" (
+  echo [ERROR] FAILED: %*  (see flash_log.txt)
   echo [ERROR] FAILED: %* >> "%LOG%"
-  echo [ERROR] FAILED: %*
-  echo Log: %CD%\%LOG%
   pause
   exit /B 1
 )
+echo   OK: %*
 goto :eof
