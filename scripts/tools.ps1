@@ -1,4 +1,4 @@
-# tools.ps1 — shared helpers (portable: không hardcode D:\LISA)
+﻿# tools.ps1 — shared helpers (portable: không hardcode D:\LISA)
 $ErrorActionPreference = 'Stop'
 $script:Root = Split-Path $PSScriptRoot -Parent
 if (-not $script:Root) { $script:Root = (Get-Location).Path }

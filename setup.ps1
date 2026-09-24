@@ -1,4 +1,4 @@
-<#
+﻿<#
   setup.ps1 — portable: tải/copy tool + APK + Kaorios + lang
   Nguồn tùy chọn (có thì dùng): $env:KITCHEN_SRC_TOOLS, $env:KITCHEN_SRC_APK
   Mặc định không hardcode ổ D — CI chỉ cần tools/ đã có trong repo (LFS).

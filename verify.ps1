@@ -1,4 +1,4 @@
-# verify.ps1 — kiểm tra package ROM sau build
+﻿# verify.ps1 — kiểm tra package ROM sau build
 . "$PSScriptRoot\scripts\tools.ps1"
 $cfg = Get-KitchenConfig
 $Root = $script:Root

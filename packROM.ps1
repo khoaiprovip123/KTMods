@@ -1,4 +1,4 @@
-<#
+﻿<#
   packROM.ps1 — đóng gói ROM flashable + nén 7z
 #>
 param(

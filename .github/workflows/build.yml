@@ -25,6 +25,9 @@ jobs:
   build:
     runs-on: windows-latest
     timeout-minutes: 180
+    defaults:
+      run:
+        shell: pwsh
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,12 +35,10 @@ jobs:
           lfs: true
 
       - name: Setup tools + APK
-        shell: powershell
         run: .\setup.ps1
         continue-on-error: true
 
       - name: Download APKs from sources
-        shell: powershell
         run: |
           if (Test-Path config\apk-sources.txt) {
             Get-Content config\apk-sources.txt | Where-Object { $_ -and -not $_.StartsWith('#') } | ForEach-Object {
@@ -54,7 +55,6 @@ jobs:
           }
 
       - name: Build ROM
-        shell: powershell
         env:
           ROM_URL: ${{ github.event.inputs.rom_url }}
           DEBOUNCE: ${{ github.event.inputs.debloat }}
@@ -68,7 +68,6 @@ jobs:
 
       - name: Verify package
         if: success()
-        shell: powershell
         run: .\verify.ps1
 
       - name: Upload ROM artifact

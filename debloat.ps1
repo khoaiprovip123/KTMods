@@ -1,4 +1,4 @@
-<#
+﻿<#
   debloat.ps1 — gỡ app rác theo config/debloat.txt
 #>
 . "$PSScriptRoot\scripts\tools.ps1"
