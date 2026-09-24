@@ -289,18 +289,18 @@ $miImg   = Join-Path $images 'mi_ext.img'
     --device-size $devSize --super-name super `
     "--group=qti_dynamic_partitions_a:${devSize}" `
     "--group=qti_dynamic_partitions_b:${devSize}" `
-    "--partition=system_a:readonly:${szSys}:qti_dynamic_partitions_a" "--image=system_a=$sysImg" `
-    "--partition=system_b:readonly:0:qti_dynamic_partitions_b" `
-    "--partition=system_ext_a:readonly:${szExt}:qti_dynamic_partitions_a" "--image=system_ext_a=$extImg" `
-    "--partition=system_ext_b:readonly:0:qti_dynamic_partitions_b" `
-    "--partition=product_a:readonly:${szProd}:qti_dynamic_partitions_a" "--image=product_a=$prodImg" `
-    "--partition=product_b:readonly:0:qti_dynamic_partitions_b" `
-    "--partition=vendor_a:readonly:${szVend}:qti_dynamic_partitions_a" "--image=vendor_a=$vendImg" `
-    "--partition=vendor_b:readonly:0:qti_dynamic_partitions_b" `
-    "--partition=odm_a:readonly:${szOdm}:qti_dynamic_partitions_a" "--image=odm_a=$odmImg" `
-    "--partition=odm_b:readonly:0:qti_dynamic_partitions_b" `
-    "--partition=mi_ext_a:readonly:${szMi}:qti_dynamic_partitions_a" "--image=mi_ext_a=$miImg" `
-    "--partition=mi_ext_b:readonly:0:qti_dynamic_partitions_b" `
+    "--partition=system_a:none:${szSys}:qti_dynamic_partitions_a" "--image=system_a=$sysImg" `
+    "--partition=system_b:none:0:qti_dynamic_partitions_b" `
+    "--partition=system_ext_a:none:${szExt}:qti_dynamic_partitions_a" "--image=system_ext_a=$extImg" `
+    "--partition=system_ext_b:none:0:qti_dynamic_partitions_b" `
+    "--partition=product_a:none:${szProd}:qti_dynamic_partitions_a" "--image=product_a=$prodImg" `
+    "--partition=product_b:none:0:qti_dynamic_partitions_b" `
+    "--partition=vendor_a:none:${szVend}:qti_dynamic_partitions_a" "--image=vendor_a=$vendImg" `
+    "--partition=vendor_b:none:0:qti_dynamic_partitions_b" `
+    "--partition=odm_a:none:${szOdm}:qti_dynamic_partitions_a" "--image=odm_a=$odmImg" `
+    "--partition=odm_b:none:0:qti_dynamic_partitions_b" `
+    "--partition=mi_ext_a:none:${szMi}:qti_dynamic_partitions_a" "--image=mi_ext_a=$miImg" `
+    "--partition=mi_ext_b:none:0:qti_dynamic_partitions_b" `
     "--output=$superOut"
 if ($LASTEXITCODE -ne 0) { Fail 'lpmake failed' }
 Write-Ok "super.img = $((Get-Item $superOut).Length) bytes"
