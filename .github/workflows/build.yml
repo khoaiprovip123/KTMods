@@ -54,6 +54,10 @@ jobs:
             }
           }
 
+      - name: Install aria2 (faster download)
+        run: choco install aria2 -y --no-progress
+        continue-on-error: true
+
       - name: Build ROM
         env:
           ROM_URL: ${{ github.event.inputs.rom_url }}

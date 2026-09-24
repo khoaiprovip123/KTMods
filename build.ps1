@@ -67,7 +67,14 @@ else {
             }
             else {
                 Write-Ok "Downloading $RomUrl ..."
-                curl.exe -L --fail --retry 3 --retry-delay 2 -o $OtaZip $RomUrl
+                # aria2c multi-conn faster; fallback curl with resume
+                $aria = Get-Command aria2c -ErrorAction SilentlyContinue
+                if ($aria) {
+                    & $aria.Source -x 8 -s 8 -k 4M --file-allocation=none --retry-wait=3 -c -d $cache -o rom_ota.zip $RomUrl
+                }
+                else {
+                    curl.exe -L --fail --retry 5 --retry-delay 3 -C - -o $OtaZip $RomUrl
+                }
                 if ($LASTEXITCODE -ne 0) { Fail 'Download failed' }
                 Write-Ok "Downloaded $([math]::Round((Get-Item $OtaZip).Length / 1GB, 2)) GB"
             }
