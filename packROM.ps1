@@ -50,8 +50,11 @@ if ($binSrc) {
     if (-not (Get-ChildItem (Join-Path $pkg 'bin') -EA 0)) { Write-Warn 'no fastboot/adb - user must install platform-tools' }
 }
 
-# flash scripts
-$vb = $cfg  # flags
+# flash scripts (safe: check device + super size)
+$fmtTpl = Join-Path (Join-Path $Root 'scripts') 'flash_format_data.bat'
+$keepTpl = Join-Path (Join-Path $Root 'scripts') 'flash_keep_data.bat'
+if (Test-Path $fmtTpl) { Copy-Item -Force $fmtTpl (Join-Path $pkg 'flash_format_data.bat') }
+if (Test-Path $keepTpl) { Copy-Item -Force $keepTpl (Join-Path $pkg 'flash_keep_data.bat') }
 @'
 @echo off
 cd /d "%~dp0"
