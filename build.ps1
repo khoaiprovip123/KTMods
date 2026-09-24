@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
   rom-kitchen — build custom Xiaomi lisa ROM (no root) from stock OTA + mods.
 .EXAMPLE
@@ -249,10 +249,9 @@ foreach ($part in @('system', 'product', 'system_ext')) {
     $outImg = Join-Path $images ($part + '.img')
     Write-Ok "mkfs.erofs $part ..."
     Push-Location $dir
-    & $mkfs -d0 -z lz4hc,level=9 --all-root `
-        --fs-config-file=($part + '_fs_config.stripped') `
-        --file-contexts=($part + '_file_contexts.stripped') `
-        -T0 --mkfs-time $outImg $part
+    $fsCfg = 'config/' + $part + '_fs_config.stripped'
+    $fsCtx = 'config/' + $part + '_file_contexts.stripped'
+    & $mkfs -d0 -z lz4hc,level=9 --all-root --fs-config-file="$fsCfg" --file-contexts="$fsCtx" -T0 --mkfs-time $outImg $part
     $code = $LASTEXITCODE
     Pop-Location
     if ($code -ne 0) { Fail "mkfs.erofs $part failed" }

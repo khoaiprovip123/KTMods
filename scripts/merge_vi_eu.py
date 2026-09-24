@@ -16,11 +16,18 @@ MAP = [
     ('ThemeManager', 'product/product/app/MIUIThemeManager/MIUIThemeManager.apk'),
     ('MIUIPackageInstaller', 'product/product/priv-app/MIUIPackageInstaller/MIUIPackageInstaller.apk'),
     ('MiuiSystemUI', 'system_ext/system_ext/priv-app/MiuiSystemUI/MiuiSystemUI.apk'),
+    # assets/lang tags
+    ('settings', 'system_ext/system_ext/priv-app/Settings/Settings.apk'),
+    ('Settings', 'system_ext/system_ext/priv-app/Settings/Settings.apk'),
+    ('fwres', 'system/system/system/framework/framework-res.apk'),
+    ('framework-res', 'system/system/system/framework/framework-res.apk'),
 ]
 
 for tag, rel in MAP:
     apk = work / rel
     vi = lang_eu / tag / 'res' / 'values-vi'
+    if not vi.exists():
+        vi = lang_eu / tag / 'values-vi'
     if not apk.exists():
         print('skip', tag, 'target missing'); continue
     if not vi.exists():
