@@ -70,16 +70,8 @@ Write-Step '1. EXTRACT PAYLOAD'
 if (-not (Test-Path $payload)) {
     if (-not $OtaZip) { Fail 'payload.bin cache miss và không có OTA' }
     $py = Get-Python
-    & $py -c @"
-import zipfile, shutil, os
-src = r'''$OtaZip'''
-dst = r'''$payload'''
-print('extracting payload.bin...')
-with zipfile.ZipFile(src) as z, open(dst, 'wb') as f:
-    with z.open('payload.bin') as p:
-        shutil.copyfileobj(p, f, 1024*1024)
-print('payload.bin', os.path.getsize(dst))
-"@
+    $extractPy = Join-Path (Join-Path $Root 'scripts') 'extract_payload.py'
+    & $py $extractPy $OtaZip $payload
     if ($LASTEXITCODE -ne 0) { Fail 'extract payload.bin failed' }
 } else { Write-Ok "payload.bin cache: $payload" }
 
@@ -165,7 +157,7 @@ if ($cfg.disable_signature -eq 'true' -or $cfg.install_toolbox -eq 'true' -or $c
         $flags = @()
         if ($cfg.disable_signature -eq 'true') { $flags += '--disable-signature-verification' }
         if ($cfg.install_toolbox -eq 'true')   { $flags += '--kaorios-toolbox' }
-        $cmd = "cd /d/LISA/build/tools/FrameworkPatcher/FrameworkPatcher-master && ./scripts/patcher_a14.sh 34 lisa OS2.0.16.0 --framework --services --miui-services " + ($flags -join ' ')
+        $cmd = "cd '" + ($fpDir -replace '\\','/') + "' && ./scripts/patcher_a14.sh 34 lisa OS2.0.16.0 --framework --services --miui-services " + ($flags -join ' ')
         & $bash -lc $cmd
         if (Test-Path (Join-Path $fpDir 'framework_patched.jar')) {
             Copy-Literal (Join-Path $fpDir 'framework_patched.jar') $fw
@@ -177,97 +169,13 @@ if ($cfg.disable_signature -eq 'true' -or $cfg.install_toolbox -eq 'true' -or $c
 
     # 5b. Manual patches: checkCapability + secure flag + CN notification (Python)
     Write-Ok 'Manual patches (instance methods / secure flag / CN)...'
-    $pyPatch = Join-Path $work 'auto_patch.py'
-    @'
-import re, zipfile, tempfile, shutil, os, subprocess, sys
-from pathlib import Path
-
-def decompile(jar, out, apktool):
-    subprocess.check_call(["java","-jar",apktool,"d","-q","-f","-s","-o",out,jar])
-
-def compile_apk(src, out, apktool):
-    subprocess.check_call(["java","-jar",apktool,"b","-q","-f",src,"-o",out])
-
-def force_return_z(path, method, value=0):
-    text = path.read_text(encoding="utf-8", errors="replace")
-    pat = re.compile(r"(\.method[^\n]*" + re.escape(method) + r"\([^\n]*\)Z\n)(.*?)(\.end method)", re.S)
-    def repl(m):
-        header, body, end = m.group(1), m.group(2), m.group(3)
-        meta=[]
-        for line in body.splitlines(keepends=True):
-            s=line.strip()
-            if s.startswith((".locals",".registers",".param",".annotation",".end annotation")) or s=="":
-                meta.append(line)
-            else: break
-        locals_line = next((x for x in meta if x.strip().startswith((".locals",".registers"))), "    .locals 1\n")
-        if not locals_line.strip().startswith((".locals",".registers")):
-            locals_line = "    .locals 1\n"
-        rest = "".join(x for x in meta if not x.strip().startswith((".locals",".registers")))
-        return header + locals_line + rest + f"\n    const/4 v0, 0x{value:x}\n\n    return v0\n" + end
-    new, n = pat.subn(repl, text)
-    if n: path.write_text(new, encoding="utf-8")
-    return n
-
-def replace_is_intl(path):
-    text = path.read_text(encoding="utf-8", errors="replace")
-    new, n = re.subn(r"sget-boolean (v\d+), Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z", r"const/4 \1, 0x1", text)
-    if n: path.write_text(new, encoding="utf-8")
-    return n
-
-def fix_double_end(path):
-    text = path.read_text(encoding="utf-8", errors="replace")
-    text2 = re.sub(r"\.end method\s*\n\s*\.end method\s*\n", ".end method\n", text)
-    path.write_text(text2, encoding="utf-8")
-
-apktool = sys.argv[1]
-work = Path(sys.argv[2])
-do_secure = sys.argv[3] == "1"
-do_cn = sys.argv[4] == "1"
-
-sv_jar = work / "system/system/system/framework/services.jar"
-msv_jar = work / "system_ext/system_ext/framework/miui-services.jar"
-fw_jar = work / "system/system/system/framework/framework.jar"
-
-for jar, tag, secure_cls, cn in [
-    (fw_jar, "fw", False, False),
-    (sv_jar, "sv", True, False),
-    (msv_jar, "msv", True, True),
-]:
-    out = work / f"dec_{tag}"
-    if out.exists(): shutil.rmtree(out, ignore_errors=True)
-    decompile(str(jar), str(out), apktool)
-    if secure_cls and do_secure:
-        for p in out.rglob("WindowState.smali"):
-            if "server/wm" in p.as_posix():
-                force_return_z(p, "isSecureLocked", 0)
-        for p in out.rglob("WindowManagerServiceImpl.smali"):
-            force_return_z(p, "notAllowCaptureDisplay", 0)
-        for p in out.rglob("SigningDetails.smali"):
-            force_return_z(p, "checkCapability", 1)
-            force_return_z(p, "checkCapabilityRecover", 1)
-        for p in out.rglob("StrictJarVerifier.smali"):
-            force_return_z(p, "verifyMessageDigest", 1)
-        fix_double_end(msv_jar)  # no-op
-        for p in out.rglob("*.smali"):
-            fix_double_end(p)
-    if cn and do_cn:
-        for name in ["BroadcastQueueModernStubImpl.smali","ActivityManagerServiceImpl.smali","ProcessManagerService.smali","ProcessSceneCleaner.smali"]:
-            for p in out.rglob(name):
-                replace_is_intl(p)
-    rebuilt = work / f"{tag}_final.jar"
-    compile_apk(str(out), str(rebuilt), apktool)
-    shutil.copy2(rebuilt, jar)
-    print("patched", jar.name)
-
-print("AUTO_PATCH_DONE")
-'@ | Set-Content -LiteralPath $pyPatch -Encoding UTF8
-
     $apktool = Get-Apktool
     $doSecure = if ($cfg.disable_secure_flag -eq 'true') { '1' } else { '0' }
     $doCn = if ($cfg.cn_notification_fix -eq 'true') { '1' } else { '0' }
     $py = Get-Python
-    & $py $pyPatch $apktool $work $doSecure $doCn
-    if ($LASTEXITCODE -ne 0) { Write-Warn 'auto_patch.py có lỗi — kiểm tra jar' }
+    $autoPy = Join-Path (Join-Path $Root 'scripts') 'auto_patch.py'
+    & $py $autoPy $apktool $work $doSecure $doCn
+    if ($LASTEXITCODE -ne 0) { Write-Warn 'auto_patch.py failed' }
 }
 
 # ========== 6. Kaorios app + props ==========
@@ -300,116 +208,27 @@ if (($cfg.add_vietnamese -eq 'true') -and (-not $SkipLang)) {
     $py = Get-Python
     $apktool = Get-Apktool
     $langDir = Join-Path $Root $cfg.lang_dir
-    & $py -c @"
-import os, shutil, subprocess, sys
-from pathlib import Path
-
-apktool = r'''$apktool'''
-work = Path(r'''$work''')
-lang = Path(r'''$langDir''')
-java = 'java'
-
-def rebuild_with_vi(apk, vi_src, tag):
-    if not Path(apk).exists():
-        print('skip', tag, 'apk missing'); return
-    if not Path(vi_src).exists():
-        print('skip', tag, 'values-vi missing'); return
-    out = work / f'vi_{tag}'
-    if out.exists(): shutil.rmtree(out, ignore_errors=True)
-    subprocess.check_call([java, '-jar', apktool, 'd', '-q', '-f', '-s', '-o', str(out), apk])
-    res = out / 'res'
-    # copy values-vi (+ values-vi-rVN if present)
-    for name in ('values-vi', 'values-vi-rVN'):
-        src = Path(vi_src)
-        if src.name != name:
-            src = Path(vi_src).parent / name if (Path(vi_src).parent / name).exists() else src
-        dst = res / name
-        if src.exists() and src.is_dir():
-            if dst.exists(): shutil.rmtree(dst, ignore_errors=True)
-            shutil.copytree(src, dst)
-            print(tag, 'copied', name)
-    # remove invalid mcc folders that break aapt2
-    import re
-    for d in list(res.glob('values-mcc*')):
-        if re.search(r'mcc(9460|9998|9999)', d.name):
-            shutil.rmtree(d, ignore_errors=True)
-            print(tag, 'removed', d.name)
-    rebuilt = work / f'{tag}_vi.apk'
-    subprocess.check_call([java, '-jar', apktool, 'b', '-q', '-f', str(out), str(rebuilt)])
-    shutil.copy2(rebuilt, apk)
-    print(tag, 'OK ->', apk)
-
-# Settings (system_ext)
-rebuild_with_vi(
-    str(work / 'system_ext/system_ext/priv-app/Settings/Settings.apk'),
-    str(lang / 'Settings' / 'values-vi'),
-    'settings')
-# framework-res (system)
-rebuild_with_vi(
-    str(work / 'system/system/system/framework/framework-res.apk'),
-    str(lang / 'framework-res' / 'values-vi'),
-    'fwres')
-print('VIETNAMESE_DONE')
-"@
-    if ($LASTEXITCODE -eq 0) { Write-Ok 'values-vi merged into Settings + framework-res' }
-    else { Write-Warn 'merge values-vi lỗi — kiểm tra assets/lang' }
+    $langDir = Join-Path $Root $cfg.lang_dir
+    $mergePy = Join-Path (Join-Path $Root 'scripts') 'merge_vi_eu.py'
+    & $py $mergePy $apktool $work $langDir
+    $langEu = Join-Path $work 'lang_eu'
+    if (Test-Path $langEu) {
+        & $py $mergePy $apktool $work $langEu
+    }
+    Write-Ok 'values-vi merged from xiaomi.eu'
 }
 
-# ========== 8. Strip fs_config prefix + rebuild EROFS ==========
+# ========== 8. Strip fs_config + rebuild EROFS ==========
 Write-Step '8. REBUILD EROFS'
 $mkfs = Get-Tool 'mkfs.erofs.exe'
+$py = Get-Python
+$stripPy = Join-Path (Join-Path $Root 'scripts') 'strip_fs_config.py'
 foreach ($part in @('system','product','system_ext')) {
     $dir = Join-Path $work $part
-    $src = Join-Path $dir $part
     $cfgd = Join-Path $dir 'config'
     $stripped = Join-Path $cfgd "$($part)_fs_config.stripped"
-    $strippedFc = Join-Path $cfgd "$($part)_file_contexts.stripped"
     if (-not (Test-Path $stripped)) {
-        $py = Get-Python
-        & $py -c @"
-from pathlib import Path
-prefix = '$part'
-cfg = Path(r'$cfgd')
-def strip_cfg(inp, outp):
-    lines = Path(inp).read_text(encoding='utf-8', errors='replace').splitlines()
-    out=[]
-    for line in lines:
-        if not line.strip() or line.startswith('#'):
-            out.append(line); continue
-        parts=line.split()
-        path=parts[0]
-        if path=='/':
-            out.append(line); continue
-        if path==prefix or path==prefix+'/':
-            out.append('/ '+' '.join(parts[1:])); continue
-        if path.startswith(prefix+'/'):
-            newp=path[len(prefix)+1:] or '/'
-            out.append(newp+' '+' '.join(parts[1:])); continue
-        out.append(line)
-    Path(outp).write_text('\n'.join(out)+'\n', encoding='utf-8')
-def strip_fc(inp, outp, prefix):
-    lines=Path(inp).read_text(encoding='utf-8', errors='replace').splitlines()
-    out=[]
-    for line in lines:
-        if not line.strip() or line.startswith('#'):
-            out.append(line); continue
-        parts=line.split()
-        if len(parts)<2:
-            out.append(line); continue
-        path=parts[0]; rest=' '.join(parts[1:])
-        if path in ('/','/.*'):
-            out.append(line); continue
-        if path.startswith('/'+prefix+'/'):
-            out.append(path[1+len(prefix):] + ' ' + rest)
-        elif path=='/'+prefix:
-            out.append('/ '+rest)
-        else:
-            out.append(line)
-    Path(outp).write_text('\n'.join(out)+'\n', encoding='utf-8')
-strip_cfg(cfg / f'{prefix}_fs_config', cfg / f'{prefix}_fs_config.stripped')
-strip_fc(cfg / f'{prefix}_file_contexts', cfg / f'{prefix}_file_contexts.stripped', prefix)
-print('stripped', prefix)
-"@
+        & $py $stripPy $cfgd $part
     }
     $outImg = Join-Path $images "$part.img"
     Write-Ok "mkfs.erofs $part ..."
@@ -418,7 +237,7 @@ print('stripped', prefix)
         --fs-config-file="config/$($part)_fs_config.stripped" `
         --file-contexts="config/$($part)_file_contexts.stripped" `
         -T0 --mkfs-time $outImg $part
-    if ($LASTEXITCODE -ne 0) { Pop-Location; Fail "mkfs.erofs $part failed (kiểm tra fs_config thiếu entry)" }
+    if ($LASTEXITCODE -ne 0) { Pop-Location; Fail "mkfs.erofs $part failed" }
     Pop-Location
     Write-Ok "$part.img rebuilt"
 }
