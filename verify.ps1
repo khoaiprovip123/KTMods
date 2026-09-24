@@ -1,4 +1,4 @@
-﻿# verify.ps1 — kiểm tra package ROM sau build
+# verify.ps1 — kiểm tra package ROM sau build
 . "$PSScriptRoot\scripts\tools.ps1"
 $cfg = Get-KitchenConfig
 $Root = $script:Root
@@ -31,11 +31,13 @@ if (Test-Path $super) {
 Check 'flash_format_data.bat' (Test-Path (Join-Path $pkgDir 'flash_format_data.bat'))
 Check 'flash_keep_data.bat' (Test-Path (Join-Path $pkgDir 'flash_keep_data.bat'))
 
-# flash script must disable verity
+# flash script must disable verity + device check (anti-brick)
 $fmtPath = Join-Path $pkgDir 'flash_format_data.bat'
 if (Test-Path $fmtPath) {
     $fmt = Get-Content $fmtPath -Raw
     Check 'vbmeta disable-verity' ($fmt -match 'disable-verity' -and $fmt -match 'disable-verification')
+    Check 'flash checks device lisa' ($fmt -match 'product: lisa' -or $fmt -match 'lisa')
+    Check 'flash checks super size' ($fmt -match '9126805504')
 }
 
 # firmware images
