@@ -19,7 +19,6 @@ if not exist "%fastboot%" (
   ) else (
     where fastboot >nul 2>&1
     if errorlevel 1 (
-      echo [ERROR] fastboot not found | tee -a "%LOG%" 2>nul
       echo [ERROR] fastboot not found >> "%LOG%"
       echo [ERROR] fastboot not found
       pause & exit /B 1
