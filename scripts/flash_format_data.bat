@@ -100,8 +100,13 @@ pause
 exit /B 0
 
 :do
+echo.
+echo [%TIME%] FLASH %*
 echo [%TIME%] %* >> "%LOG%"
-%fastboot% %* >> "%LOG%" 2>&1
+for /f "delims=" %%L in ('%fastboot% %* 2^>^&1') do (
+  echo   %%L
+  echo %%L >> "%LOG%"
+)
 set "RC=!ERRORLEVEL!"
 echo [%TIME%]   exit=!RC! >> "%LOG%"
 if not "!RC!"=="0" (
