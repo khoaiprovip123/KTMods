@@ -80,10 +80,16 @@ else {
 
 # ========== 1. Extract payload.bin ==========
 Write-Step '1. EXTRACT PAYLOAD'
+Write-Host "  Free disk: $([math]::Round((Get-PSDrive (Split-Path $Root -Qualifier).TrimEnd(':')).Free / 1GB, 1)) GB"
 if (-not (Test-Path $payload)) {
     if (-not $OtaZip) { Fail 'payload.bin cache miss and no OTA' }
     & $py (Join-Path $scripts 'extract_payload.py') $OtaZip $payload
     if ($LASTEXITCODE -ne 0) { Fail 'extract payload.bin failed' }
+    # free disk: delete OTA zip after payload extracted
+    if ($OtaZip -and (Test-Path -LiteralPath $OtaZip) -and ($OtaZip -like '*rom_ota.zip')) {
+        Remove-Item -LiteralPath $OtaZip -Force -ErrorAction SilentlyContinue
+        Write-Ok 'removed rom_ota.zip (free disk)'
+    }
 }
 else {
     Write-Ok "payload.bin cache: $payload"
@@ -106,6 +112,11 @@ if ($missing.Count -gt 0) {
 }
 else {
     Write-Ok 'images already dumped'
+}
+# free disk: payload no longer needed after dump
+if ((Test-Path $payload) -and (Test-Path (Join-Path $images 'system.img'))) {
+    Remove-Item -Force $payload -ErrorAction SilentlyContinue
+    Write-Ok 'removed payload.bin (free disk)'
 }
 
 # ========== 3. Unpack EROFS ==========
