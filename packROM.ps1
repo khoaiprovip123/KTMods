@@ -1,4 +1,4 @@
-﻿<#
+<#
   packROM.ps1 — đóng gói ROM flashable + nén 7z
 #>
 param(
@@ -28,24 +28,26 @@ foreach ($f in Get-ChildItem $images -Filter *.img) {
     Write-Ok "images\$($f.Name)"
 }
 
-# fastboot/adb: ưu tiên tools/platform-tools rồi PATH
+# fastboot/adb: tools/platform-tools → tools/bin → known local → PATH
 $binSrc = $null
-foreach ($c in @(
+$cands = @(
     (Join-Path (Join-Path $Root 'tools') 'platform-tools'),
-    (Join-Path (Join-Path $Root 'tools') 'bin')
-)) {
-    if (Test-Path $c) { $binSrc = $c; break }
+    (Join-Path (Join-Path $Root 'tools') 'bin'),
+    'D:\LISA\build\output\LISA_HyperOS2.0.16.0_CN_Mods\bin',
+    'D:\LISA\NOthing\NTFlashTools-Windows\platform-tools'
+)
+foreach ($c in $cands) {
+    if ((Test-Path (Join-Path $c 'fastboot.exe'))) { $binSrc = $c; break }
 }
 if ($binSrc) {
     Copy-Item -Recurse -Force "$binSrc\*" (Join-Path $pkg 'bin')
     Write-Ok "bin from $binSrc"
 } else {
-    # fallback: copy fastboot/adb from PATH
     foreach ($t in @('fastboot.exe','adb.exe','AdbWinApi.dll','AdbWinUsbApi.dll')) {
         $c = Get-Command $t -EA 0
         if ($c) { Copy-Item -Force $c.Source (Join-Path $pkg 'bin'); Write-Ok "bin $t" }
     }
-    if (-not (Get-ChildItem (Join-Path $pkg 'bin') -EA 0)) { Write-Warn 'no fastboot/adb — user tự cài platform-tools' }
+    if (-not (Get-ChildItem (Join-Path $pkg 'bin') -EA 0)) { Write-Warn 'no fastboot/adb - user must install platform-tools' }
 }
 
 # flash scripts
