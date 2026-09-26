@@ -61,8 +61,8 @@ for %%A in (images\super.img) do set SUPER_SIZE=%%~zA
 echo super.img=%SUPER_SIZE% >> "%LOG%"
 if not "%SUPER_SIZE%"=="9126805504" (
   color 0C
-  echo [STOP] super.img size = %SUPER_SIZE% (need 9126805504) >> "%LOG%"
-  echo [STOP] super.img size = %SUPER_SIZE% (need 9126805504)
+  echo [STOP] super.img size = %SUPER_SIZE%, expected 9126805504 bytes >> "%LOG%"
+  echo [STOP] super.img size = %SUPER_SIZE%, expected 9126805504 bytes
   pause
   exit /B 1
 )
@@ -114,7 +114,7 @@ call :do flash vendor_boot_ab images\vendor_boot.img
 if exist "images\cust.img" call :do flash cust images\cust.img
 
 echo Flashing super.img (takes about 2-3 minutes, please wait)...
-call :do flash super images\super.img
+call :do -S 256M flash super images\super.img
 
 echo.
 echo ##############################################################
@@ -136,8 +136,8 @@ set "RC=!ERRORLEVEL!"
 echo [%TIME%]   exit=!RC! >> "%LOG%"
 if not "!RC!"=="0" (
   color 0C
-  echo [ERROR] FAILED: %*  (see %LOG%)
-  echo [ERROR] FAILED: %* >> "%LOG%"
+  echo [ERROR] FAILED: %* - check %LOG%
+  echo [ERROR] FAILED: %* - check %LOG% >> "%LOG%"
   pause
   exit /B 1
 )
