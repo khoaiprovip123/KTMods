@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/file_browse_frame" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.android.fileexplorer.view.HeaderSpringBackLayout android:id="@id/springbacklayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:header="@id/navi_bar" app:scrollOrientation="vertical|angle" app:scrollableView="@android:id/list">
+        <androidx.core.widget.NestedScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include android:visibility="gone" layout="@layout/layout_empty_view_maml_mirror" />
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+        <com.android.fileexplorer.view.RefreshLoadRecyclerView android:id="@android:id/list" android:paddingTop="@dimen/mirror_file_gallery_height" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" style="@style/RecyclerView_Padding" />
+        <include android:id="@id/navi_bar" layout="@layout/navigation_bar_phone_r_mirror" />
+    </com.android.fileexplorer.view.HeaderSpringBackLayout>
+    <com.android.fileexplorer.view.ToastTextView android:id="@id/toast" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:textAlignment="viewStart" style="@style/ToastTextStyle" />
+</RelativeLayout>

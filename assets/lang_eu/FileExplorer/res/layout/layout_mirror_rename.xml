@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@drawable/shape_mirror_search_corner" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="@dimen/mirror_sub_text_size" android:textColor="@color/mirror_search_text_color" android:id="@id/et_rename" android:background="@null" android:layout_width="fill_parent" android:layout_height="34.0px" android:textCursorDrawable="@drawable/shape_mirror_search_cursor" android:textDirection="locale" android:textAlignment="viewStart" android:paddingStart="8.0px" android:paddingEnd="8.0px" />
+</FrameLayout>

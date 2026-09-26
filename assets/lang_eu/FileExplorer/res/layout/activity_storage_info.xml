@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/common_color_blue" android:paddingTop="18.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <FrameLayout android:id="@id/circle_layout" android:layout_width="fill_parent" android:layout_height="190.0dip">
+                <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="33.0sp" android:textColor="@color/text_color_white" android:id="@id/storage_used" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textDirection="ltr" />
+                    <TextView android:textSize="15.0sp" android:textColor="@color/text_color_white" android:layout_gravity="center_horizontal" android:id="@id/used_or_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:text="@string/used" />
+                </LinearLayout>
+            </FrameLayout>
+            <TextView android:textSize="15.0sp" android:textColor="#b3ffffff" android:id="@id/phone_storage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" />
+        </LinearLayout>
+        <TextView android:id="@id/size_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="23.0dip" android:text="@string/phone_storage_size_tip" android:paddingStart="22.0dip" android:paddingEnd="22.0dip" style="@style/StorageInfoActivityTextStyle" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/category_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="23.0dip" android:baselineAligned="false" android:paddingStart="22.0dip" android:paddingEnd="22.0dip">
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:background="@drawable/shape_image_category" android:layout_width="@dimen/storage_detail_category_bg" android:layout_height="@dimen/storage_detail_category_bg" />
+                    <TextView android:id="@id/image_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="11.0dip" style="@style/StorageInfoActivityTextStyle" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.0dip">
+                    <TextView android:background="@drawable/shape_video_category" android:layout_width="@dimen/storage_detail_category_bg" android:layout_height="@dimen/storage_detail_category_bg" />
+                    <TextView android:id="@id/video_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="11.0dip" style="@style/StorageInfoActivityTextStyle" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.0dip">
+                    <TextView android:background="@drawable/shape_zip_category" android:layout_width="@dimen/storage_detail_category_bg" android:layout_height="@dimen/storage_detail_category_bg" />
+                    <TextView android:id="@id/zip_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="11.0dip" style="@style/StorageInfoActivityTextStyle" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.0dip">
+                    <TextView android:background="@drawable/shape_other_category" android:layout_width="@dimen/storage_detail_category_bg" android:layout_height="@dimen/storage_detail_category_bg" />
+                    <TextView android:id="@id/other_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="11.0dip" style="@style/StorageInfoActivityTextStyle" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:background="@drawable/shape_audio_category" android:layout_width="@dimen/storage_detail_category_bg" android:layout_height="@dimen/storage_detail_category_bg" />
+                    <TextView android:id="@id/audio_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="11.0dip" style="@style/StorageInfoActivityTextStyle" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.0dip">
+                    <TextView android:background="@drawable/shape_doc_category" android:layout_width="@dimen/storage_detail_category_bg" android:layout_height="@dimen/storage_detail_category_bg" />
+                    <TextView android:id="@id/doc_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="11.0dip" style="@style/StorageInfoActivityTextStyle" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.0dip">
+                    <TextView android:background="@drawable/shape_apk_category" android:layout_width="@dimen/storage_detail_category_bg" android:layout_height="@dimen/storage_detail_category_bg" />
+                    <TextView android:id="@id/apk_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="11.0dip" style="@style/StorageInfoActivityTextStyle" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="22.0dip">
+                    <TextView android:background="@drawable/shape_free_category" android:layout_width="@dimen/storage_detail_category_bg" android:layout_height="@dimen/storage_detail_category_bg" />
+                    <TextView android:id="@id/free_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="11.0dip" style="@style/StorageInfoActivityTextStyle" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <Button android:textColor="@color/text_color_secondary" android:gravity="center" android:id="@id/clean_btn" android:background="@drawable/add_private_bg" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="10.0dip" android:text="@string/phone_storage_clean" android:layout_marginStart="22.0dip" android:layout_marginEnd="22.0dip" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center_vertical" android:background="@drawable/bg_large_top" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="locale"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="middle" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:drawableStart="@drawable/miuix_action_icon_back_dark" android:textDirection="locale" style="@style/Miuix.AppCompat.TextAppearance.WindowTitle" />
+</FrameLayout>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawable app:symbolDisabledAlpha="0.3" app:symbolIconHeight="28.0dip" app:symbolIconSize="20.0dip" app:symbolIconWidth="28.0dip" app:symbolNormalAlpha="1.0" app:symbolPressedAlpha="0.5" app:symbolText="󰀵" app:symbolTintColor="@color/text_color_white_50alpha" class="miuix.theme.symbol.SymbolDrawable"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

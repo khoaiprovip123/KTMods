@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.navigator.MiuixNavigationLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@android:id/background" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/content_parent" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/content_decor_wrapper" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no">
+            <androidx.fragment.app.FragmentContainerView android:id="@id/content_decor" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <View android:id="@id/divider" android:background="?navigationColorDividerLine" android:visibility="gone" android:layout_width="0.5dip" android:layout_height="fill_parent" />
+        <FrameLayout android:id="@id/secondary_content_decor_wrapper" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no" android:layout_marginStart="@dimen/miuix_navigator_content_max_width_in_list_mode">
+            <androidx.fragment.app.FragmentContainerView android:id="@id/secondary_content_decor" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@id/navigation_decor_wrapper" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.fragment.app.FragmentContainerView android:id="@id/navigation_decor" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <View android:id="@id/navigation_divider" android:background="?navigationColorDividerLine" android:visibility="gone" android:layout_width="0.5dip" android:layout_height="fill_parent" />
+</miuix.navigator.MiuixNavigationLayout>

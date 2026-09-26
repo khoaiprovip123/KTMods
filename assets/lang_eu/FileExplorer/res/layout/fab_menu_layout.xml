@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.FabMenuLayout android:orientation="vertical" android:background="@drawable/filter_menu_bg" android:paddingTop="@dimen/menu_padding_vertical" android:paddingBottom="@dimen/menu_padding_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/doc_menu_group" layout="@layout/layout_fab_menu_group" />
+    <include android:id="@id/sort_menu_group" layout="@layout/layout_fab_menu_group" />
+    <include android:id="@id/view_type_menu_group" layout="@layout/layout_fab_menu_group" />
+</com.android.fileexplorer.view.FabMenuLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="center_vertical" android:background="@color/white" android:layout_width="@dimen/mirror_drop_down_width" android:layout_height="@dimen/mirror_drop_down_item_height" android:minHeight="@dimen/mirror_drop_down_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll_drop_down_data" android:layout_width="@dimen/mirror_drop_down_width" android:layout_height="@dimen/mirror_drop_down_item_height" android:paddingStart="@dimen/mirror_drop_down_item_margin_start" android:paddingEnd="@dimen/mirror_drop_down_item_margin_end">
+        <ImageView android:id="@id/iv_drop_down" android:visibility="gone" android:layout_width="@dimen/mirror_drop_down_item_icon_size" android:layout_height="@dimen/mirror_drop_down_item_icon_size" />
+        <TextView android:textSize="@dimen/mirror_sub_text_size" android:textColor="@color/mirror_drop_down_text_color_normal" android:ellipsize="end" android:id="@id/tv_drop_down" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:fontFamily="sans-serif" android:layout_marginStart="@dimen/mirror_drop_down_item_margin_end" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/mirror_sub_text_size" android:textColor="@color/mirror_drop_down_text_color_disable" android:layout_gravity="center" android:id="@id/tv_drop_down_status" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="sans-serif" />
+</FrameLayout>

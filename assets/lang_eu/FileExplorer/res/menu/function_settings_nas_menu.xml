@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@id/display_view_type_mode_group">
+        <item android:id="@id/display_grid" android:title="@string/view_mode_grid" android:checkable="true" />
+        <item android:id="@id/display_list" android:title="@string/view_mode_list" android:checkable="true" />
+    </group>
+    <group android:id="@id/file_filter_sort_group">
+        <item android:id="@id/filter_sort_by_name" android:title="@string/by_name" android:checkable="true" />
+        <item android:id="@id/filter_sort_by_size" android:title="@string/by_size" android:checkable="true" />
+        <item android:id="@id/filter_sort_by_date" android:title="@string/by_date" android:checkable="true" />
+    </group>
+    <group android:id="@id/file_sort_mode_group">
+        <item android:id="@id/file_sort_positive_order" android:title="@string/positive_order" android:checkable="true" />
+        <item android:id="@id/file_sort_reverse_order" android:title="@string/reverse_order" android:checkable="true" />
+    </group>
+</menu>

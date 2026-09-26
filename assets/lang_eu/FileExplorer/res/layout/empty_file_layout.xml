@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/empty_view" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/empty_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/empty_icon" />
+    <TextView android:id="@id/empty_message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_file" style="@style/empty_file_list_hint_style" />
+    <TextView android:textColor="@color/no_apk_hint" android:id="@id/apk_empty_message" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_apk" style="@style/empty_file_list_hint_style" />
+</LinearLayout>

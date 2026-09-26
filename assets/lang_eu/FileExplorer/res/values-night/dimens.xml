@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fast_scroller_thumb_border_width">1.0dip</dimen>
+</resources>

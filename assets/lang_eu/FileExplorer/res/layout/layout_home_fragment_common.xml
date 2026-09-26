@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <miuix.springback.view.SpringBackLayout android:id="@id/springbacklayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@android:id/list" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <androidx.core.widget.NestedScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include android:visibility="gone" layout="@layout/layout_empty_view_maml" />
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+        <com.android.fileexplorer.view.RefreshLoadRecyclerView android:id="@android:id/list" android:paddingTop="@dimen/miuix_theme_margin_base" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" style="@style/RecyclerView_Padding" />
+    </miuix.springback.view.SpringBackLayout>
+    <FrameLayout android:id="@id/scrollview2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/no_permission_res" layout="@layout/no_permission_background" />
+    </FrameLayout>
+</FrameLayout>

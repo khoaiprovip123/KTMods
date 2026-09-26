@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dialog_padding" android:paddingEnd="@dimen/dialog_padding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:gravity="center_vertical" android:id="@id/text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/text_input_dialog_view_margin_border" android:inputType="textCapSentences" android:layout_marginStart="@dimen/text_input_dialog_view_margin_border" android:layout_marginEnd="@dimen/text_input_dialog_view_margin_border" />
+        <TextView android:textAppearance="@style/Miuix.AppCompat.TextAppearance.EditText.Error" android:id="@id/error_message" android:paddingLeft="@dimen/user_edit_input_padding" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

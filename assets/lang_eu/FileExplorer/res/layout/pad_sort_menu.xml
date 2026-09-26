@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.miui.support.cardview.CardView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="2.0px" android:layout_marginBottom="@dimen/common_card_view_margin" android:layout_marginStart="@dimen/common_card_view_margin" android:layout_marginEnd="@dimen/common_card_view_margin" app:cardBackgroundColor="@color/transparent" app:cardCornerRadius="18.0dip" app:cardElevation="6.0dip">
+        <com.android.fileexplorer.view.PadFabExpandView android:id="@id/layout_fab_menu" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </com.miui.support.cardview.CardView>
+</LinearLayout>

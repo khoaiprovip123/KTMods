@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="4.0" />
+        <include android:id="@id/layout_header" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/server_control_activity_header" />
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:minHeight="@dimen/common_begin_btn_margin" android:layout_weight="6.0" />
+        <RelativeLayout android:gravity="center" android:id="@id/start_stop_button_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center" android:layout_gravity="center" android:background="@drawable/common_info_button" android:layout_width="@dimen/common_begin_btn_width" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/group_item_margin_server_control_button_normal" android:minHeight="@dimen/miuix_appcompat_button_height" android:layout_marginStart="@dimen/common_begin_btn_margin" android:layout_marginEnd="@dimen/common_begin_btn_margin">
+                <TextView android:textSize="@dimen/ftp_start_btn_test_size" android:textColor="@color/ftp_bottom_text_color_selector" android:ellipsize="end" android:gravity="center" android:layout_gravity="center" android:id="@id/start_stop_button_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:drawablePadding="@dimen/ftp_start_btn_drawable_padding" android:fontFamily="sans-serif-medium" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

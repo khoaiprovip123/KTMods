@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<functionindex
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <items>
+        <item>
+            <id>1</id>
+            <resource_name>app_name</resource_name>
+            <package>com.android.fileexplorer</package>
+            <class>com.android.fileexplorer.FileExplorerTabActivity</class>
+            <keywords>search_recent_file</keywords>
+            <drawable>android.resource://com.android.fileexplorer/drawable/icon</drawable>
+            <description>path_recent_file</description>
+            <is_setting>false</is_setting>
+            <app_name>app_name</app_name>
+        </item>
+        <item>
+            <id>4</id>
+            <resource_name>category_download</resource_name>
+            <package>com.android.fileexplorer</package>
+            <class>com.android.fileexplorer.activity.AppTagActivity</class>
+            <intent_data>filetag://fileexplorer.android.com/download</intent_data>
+            <keywords>search_download</keywords>
+            <drawable>android.resource://com.android.fileexplorer/drawable/icon_search_download</drawable>
+            <description>path_download</description>
+            <is_setting>false</is_setting>
+            <app_name>app_name</app_name>
+        </item>
+    </items>
+</functionindex>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/file_convert_excel" android:visible="false" android:title="@string/file_parse_menu_excel" />
+    <item android:id="@id/file_convert_ppt" android:visible="false" android:title="@string/file_parse_menu_ppt" />
+    <item android:id="@id/file_convert_word" android:visible="false" android:title="@string/file_parse_menu_word" />
+    <item android:id="@id/file_convert_image" android:visible="false" android:title="@string/file_parse_menu_image" />
+    <item android:id="@id/file_convert_pdf" android:visible="false" android:title="@string/file_parse_menu_pdf" />
+</menu>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.mirror.view.MirrorPathGallery android:orientation="horizontal" android:id="@id/path_gallery" android:layout_width="fill_parent" android:layout_height="@dimen/mirror_file_gallery_height" android:layoutDirection="locale"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/first_path" android:background="@drawable/path_galley_bg" android:visibility="gone" android:fontFamily="sans-serif" style="@style/PathItemTextStyle.Mirror" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/path_arrow_first" android:layout_width="@dimen/mirror_file_gallery_icon_width" android:layout_height="wrap_content" android:src="@drawable/mirror_forward_disable" android:layout_marginStart="@dimen/mirror_file_gallery_icon_margin_start" android:layout_marginEnd="@dimen/mirror_file_gallery_icon_margin_end" />
+    <com.android.fileexplorer.view.recycler.HorizontalRecyclerView android:id="@id/scroll_container" android:scrollbars="vertical" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fastScrollEnabled="true" />
+</com.android.fileexplorer.mirror.view.MirrorPathGallery>

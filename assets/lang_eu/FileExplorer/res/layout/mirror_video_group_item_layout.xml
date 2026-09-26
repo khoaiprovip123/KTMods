@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.VideoGroupItemR android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.android.fileexplorer.mirror.view.MirrorVideoGroupItem android:id="@id/video_group" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cl_top_view" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:id="@id/mirror_icon_selected" android:background="@drawable/mirror_selected_grid_icon_bg" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintDimensionRatio="1:1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <FrameLayout android:id="@id/fl_picture" android:background="@drawable/docs_grid_image_bg_mirror" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_margin="@dimen/mirror_item_grid_padding" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="1:1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                <com.android.fileexplorer.view.RoundedImageView android:id="@id/image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/doc_grid_stroke_width" android:scaleType="centerCrop" app:riv_corner_radius="@dimen/mirror_recent_doc_radius" />
+            </FrameLayout>
+            <ImageView android:id="@id/ic_video_tag_view" android:layout_width="@dimen/mirror_fav_item_icon_size" android:layout_height="@dimen/mirror_fav_item_icon_size" android:layout_marginTop="@dimen/mirror_fav_item_icon_margin" android:src="@drawable/ic_video_tag_recent" android:layout_marginStart="@dimen/mirror_fav_item_icon_margin" app:layout_constraintStart_toStartOf="@id/fl_picture" app:layout_constraintTop_toTopOf="@id/fl_picture" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <CheckBox android:theme="@style/Checkbox_NewStyle" android:id="@android:id/checkbox" android:focusable="false" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/checkbox_margin" android:scaleType="fitCenter" android:layout_alignParentBottom="true" android:layout_alignParentEnd="true" />
+        <ImageView android:id="@id/more_video_view" android:visibility="gone" android:layout_width="20.0px" android:layout_height="fill_parent" />
+    </com.android.fileexplorer.mirror.view.MirrorVideoGroupItem>
+</com.android.fileexplorer.view.VideoGroupItemR>

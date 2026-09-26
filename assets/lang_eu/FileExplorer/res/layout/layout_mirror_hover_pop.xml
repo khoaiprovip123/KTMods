@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.miui.support.cardview.CardView android:id="@id/cv_hover_pop" android:paddingTop="@dimen/mirror_drop_down_padding_top_bottom" android:paddingBottom="@dimen/mirror_drop_down_padding_top_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/mirror_dialog_card_elevation" app:cardBackgroundColor="@color/white" app:cardCornerRadius="4.0px" app:cardElevation="20.0px" style="@style/CardView.Light.Mirror">
+        <TextView android:textSize="@dimen/mirror_navigation_tip_text_size" android:textColor="@color/mirror_sub_text_color" android:id="@id/tv_hover_pop" android:paddingTop="@dimen/mirror_navigation_tip_text_padding_top" android:paddingBottom="@dimen/mirror_navigation_tip_text_padding_top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="@dimen/mirror_navigation_tip_text_padding_start" android:paddingEnd="@dimen/mirror_navigation_tip_text_padding_start" />
+    </com.miui.support.cardview.CardView>
+</FrameLayout>

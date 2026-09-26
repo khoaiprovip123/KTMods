@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.springback.view.SpringBackLayout android:id="@id/springbacklayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@id/scrollview"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.core.widget.NestedScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include android:visibility="gone" layout="@layout/layout_empty_view_maml" />
+            <com.android.fileexplorer.adapter.recycle.BaseRecyclerView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" />
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+</miuix.springback.view.SpringBackLayout>

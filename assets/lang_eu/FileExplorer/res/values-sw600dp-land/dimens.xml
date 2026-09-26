@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="category_music_item_margin_middle">30.599976dip</dimen>
+    <dimen name="category_music_item_margin_side">72.0dip</dimen>
+    <dimen name="category_pic_item_margin_middle">12.169983dip</dimen>
+    <dimen name="category_pic_item_margin_middle_fold">6.25dip</dimen>
+    <dimen name="category_pic_item_margin_top">12.169983dip</dimen>
+    <dimen name="doc_content_padding_pad">72.0dip</dimen>
+    <dimen name="group_item_common_margin_middle">30.599976dip</dimen>
+    <dimen name="group_item_common_margin_slide">72.0dip</dimen>
+    <dimen name="miuix_appcompat_btn_to_nav_spacing">16.0dip</dimen>
+    <dimen name="more_category_fragment_padding_horizontal">61.0dip</dimen>
+    <item type="dimen" name="pad_navigation_width">0.3166</item>
+    <item type="dimen" name="pad_navigation_width_fold">0.387</item>
+</resources>

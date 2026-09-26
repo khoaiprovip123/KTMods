@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="50" android:drawable="@drawable/pull_refresh24" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh25" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh26" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh27" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh28" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh29" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh30" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh31" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh32" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh33" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh34" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh35" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh36" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh37" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh38" />
+    <item android:duration="50" android:drawable="@drawable/pull_refresh39" />
+</animation-list>

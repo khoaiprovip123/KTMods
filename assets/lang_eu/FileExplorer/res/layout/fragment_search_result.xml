@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.nestedheader.widget.NestedHeaderLayout android:id="@id/nested_header_layout" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent" app:headerAutoClose="false" app:headerView="@id/header" app:scrollType="offset" app:scrollableView="@id/springbacklayout" app:selfScrollFirst="false">
+        <View android:id="@id/header" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <miuix.springback.view.SpringBackLayout android:id="@id/springbacklayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@android:id/list">
+            <com.android.fileexplorer.adapter.recycle.BaseRecyclerView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/RecyclerView_Padding_bottom" />
+            <androidx.core.widget.NestedScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/search_framelayout_min_height">
+                    <include android:visibility="gone" layout="@layout/layout_ai_search_progress" />
+                    <include android:visibility="gone" layout="@layout/layout_empty_view_maml" />
+                </FrameLayout>
+            </androidx.core.widget.NestedScrollView>
+        </miuix.springback.view.SpringBackLayout>
+    </miuix.nestedheader.widget.NestedHeaderLayout>
+    <include layout="@layout/file_search_view" />
+</FrameLayout>

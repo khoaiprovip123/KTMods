@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="@dimen/ic_transfer_size" android:width="@dimen/ic_transfer_size" android:autoMirrored="true" android:viewportWidth="88.0" android:viewportHeight="88.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="@drawable/$ic_transfer__0" android:pathData="M22,0L66,0A22,22 0,0 1,88 22L88,66A22,22 0,0 1,66 88L22,88A22,22 0,0 1,0 66L0,22A22,22 0,0 1,22 0z" />
+    <path android:fillColor="#ffffffff" android:pathData="M33,26C33,24.3431 34.3431,23 36,23C37.6569,23 39,24.3431 39,26V62C39,63.6569 37.6569,65 36,65C34.3431,65 33,63.6569 33,62V26Z" />
+    <path android:fillColor="#ffffffff" android:pathData="M55,62C55,63.6569 53.6569,65 52,65C50.3431,65 49,63.6569 49,62L49,26C49,24.3431 50.3431,23 52,23C53.6569,23 55,24.3431 55,26L55,62Z" />
+    <path android:fillColor="#ffffffff" android:pathData="M36.0011,23C37.6573,23 39,24.3427 39,25.9989V37H23.6264C22.0148,37 21.2606,35.0054 22.4691,33.9392L34.0169,23.7502C34.5648,23.2668 35.2704,23 36.0011,23Z" />
+    <path android:fillColor="#ffffffff" android:pathData="M51.9989,65C50.3427,65 49,63.6573 49,62.0011L49,51L64.3736,51C65.9852,51 66.7394,52.9946 65.5309,54.0608L53.9831,64.2498C53.4352,64.7332 52.7296,65 51.9989,65Z" />
+</vector>

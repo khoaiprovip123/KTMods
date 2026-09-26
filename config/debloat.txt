@@ -31,8 +31,8 @@ XiaoaiRecommendation
 
 # --- Tiện ích rác ---
 MIUICleanMaster
-MiuiScanner
-MiuiCit
+# MiuiScanner (giữ lại để quét QR từ Control Center / Camera)
+# MiuiCit (giữ lại menu test phần cứng *#*#6484#*#*)
 DeviceInfoQR
 ConferenceDialer
 CarWith

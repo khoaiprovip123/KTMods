@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.miui.support.cardview.CardView android:layout_gravity="center" android:layout_width="@dimen/mirror_dialog_width" android:layout_height="252.0px" android:layout_marginTop="100.0px" android:layout_marginBottom="100.0px" app:cardCornerRadius="12.0px" app:cardElevation="10.0dip">
+        <androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/shape_mirror_common_dialog_bg" android:paddingBottom="@dimen/mirror_dialog_margin_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/iv_loading" android:layout_width="32.0px" android:layout_height="32.0px" android:layout_marginTop="80.0px" android:src="@drawable/icon_loading" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="@dimen/mirror_dialog_content_text_size" android:textColor="@color/mirror_main_text_color" android:id="@id/tv_dialog_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mirror_dialog_content_margin_top" android:text="@string/operation_deleting" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/iv_loading" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.miui.support.cardview.CardView>
+</FrameLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/action_search" android:visibility="gone" android:layout_width="@dimen/actionbar_icon_size" android:layout_height="@dimen/actionbar_icon_size" android:src="@drawable/ic_actionbar_search" android:contentDescription="@string/search_title_hint" android:layout_marginEnd="@dimen/group_action_margin_end" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/action_create" android:layout_width="@dimen/actionbar_icon_size" android:layout_height="@dimen/actionbar_icon_size" android:src="@drawable/ic_create_folder" android:contentDescription="@string/create_folder" android:layout_marginEnd="@dimen/group_action_margin_end" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/action_list_grid" android:layout_width="@dimen/actionbar_icon_size" android:layout_height="@dimen/actionbar_icon_size" android:src="@drawable/ic_form_grid" android:contentDescription="@string/func_settings" />
+</LinearLayout>

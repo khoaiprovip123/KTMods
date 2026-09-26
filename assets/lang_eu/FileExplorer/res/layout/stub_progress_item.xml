@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.cloud.widget.TransferStatusProgress android:id="@id/cloud_trans_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" app:tsp_errorProgressColor="#fffa382e" app:tsp_max="100" app:tsp_progressColor="@color/cloud_trans_progress_progress_color" app:tsp_roundColor="@color/cloud_trans_progress_round_color" app:tsp_roundWidth="1.7999878dip" app:tsp_startAngle="-90" app:tsp_style="STROKE" app:tsp_viewMode="1"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

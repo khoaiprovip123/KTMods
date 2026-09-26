@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.miui.support.cardview.CardView android:layout_gravity="center" android:layout_width="@dimen/mirror_dialog_width" android:layout_height="wrap_content" android:layout_marginTop="100.0px" android:layout_marginBottom="100.0px" app:cardBackgroundColor="@color/white" app:cardCornerRadius="@dimen/mirror_dialog_bg_radius" app:cardElevation="@dimen/mirror_dialog_card_elevation" style="@style/CardView.Light.Mirror">
+        <androidx.constraintlayout.widget.ConstraintLayout android:paddingBottom="@dimen/mirror_dialog_progress_circle_text_margin_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="@dimen/mirror_dialog_title_text_size" android:textColor="@color/mirror_main_text_color" android:id="@id/message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mirror_dialog_progress_circle_margin_top" android:fontFamily="sans-serif" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/progress" />
+            <ProgressBar android:id="@id/progress" android:layout_width="32.0px" android:layout_height="32.0px" android:layout_marginTop="@dimen/mirror_dialog_progress_circle_margin_top" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/MirrorProgressCircle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.miui.support.cardview.CardView>
+</FrameLayout>

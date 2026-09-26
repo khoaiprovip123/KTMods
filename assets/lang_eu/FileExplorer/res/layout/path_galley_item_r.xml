@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/path_gallery_text_size" android:id="@id/path_item" android:background="@drawable/path_galley_bg" android:fontFamily="mipro-regular" android:layoutDirection="locale" style="@style/PathItemTextStyleR" />
+    <ImageView android:id="@id/path_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_galley_arrow" android:layout_marginStart="5.0dip" android:layout_marginEnd="9.0dip" />
+</LinearLayout>

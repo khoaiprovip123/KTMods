@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="abbrev_a_hour_ago">
+        <item quantity="other">%d ชั่วโมงที่แล้ว</item>
+    </plurals>
+    <plurals name="abbrev_half_hour_ago">
+        <item quantity="other">ครึ่งชั่วโมงผ่านมา</item>
+    </plurals>
+    <plurals name="abbrev_in_a_hour">
+        <item quantity="other">ใน %d ชั่วโมง</item>
+    </plurals>
+    <plurals name="abbrev_in_half_hour">
+        <item quantity="other">ในครึ่งชั่วโมง</item>
+    </plurals>
+    <plurals name="abbrev_in_less_than_one_minute">
+        <item quantity="other">ทันที</item>
+    </plurals>
+    <plurals name="abbrev_in_num_minutes">
+        <item quantity="other">ใน %d นาที</item>
+    </plurals>
+    <plurals name="abbrev_less_than_one_minute_ago">
+        <item quantity="other">เมื่อสักครู่</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="other">%d นาทีที่ผ่านมา</item>
+    </plurals>
+    <plurals name="add_max_shortcut_count">
+        <item quantity="other">คุณสามารถเพิ่มรูปภาพได้มากถึง %d โฟลเดอร์</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">%1$d วันก่อน</item>
+    </plurals>
+    <plurals name="delete_cload_nas_files">
+        <item quantity="other">ลบรายการที่เลือก %1$d รายการออกจากอุปกรณ์ทั้งหมด คลาวด์ และ Xiaomi SmartStorage ใช่ไหม คุณจะสามารถกู้คืนรายการที่เพิ่งลบไปใน Xiaomi Cloud และแอป Xiaomi SmartStorage ได้</item>
+    </plurals>
+    <plurals name="delete_cloud_files">
+        <item quantity="other">ลบ %1$d ไฟล์จากอุปกรณ์ทั้งหมดและระบบคลาวด์ของคุณ? ไฟล์ Mi ไดรฟ์ สามารถกู้คืนได้จากรายการที่เพิ่งลบไป</item>
+    </plurals>
+    <plurals name="delete_files">
+        <item quantity="other">ลบ %1$d ไฟล์?</item>
+    </plurals>
+    <plurals name="delete_files_confirm">
+        <item quantity="other">ลบ %1$d ไฟล์</item>
+    </plurals>
+    <plurals name="delete_folders">
+        <item quantity="other">ลบ %1$d โฟลเดอร์?</item>
+    </plurals>
+    <plurals name="delete_folders_confirm">
+        <item quantity="other">" และอีก %1$d โฟลเดอร์?"</item>
+    </plurals>
+    <plurals name="delete_nas_files">
+        <item quantity="other">ลบรายการที่เลือก %1$d รายการออกจากอุปกรณ์ทั้งหมดและ Xiaomi SmartStorage ใช่ไหม คุณจะสามารถกู้คืนรายการที่ถูกลบล่าสุดได้ในแอป Xiaomi SmartStorage</item>
+    </plurals>
+    <plurals name="delete_pc_files">
+        <item quantity="other">ลบไฟล์ %2$d ออกจาก %1$s อย่างถาวรหรือไม่?</item>
+    </plurals>
+    <plurals name="directory_item_count">
+        <item quantity="other">%d รายการ</item>
+    </plurals>
+    <plurals name="file_count">
+        <item quantity="other"> %1$d รายการ</item>
+    </plurals>
+    <plurals name="file_fail_count">
+        <item quantity="other">ไม่สามารถโอนได้ %s รายการ</item>
+    </plurals>
+    <plurals name="file_num_content">
+        <item quantity="other">%2$d ไฟล์ รวมถึง%1$s</item>
+    </plurals>
+    <plurals name="file_success_count">
+        <item quantity="other">ถ่ายโอน %s รายการแล้ว</item>
+    </plurals>
+    <plurals name="follow_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> ผู้ติดตาม</item>
+    </plurals>
+    <plurals name="found_new_files">
+        <item quantity="other">พบ %1$d ไฟล์ใหม่</item>
+    </plurals>
+    <plurals name="gems">
+        <item quantity="other">%1$s เพชร</item>
+    </plurals>
+    <plurals name="in_a_hour">
+        <item quantity="other">ในอีก 1 ชั่วโมง</item>
+    </plurals>
+    <plurals name="in_half_hour">
+        <item quantity="other">ในครึ่งชั่วโมง</item>
+    </plurals>
+    <plurals name="in_less_than_one_minute">
+        <item quantity="other">ทันที</item>
+    </plurals>
+    <plurals name="in_num_minutes">
+        <item quantity="other">ใน%d นาที</item>
+    </plurals>
+    <plurals name="items_picture">
+        <item quantity="other"> (%1$d รายการ)</item>
+    </plurals>
+    <plurals name="less_than_one_minute_ago">
+        <item quantity="other">เมื่อสักครู่</item>
+    </plurals>
+    <plurals name="mins_ago">
+        <item quantity="other">%1$d นาทีก่อน</item>
+    </plurals>
+    <plurals name="miuix_appcompat_items_selected">
+        <item quantity="other">%d รายการที่เลือกไว้</item>
+    </plurals>
+    <plurals name="more_gems">
+        <item quantity="other">รวบรวมเพิ่ม &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> เพชรเพื่อเข้าร่วมการจับรางวัล</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_fail">
+        <item quantity="other">ไม่สามารถซิงค์ %1$s ไฟล์ได้</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_success">
+        <item quantity="other">"ซิงค์แล้ว %1$s ไฟล์ | "</item>
+    </plurals>
+    <plurals name="notification_title_syncing_with_count_no_network">
+        <item quantity="other">กำลังรอการเชื่อมต่อเครือข่าย เหลือ %1$s ไฟล์</item>
+    </plurals>
+    <plurals name="numSelectedFile">
+        <item quantity="other">เลือกไว้ %1$d รายการ</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d นาทีที่ผ่านมา</item>
+    </plurals>
+    <plurals name="number_of_comment_flow">
+        <item quantity="other">%1$s ความคิดเห็น</item>
+    </plurals>
+    <plurals name="original_user_days">
+        <item quantity="other">" • &lt;font color=#fc7050>%1$d&lt;/font> วัน"</item>
+    </plurals>
+    <plurals name="original_user_fans">
+        <item quantity="other">" • คุณมี &lt;font color=#fc7050>%1$s&lt;/font> ผู้ติดตาม!"</item>
+    </plurals>
+    <plurals name="original_user_play_1">
+        <item quantity="other">" • คุณอัปโหลดแล้ว &lt;font color=#fc7050>%1$s&lt;/font> วิดีโอ"</item>
+    </plurals>
+    <plurals name="original_user_play_2">
+        <item quantity="other">คุณทำให้ &lt;font color=#fc7050>%1$s&lt;/font> คนมีความสุข!</item>
+    </plurals>
+    <plurals name="pick_max_count">
+        <item quantity="other">ไม่สามารถเลือกสินค้ามากกว่า %1$s รายการได้</item>
+    </plurals>
+    <plurals name="preview_pick_count">
+        <item quantity="other">ตัวอย่าง (%1$s/%2$s)</item>
+    </plurals>
+    <plurals name="privacy_revoke_numbers_talkback">
+        <item quantity="other">เพิกถอน (%d)</item>
+    </plurals>
+    <plurals name="remote_video_update">
+        <item quantity="other">พบ %1$s วีดีโอใหม่</item>
+    </plurals>
+    <plurals name="search_head_hint_all">
+        <item quantity="other">ผลลัพธ์ (%1$d หน้า)</item>
+    </plurals>
+    <plurals name="search_head_hint_app">
+        <item quantity="other">ไฟล์ที่เกี่ยวข้องกับแอป \"%1$s\" (%2$d รายการ)</item>
+    </plurals>
+    <plurals name="search_head_hint_file">
+        <item quantity="other">ไฟล์ที่มี \"%1$s\" (%2$d รายการ)</item>
+    </plurals>
+    <plurals name="search_head_hint_tag">
+        <item quantity="other">แท็กไฟล์ที่เกี่ยวข้องกับ \"%1$s\" (%2$d รายการ)</item>
+    </plurals>
+    <plurals name="tap_share_send_fail_with_too_many">
+        <item quantity="other">ไม่สามารถส่งได้ เลือกมากกว่า %d รายการ</item>
+    </plurals>
+    <plurals name="text_group_count">
+        <item quantity="other">%d รายการ</item>
+    </plurals>
+    <plurals name="total_topic_num">
+        <item quantity="other">%1$s หัวข้อ</item>
+    </plurals>
+    <plurals name="total_user_num">
+        <item quantity="other">%1$s คน</item>
+    </plurals>
+    <plurals name="user_sign_limt">
+        <item quantity="other">คุณสามารถป้อนได้มากสุด %d ตัวอักษร</item>
+    </plurals>
+    <plurals name="video_ad_download_tip">
+        <item quantity="other"> ดาวน์โหลด</item>
+    </plurals>
+    <plurals name="video_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> วีดีโอ</item>
+    </plurals>
+    <plurals name="video_items">
+        <item quantity="other"> %1$d รายการ</item>
+    </plurals>
+    <plurals name="video_play_num">
+        <item quantity="other">ดู %1$s</item>
+    </plurals>
+    <plurals name="video_publish_watchable_hint">
+        <item quantity="other">รับผู้ติดตามอีก %1$d คนเพื่ออัปเกรดสถานะของคุณ</item>
+    </plurals>
+</resources>

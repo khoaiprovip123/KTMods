@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.MenuItemView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.fileexplorer.view.AliasImageView android:layout_gravity="center" android:id="@id/menu_item_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" />
+    <TextView android:textSize="@dimen/fab_menu_item_text_size" android:textColor="@color/fab_text_color_selector" android:gravity="center" android:layout_gravity="center" android:id="@id/menu_item_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" android:fontFamily="sans-serif" />
+</com.android.fileexplorer.view.MenuItemView>

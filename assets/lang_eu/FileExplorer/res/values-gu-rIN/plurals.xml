@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="abbrev_a_hour_ago">
+        <item quantity="other">%d-કલાક પહેલાં</item>
+        <item quantity="one">%d-કલાક પહેલાં</item>
+    </plurals>
+    <plurals name="abbrev_half_hour_ago">
+        <item quantity="other">અડધા કલાક પહેલાં</item>
+        <item quantity="one">અડધા કલાક પહેલાં</item>
+    </plurals>
+    <plurals name="abbrev_in_a_hour">
+        <item quantity="other">%d કલાકમાં</item>
+        <item quantity="one">%d કલાકમાં</item>
+    </plurals>
+    <plurals name="abbrev_in_half_hour">
+        <item quantity="other">અડધા કલાકમાં</item>
+        <item quantity="one">અડધા કલાકમાં</item>
+    </plurals>
+    <plurals name="abbrev_in_less_than_one_minute">
+        <item quantity="other">તરત જ</item>
+        <item quantity="one">તરત જ</item>
+    </plurals>
+    <plurals name="abbrev_in_num_minutes">
+        <item quantity="other">%d મિનિટ્સમાં</item>
+        <item quantity="one">%d મિનિટમાં</item>
+    </plurals>
+    <plurals name="abbrev_less_than_one_minute_ago">
+        <item quantity="other">હમણાં જ</item>
+        <item quantity="one">હમણાં જ</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="other">%d મિનિટ્સ પહેલાં</item>
+        <item quantity="one">%d મિનિટ પહેલાં</item>
+    </plurals>
+    <plurals name="add_max_shortcut_count">
+        <item quantity="other">તમે %d જેટલા ફોલ્ડર્સ ઉમેરી શકો છો</item>
+        <item quantity="one">તમે %d જેટલા ફોલ્ડર ઉમેરી શકો છો</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">%1$d દિવસો પહેલા</item>
+        <item quantity="one">%1$d દિવસ પહેલા</item>
+    </plurals>
+    <plurals name="delete_cload_nas_files">
+        <item quantity="other">બધા ડિવાઇસેસ, ક્લાઉડ અને Xiaomi SmartStorage માંથી પસંદ કરેલ %1$d આઇટમ ડિલીટ કરીએ? તમે Xiaomi Cloud અને Xiaomi SmartStorage એપમાં તાજેતરમાં ડિલીટ કરેલી આઇટમ્સને રિસ્ટોર કરી શકશો.</item>
+        <item quantity="one">બધા ડિવાઇસેસ, ક્લાઉડ અને Xiaomi SmartStorage માંથી પસંદ કરેલ %1$d આઇટમ ડિલીટ કરીએ? તમે Xiaomi Cloud અને Xiaomi SmartStorage એપમાં તાજેતરમાં ડિલીટ કરેલી આઇટમને રિસ્ટોર કરી શકશો.</item>
+    </plurals>
+    <plurals name="delete_cloud_files">
+        <item quantity="other">તમારા બધા ડિવાઇસ અને ક્લાઉડમાંથી %1$d ફાઇલો ડિલીટ કરીએ? તમારી તાજેતરમાં ડિલીટ કરેલી આઇટમ્સમાંથી Mi ડ્રાઇવ ફાઇલો પુનઃપ્રાપ્ત કરી શકાય છે.</item>
+        <item quantity="one">તમારા બધા ડિવાઇસ અને ક્લાઉડમાંથી %1$d ફાઇલ ડિલીટ કરીએ? તમારી તાજેતરમાં ડિલીટ કરેલી આઇટમ્સમાંથી Mi ડ્રાઇવ ફાઇલો પુનઃપ્રાપ્ત કરી શકાય છે.</item>
+    </plurals>
+    <plurals name="delete_files">
+        <item quantity="other">%1$d ફાઇલો ડિલીટ કરીએ?</item>
+        <item quantity="one">%1$d ફાઇલ ડિલીટ કરીએ?</item>
+    </plurals>
+    <plurals name="delete_files_confirm">
+        <item quantity="other">%1$d ફાઇલો ડિલીટ કરો</item>
+        <item quantity="one">%1$d ફાઇલ ડિલીટ કરો</item>
+    </plurals>
+    <plurals name="delete_folders">
+        <item quantity="other">%1$d ફોલ્ડર્સ ડિલીટ કરીએ?</item>
+        <item quantity="one">%1$d ફોલ્ડર ડિલીટ કરીએ?</item>
+    </plurals>
+    <plurals name="delete_folders_confirm">
+        <item quantity="other">" અને %1$d ફોલ્ડર્સ?"</item>
+        <item quantity="one">" અને %1$d ફોલ્ડર?"</item>
+    </plurals>
+    <plurals name="delete_nas_files">
+        <item quantity="other">બધા ડિવાઇસેસ અને Xiaomi SmartStorage માંથી પસંદ કરેલ %1$d આઇટમ્સ ડિલીટ કરીએ? તમે Xiaomi SmartStorage એપમાં તાજેતરમાં ડિલીટ કરેલી આઇટમ્સને રિસ્ટોર કરી શકશો.</item>
+        <item quantity="one">બધા ડિવાઇસેસ અને Xiaomi SmartStorage માંથી પસંદ કરેલ %1$d આઇટમ ડિલીટ કરીએ? તમે Xiaomi SmartStorage એપમાં તાજેતરમાં ડિલીટ કરેલી આઇટમ્સને રિસ્ટોર કરી શકશો.</item>
+    </plurals>
+    <plurals name="delete_pc_files">
+        <item quantity="other">હવે %1$s માંથી %2$d ફાઇલો કાયમ માટે ડિલીટ કરીએ?</item>
+        <item quantity="one">હવે %1$s માંથી %2$d ફાઇલ કાયમ માટે ડિલીટ કરીએ?</item>
+    </plurals>
+    <plurals name="directory_item_count">
+        <item quantity="other">%d આઇટમ્સ</item>
+        <item quantity="one">%d આઇટમ</item>
+    </plurals>
+    <plurals name="file_count">
+        <item quantity="other"> (%1$d આઇટમ્સ)</item>
+        <item quantity="one">%1$d આઇટમ</item>
+    </plurals>
+    <plurals name="file_fail_count">
+        <item quantity="other">%s આઇટમ્સ ટ્રાંસફર કરી શકાતી નથી</item>
+        <item quantity="one">%s આઇટમ ટ્રાંસફર કરી શકાતી નથી</item>
+    </plurals>
+    <plurals name="file_num_content">
+        <item quantity="other">%2$d ફાઇલોમાં %1$s સામેલ છે</item>
+        <item quantity="one">%2$d ફાઇલમાં %1$s સામેલ છે</item>
+    </plurals>
+    <plurals name="file_success_count">
+        <item quantity="other">%s આઇટમ્સ ટ્રાંસફર કરી</item>
+        <item quantity="one">%s આઇટમ ટ્રાંસફર કરી</item>
+    </plurals>
+    <plurals name="follow_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> અનુયાયીઓ</item>
+        <item quantity="one">&lt;font color=#fc7050>%d&lt;/font> અનુયાયી</item>
+    </plurals>
+    <plurals name="found_new_files">
+        <item quantity="other">%1$d નવી ફાઇલો મળી</item>
+        <item quantity="one">%1$d નવી ફાઇલ મળી</item>
+    </plurals>
+    <plurals name="gems">
+        <item quantity="other">%1$s જેમ્સ</item>
+        <item quantity="one">%1$s જેમ</item>
+    </plurals>
+    <plurals name="in_a_hour">
+        <item quantity="other">1 કલાકમાં</item>
+        <item quantity="one">1 કલાકમાં</item>
+    </plurals>
+    <plurals name="in_half_hour">
+        <item quantity="other">અડધા કલાકમાં</item>
+        <item quantity="one">અડધા કલાકમાં</item>
+    </plurals>
+    <plurals name="in_less_than_one_minute">
+        <item quantity="other">તરત જ</item>
+        <item quantity="one">તરત જ</item>
+    </plurals>
+    <plurals name="in_num_minutes">
+        <item quantity="other">%d મિનિટમાં</item>
+        <item quantity="one">1 મિનિટમાં</item>
+    </plurals>
+    <plurals name="items_picture">
+        <item quantity="other"> (%1$d આઇટમ્સ)</item>
+        <item quantity="one"> (%1$d આઇટમ)</item>
+    </plurals>
+    <plurals name="less_than_one_minute_ago">
+        <item quantity="other">હમણાં જ</item>
+        <item quantity="one">હમણાં જ</item>
+    </plurals>
+    <plurals name="mins_ago">
+        <item quantity="other">%1$d થોડી મિનિટો પહેલા</item>
+        <item quantity="one">%1$d એક મિનિટ પહેલા</item>
+    </plurals>
+    <plurals name="miuix_appcompat_items_selected">
+        <item quantity="other">%d આઇટમો પસંદ કરેલ છે</item>
+        <item quantity="one">%d આઇટમ પસંદ કરેલ છે</item>
+    </plurals>
+    <plurals name="more_gems">
+        <item quantity="other">લકી ડ્રોમાં ભાગ લેવા માટે &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> વધુ જેમ્સ એકત્રિત કરો.</item>
+        <item quantity="one">લકી ડ્રોમાં ભાગ લેવા માટે &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> વધુ જેમ એકત્રિત કરો.</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_fail">
+        <item quantity="other">%1$s ફાઇલો સિંક કરી શકાઈ નથી</item>
+        <item quantity="one">%1$s ફાઇલ સિંક કરી શકાઈ નથી</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_success">
+        <item quantity="other">"%1$s ફાઇલો સિંક કરી | "</item>
+        <item quantity="one">"%1$s ફાઇલ સિંક કરી | "</item>
+    </plurals>
+    <plurals name="notification_title_syncing_with_count_no_network">
+        <item quantity="other">નેટવર્ક કનેક્શનની રાહ જોઈ રહ્યાં છીએ. %1$s ફાઇલો બાકી છે.</item>
+        <item quantity="one">નેટવર્ક કનેક્શનની રાહ જોઈ રહ્યાં છીએ. %1$s ફાઇલ બાકી છે.</item>
+    </plurals>
+    <plurals name="numSelectedFile">
+        <item quantity="other">" %1$d આઇટમ્સ પસંદ કરી"</item>
+        <item quantity="one">" %1$d આઇટમ પસંદ કરી"</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d મિનિટ પહેલા</item>
+        <item quantity="one">1 મિનિટ પહેલા</item>
+    </plurals>
+    <plurals name="number_of_comment_flow">
+        <item quantity="other">%1$s ટિપ્પણીઓ</item>
+        <item quantity="one">%1$s ટિપ્પણી</item>
+    </plurals>
+    <plurals name="original_user_days">
+        <item quantity="other">" • &lt;font color=#fc7050>%1$d&lt;/font> દિવસો"</item>
+        <item quantity="one">" • &lt;font color=#fc7050>%1$d&lt;/font> દિવસ"</item>
+    </plurals>
+    <plurals name="original_user_fans">
+        <item quantity="other">" • તમને &lt;font color=#fc7050>%1$s&lt;/font> અનુયાયી મળ્યા!"</item>
+        <item quantity="one">" • તમને &lt;font color=#fc7050>%1$s&lt;/font> અનુયાયી મળ્યો!"</item>
+    </plurals>
+    <plurals name="original_user_play_1">
+        <item quantity="other">" • તમે &lt;font color=#fc7050>%1$s&lt;/font> વિડીયોઝ અપલોડ કર્યા. "</item>
+        <item quantity="one">" • તમે &lt;font color=#fc7050>%1$s&lt;/font> વિડીયો અપલોડ કર્યો. "</item>
+    </plurals>
+    <plurals name="original_user_play_2">
+        <item quantity="other">તમે &lt;font color=#fc7050>%1$s&lt;/font> લોકોને ખુશ કર્યા!</item>
+        <item quantity="one">તમે &lt;font color=#fc7050>%1$s&lt;/font> વ્યક્તિને ખુશ કર્યો!</item>
+    </plurals>
+    <plurals name="pick_max_count">
+        <item quantity="other">%1$s કરતા વધુ આઇટમો પસંદ કરી શકાતી નથી</item>
+        <item quantity="one">%1$s કરતા વધુ આઇટમ પસંદ કરી શકાતી નથી</item>
+    </plurals>
+    <plurals name="preview_pick_count">
+        <item quantity="other">પૂર્વાવલોકન (%1$s/%2$s)</item>
+        <item quantity="one">પૂર્વાવલોકન (%1$s/%2$s)</item>
+    </plurals>
+    <plurals name="privacy_revoke_numbers_talkback">
+        <item quantity="other">(%d) પાછું ખેંચો</item>
+        <item quantity="one">(%d) પાછું ખેંચો</item>
+    </plurals>
+    <plurals name="remote_video_update">
+        <item quantity="other">%1$s નવા વિડીયોઝ મળ્યા</item>
+        <item quantity="one">%1$s નવી વિડીયો મળી</item>
+    </plurals>
+    <plurals name="search_head_hint_all">
+        <item quantity="other">પરિણામો (%1$d પૃષ્ઠો)</item>
+        <item quantity="one">પરિણામો (%1$d પૃષ્ઠ)</item>
+    </plurals>
+    <plurals name="search_head_hint_app">
+        <item quantity="other">એપ \"%1$s\" સંબંધિત ફાઇલો (%2$d આઇટમ્સ)</item>
+        <item quantity="one">એપ \"%1$s\" સંબંધિત ફાઇલો (%2$d આઇટમ)</item>
+    </plurals>
+    <plurals name="search_head_hint_file">
+        <item quantity="other">ફાઇલો જેમાં \"%1$s\" (%2$d આઇટમ્સ) સામેલ છે</item>
+        <item quantity="one">ફાઇલો જેમાં \"%1$s\" (%2$d આઇટમ) સામેલ છે</item>
+    </plurals>
+    <plurals name="search_head_hint_tag">
+        <item quantity="other">\"%1$s\" સંબંધિત ફાઇલોને ટેગ કરો (%2$d આઇટમ્સ)</item>
+        <item quantity="one">\"%1$s\" સંબંધિત ફાઇલોને ટેગ કરો (%2$d આઇટમ)</item>
+    </plurals>
+    <plurals name="tap_share_send_fail_with_too_many">
+        <item quantity="other">મોકલી શક્યા નથી. %d થી વધુ આઇટમ્સ પસંદ કરી.</item>
+        <item quantity="one">મોકલી શક્યા નથી. %d થી વધુ આઇટમ પસંદ કરી.</item>
+    </plurals>
+    <plurals name="text_group_count">
+        <item quantity="other">%d આઇટમ્સ</item>
+        <item quantity="one">%d આઇટમ</item>
+    </plurals>
+    <plurals name="total_topic_num">
+        <item quantity="other">%1$s વિષયો</item>
+        <item quantity="one">%1$s વિષય</item>
+    </plurals>
+    <plurals name="total_user_num">
+        <item quantity="other">%1$s લોકો</item>
+        <item quantity="one">%1$s વ્યક્તિ</item>
+    </plurals>
+    <plurals name="user_sign_limt">
+        <item quantity="other">તમે %d અક્ષરો દાખલ કરી શકો છો</item>
+        <item quantity="one">તમે %d અક્ષર દાખલ કરી શકો છો</item>
+    </plurals>
+    <plurals name="video_ad_download_tip">
+        <item quantity="other"> ડાઉનલોડ્સ</item>
+        <item quantity="one"> ડાઉનલોડ</item>
+    </plurals>
+    <plurals name="video_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> વિડીયોઝ</item>
+        <item quantity="one">&lt;font color=#fc7050>%d&lt;/font> વિડીયો</item>
+    </plurals>
+    <plurals name="video_items">
+        <item quantity="other"> %1$d આઇટમ્સ</item>
+        <item quantity="one"> %1$d આઇટમ</item>
+    </plurals>
+    <plurals name="video_play_num">
+        <item quantity="other">%1$s જોવાયા</item>
+        <item quantity="one">%1$s વાર જોવાયો</item>
+    </plurals>
+    <plurals name="video_publish_watchable_hint">
+        <item quantity="other">તમારી સ્થિતિ અપગ્રેડ કરવા માટે %1$d વધુ અનુયાયીઓ મેળવો</item>
+        <item quantity="one">તમારી સ્થિતિ અપગ્રેડ કરવા માટે %1$d વધુ અનુયાયી મેળવો</item>
+    </plurals>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.nestedheader.widget.NestedHeaderLayout android:id="@id/nested_header_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:headerAutoClose="false" app:scrollType="offset" app:scrollableView="@id/scroll_view" app:selfScrollFirst="false" app:stickyView="@id/navigation_bar"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.springback.view.SpringBackLayout android:id="@id/scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@android:id/list">
+        <androidx.core.widget.NestedScrollView android:id="@id/nested_scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include android:visibility="gone" layout="@layout/layout_empty_view_maml" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <com.android.fileexplorer.view.RefreshLoadRecyclerView android:id="@android:id/list" android:paddingBottom="90.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" style="@style/RecyclerView_Padding" />
+    </miuix.springback.view.SpringBackLayout>
+    <include android:id="@id/navigation_bar" layout="@layout/navigation_bar_phone_r" />
+    <Button android:textColor="@android:color/white" android:layout_gravity="center|bottom" android:id="@id/btn_retry" android:background="@drawable/common_info_button" android:visibility="gone" android:layout_width="336.0dip" android:layout_height="50.0dip" android:layout_marginBottom="46.0dip" android:text="@string/operation_retry" />
+</miuix.nestedheader.widget.NestedHeaderLayout>

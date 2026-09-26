@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GroupDividerStyle">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">10.0dip</item>
+    </style>
+    <style name="menu_list_item_icon_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginEnd">@dimen/category_margin_icon</item>
+    </style>
+    <style name="menu_list_item_style" parent="@style/Widget.ListView.Item.SingleLine">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">60.0dip</item>
+    </style>
+</resources>

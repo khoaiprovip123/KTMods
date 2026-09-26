@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.MenuSingleLineLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="@dimen/menu_group_height" android:importantForAccessibility="no"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/menu_0" android:layout_width="wrap_content" android:layout_height="fill_parent" layout="@layout/layout_menu_item_view" />
+    <include android:id="@id/menu_1" android:layout_width="wrap_content" android:layout_height="fill_parent" layout="@layout/layout_menu_item_view" />
+    <include android:id="@id/menu_2" android:layout_width="wrap_content" android:layout_height="fill_parent" layout="@layout/layout_menu_item_view" />
+    <include android:id="@id/menu_3" android:layout_width="wrap_content" android:layout_height="fill_parent" layout="@layout/layout_menu_item_view" />
+    <include android:id="@id/menu_4" android:layout_width="wrap_content" android:layout_height="fill_parent" layout="@layout/layout_menu_item_view" />
+    <include android:id="@id/menu_5" android:layout_width="wrap_content" android:layout_height="fill_parent" layout="@layout/layout_menu_item_view" />
+</com.android.fileexplorer.view.MenuSingleLineLayout>

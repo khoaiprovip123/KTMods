@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/renameDialogButton" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/rename" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="@dimen/custom_rename_dialog_button_margin_bottom" android:text="@string/operation_rename" android:layout_marginHorizontal="24.0dip" />
+        <Button android:id="@id/replace" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/custom_rename_dialog_button_margin_bottom" android:text="@string/replace" android:layout_marginHorizontal="24.0dip" />
+        <Button android:id="@id/skip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/skip" android:layout_marginHorizontal="24.0dip" />
+    </LinearLayout>
+</ScrollView>

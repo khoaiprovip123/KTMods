@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="@string/file_cloud_setting" android:key="file_parse_setting">
+        <CheckBoxPreference android:title="@string/file_cloud_setting_item_view_title" android:key="use_file_parse_setting" android:summary="@string/file_cloud_setting_item_view_message" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/encrypt_setting" android:key="encrypt_setting">
+        <CheckBoxPreference android:title="@string/operation_encrypt_title" android:key="use_encrypt" android:summary="@string/operation_encrypt_summary" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/display_setting" android:key="display_setting">
+        <Preference android:title="@string/launcher_icon_add_description" android:key="restore_icon" />
+        <CheckBoxPreference android:title="@string/recent_hide_cloud_drive_files" android:key="hide_cloud_drive_files" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/recent_hide_camera_and_screenshots" android:key="hide_camera_and_screenshots" />
+        <CheckBoxPreference android:title="@string/operation_show_sys" android:key="show_hide_file" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/cloud_drive_settings" android:key="cloud_drive_settings">
+        <CheckBoxPreference android:title="@string/use_mobile_data_update_title" android:key="use_mobile_data_update" android:summary="@string/use_mobile_data_update_summary" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory>
+        <Preference android:title="@string/privacy_policy" android:key="privacy_policy" />
+        <miuix.preference.TextPreference android:title="@string/pre_privacy_recall" android:key="privacy_recall" />
+        <Preference android:title="@string/extend_service_setting" android:key="extend_service_setting" android:fragment="com.android.fileexplorer.fragment.ExtendSeviceSettingFragment" />
+        <Preference android:title="@string/cancel_mi_drive" android:key="cancel_mi_drive" />
+        <Preference android:title="@string/permission_description" android:key="permission_description" />
+    </PreferenceCategory>
+    <com.android.fileexplorer.view.preference.MyTextPreference android:layout="@layout/document_filing_layout" android:title="ICP备案号：京ICP备10046444号-70A" android:key="use_customer_filing" />
+</PreferenceScreen>

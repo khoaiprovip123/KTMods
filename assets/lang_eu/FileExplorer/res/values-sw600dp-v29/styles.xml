@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Preference.Settings.Floating.Close.File" parent="@style/Theme.Preference.Settings.Floating.Close">
+        <item name="android:windowBackground">@color/file_window_background</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fast_scroll_thumb</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="actionModeStyle">@style/ActionMode.NoDivider</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

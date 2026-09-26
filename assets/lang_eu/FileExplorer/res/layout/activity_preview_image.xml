@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/layout_content" android:background="@color/black" android:focusable="false" android:focusableInTouchMode="true" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/fl_bg" android:background="@color/day_white_night_black" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="1.0" />
+    <miuix.viewpager.widget.ViewPager android:id="@id/vp_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <miuix.androidbasewidget.widget.ProgressBar android:layout_gravity="center" android:id="@id/progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminateDrawable="@drawable/document_progress_animation" />
+</FrameLayout>

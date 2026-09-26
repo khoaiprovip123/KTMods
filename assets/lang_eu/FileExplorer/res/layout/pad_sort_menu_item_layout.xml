@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/sort_menu_item" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="@dimen/sort_menu_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/fab_expand_item_title_size" android:textColor="@color/fab_text_color_selector" android:ellipsize="none" android:id="@id/title" android:layout_width="108.0dip" android:layout_height="wrap_content" android:maxLines="2" android:layout_centerVertical="true" android:fontFamily="sans-serif" android:layout_marginStart="28.0dip" />
+    <LinearLayout android:orientation="vertical" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:paddingStart="@dimen/fab_expand_item_up_margin_start" android:paddingEnd="@dimen/fab_expand_item_up_margin_start" android:layout_marginEnd="28.0dip" android:layout_toEndOf="@id/title">
+        <ImageView android:id="@id/up" android:background="@drawable/sort_menu_fab_up" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" />
+        <ImageView android:id="@id/down" android:background="@drawable/sort_menu_fab_down" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/up" android:importantForAccessibility="no" android:layout_alignStart="@id/up" />
+    </LinearLayout>
+</RelativeLayout>

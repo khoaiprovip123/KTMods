@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable android:label="@string/search_title" android:hint="@string/search_hint" android:searchSuggestAuthority="com.android.fileexplorer.provider.searchexport" android:searchSuggestSelection=" ?" android:searchSuggestIntentAction="com.android.fileexplorer.search" android:searchSuggestIntentData="content://" android:searchSuggestThreshold="1" android:includeInGlobalSearch="true" android:searchSettingsDescription="@string/search_description"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

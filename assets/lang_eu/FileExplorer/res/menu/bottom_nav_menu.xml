@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/app_bottom_nav_icon_recent" android:enabled="true" android:id="@id/recent" android:title="@string/category_recent" app:miuixNavigationId="1000" />
+    <item android:icon="@drawable/app_bottom_nav_icon_folder_fill" android:enabled="true" android:id="@id/home_file" android:title="@string/homepage_tab_file_view_phone" app:miuixNavigationId="1001" />
+    <item android:icon="@drawable/app_bottom_nav_icon_cloud_fill" android:enabled="true" android:id="@id/drive" android:title="@string/category_cloud_drive" app:miuixNavigationId="1002" />
+</menu>

@@ -1,0 +1,204 @@
+{
+  "type": "urn:aiot-spec-v3:com.mi.phones:device:phones:0:1.0",
+  "description": "",
+  "protocol-version": "3.0",
+  "class": "MiPhone",
+  "dynamic": 0,
+  "ddfid": 7012353,
+  "modules": {
+    "iid": 1,
+    "type": "urn:aiot-spec-v3:com.mi.phones:module:[com.android.fileexplorer]:0:1.0",
+    "description": "fileexplorer",
+    "name": "com.android.fileexplorer",
+    "services": {
+      "iid": 1,
+      "type": "urn:aiot-spec-v3:com.mi.phones:service:[com.android.fileexplorer/file]:0:1.0",
+      "description": "fileexplorer service",
+      "name": "fileexplorer",
+      "actions": [
+        {
+          "type": "urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/searchByFileName]:0:1.0",
+          "description": "根据文件名查找",
+          "in": [
+            {
+              "name":"file_name",
+              "value": "文件名",
+              "format": "string"
+            }
+          ],
+          "out": [
+            {
+              "name": "status",
+              "value": "执行状态",
+              "format": "uint32",
+              "value-list": [
+                {"value": 0, "description": "执行成功"},
+                {"value": -1, "description": "执行失败"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/searchByCategory]:0:1.0",
+          "description": "根据分类和文件名查找",
+          "in": [
+            {
+              "name":"file_name",
+              "description": "文件名",
+              "format": "string"
+            },
+            {
+              "name":"category",
+              "description": "文件类型",
+              "valueList": [
+                {"value": "doc", "description": "文档类型"},
+                {"value": "video", "description": "视频类型"},
+                {"value": "picture", "description": "图片类型"},
+                {"value": "music", "description": "音乐类型"},
+                {"value": "zip", "description": "压缩包类型"},
+                {"value": "apk", "description": "应用程序类型"},
+                {"value": "folder", "description": "文件夹类型"}
+              ]
+            }
+          ],
+          "out": [
+            {
+              "name": "status",
+              "description": "执行状态",
+              "format": "uint32",
+              "value-list": [
+                {"value": 0, "description": "执行成功"},
+                {"value": -1, "description": "执行失败"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/searchByAppName]:0:1.0",
+          "description": "根据应用和文件名查找",
+          "in": [
+            {
+              "name":"file_name",
+              "description": "文件名",
+              "format": "string"
+            },
+            {
+              "name":"package_name",
+              "description": "应用包名",
+              "valueList": [
+                {"value": "com.tencent.mm", "description": "微信"},
+                {"value": "com.tencent.mobileqq", "description": "QQ"},
+                {"value": "com.sina.weibo", "description": "微博"},
+                {"value": "com.baidu.netdisk", "description": "百度网盘"},
+                {"value": "com.ss.android.lark", "description": "飞书"}
+              ]
+            }
+          ],
+          "out": [
+            {
+              "name": "status",
+              "description": "执行状态",
+              "format": "uint32",
+              "value-list": [
+                {"value": 0, "description": "执行成功"},
+                {"value": -1, "description": "执行失败"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/openFile]:0:1.0",
+          "description": "打开文件",
+          "in": [
+            {
+              "name":"file_id",
+              "description": "文件在列表中的位置",
+              "format": "int32"
+            }
+
+          ],
+          "out": [
+            {
+              "name": "status",
+              "description": "执行状态",
+              "format": "uint32",
+              "value-list": [
+                {"value": 0, "description": "执行成功"},
+                {"value": -1, "description": "执行失败"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/copyFile]:0:1.0",
+          "description": "复制文件",
+          "in": [
+            {
+              "name":"file_id",
+              "description": "文件在列表中的位置",
+              "format": "int32"
+            }
+
+          ],
+          "out": [
+            {
+              "name": "status",
+              "description": "执行状态",
+              "format": "uint32",
+              "value-list": [
+                {"value": 0, "description": "执行成功"},
+                {"value": 11, "description": "执行失败"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/moveFile]:0:1.0",
+          "description": "移动文件",
+          "in": [
+            {
+              "name":"file_id",
+              "description": "文件在列表中的位置",
+              "format": "int32"
+            }
+
+          ],
+          "out": [
+            {
+              "name": "status",
+              "description": "执行状态",
+              "format": "uint32",
+              "value-list": [
+                {"value": 0, "description": "执行成功"},
+                {"value": -1, "description": "执行失败"}
+              ]
+            }
+          ]
+        },
+        {
+          "type": "urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/deleteFile]:0:1.0",
+          "description": "删除文件",
+          "in": [
+            {
+              "name":"file_id",
+              "description": "文件在列表中的位置",
+              "format": "int32"
+            }
+
+          ],
+          "out": [
+            {
+              "name": "status",
+              "description": "执行状态",
+              "format": "uint32",
+              "value-list": [
+                {"value": 0, "description": "执行成功"},
+                {"value": -1, "description": "执行失败"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

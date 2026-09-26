@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.miui.support.cardview.CardView android:layout_gravity="end|bottom" android:id="@id/content_layout" android:background="@drawable/filter_menu_bg" android:layout_width="@dimen/fab_button_size" android:layout_height="@dimen/fab_button_size" android:layout_marginBottom="@dimen/menu_layout_margin" android:layout_marginStart="@dimen/menu_layout_margin" android:layout_marginEnd="@dimen/menu_layout_margin" style="@style/CardView.DayNight.FabMenu"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/fab_button" android:background="@drawable/filter_menu_bg" android:layout_width="@dimen/fab_button_size" android:layout_height="@dimen/fab_button_size" android:src="@drawable/ic_fab_menu" android:contentDescription="@string/fab_menu_ball" />
+    <ViewStub android:id="@id/expand_viewstub" android:layout="@layout/fab_expand_view_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</com.miui.support.cardview.CardView>

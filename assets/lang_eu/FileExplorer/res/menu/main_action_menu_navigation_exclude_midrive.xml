@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@id/miuix_action_end_menu_group">
+        <item android:id="@id/manage_cloud_space" android:visible="false" android:title="@string/manage_cloud_space" />
+        <item android:id="@id/cloud_recycle_bin" android:visible="false" android:title="@string/cloud_recently_deleted" />
+        <item android:id="@id/immid_ftp" android:title="@string/menu_item_ftp" />
+        <item android:id="@id/immid_storage" android:title="@string/imm_str_storage" />
+        <item android:id="@id/clean" android:title="@string/menu_item_cleanup" />
+        <item android:id="@id/immid_settings" android:title="@string/settings" />
+        <item android:id="@id/pic_to_pdf" android:visible="false" android:title="@string/operation_pic_to_pdf" />
+    </group>
+</menu>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.PictureItemView android:layout_width="wrap_content" android:layout_height="wrap_content" android:foreground="@drawable/pic_cover_phone"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/picture" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cropToPadding="true" android:layout_centerInParent="true" />
+    <ImageView android:gravity="center_horizontal" android:id="@id/gif_tag" android:padding="@dimen/fav_tag_margin" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_gif_tag" android:layout_alignParentBottom="true" android:layout_alignParentEnd="true" />
+    <FrameLayout android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <CheckBox android:theme="@style/Checkbox_NewStyle_grid" android:id="@android:id/checkbox" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <ImageView android:id="@id/favorite_tag" android:padding="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_fav_tag" android:layout_alignParentTop="true" android:layout_alignParentEnd="true" />
+</com.android.fileexplorer.view.PictureItemView>

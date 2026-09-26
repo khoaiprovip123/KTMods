@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_confirm" android:id="@id/pick_confirm" android:title="@string/confirm" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_discard" android:id="@id/pick_cancel" android:title="@string/cancel" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_paste" android:id="@id/paste_confirm" android:visible="false" android:title="@string/operation_paste" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_discard" android:id="@id/paste_cancel" android:visible="false" android:title="@string/operation_cancel" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_decompress" android:id="@id/decompress_confirm" android:visible="false" android:title="@string/decompress_confirm" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_discard" android:id="@id/decompress_cancel" android:visible="false" android:title="@string/decompress_cancel" android:showAsAction="ifRoom" />
+    <item android:id="@id/new_folder" android:title="@string/create_folder" android:showAsAction="never" />
+    <item android:id="@id/immid_view_type" android:title="@string/list_mode" android:showAsAction="never" />
+    <item android:id="@id/sort" android:title="@string/menu_item_sort" android:showAsAction="never">
+        <menu>
+            <item android:id="@id/sort_name_asc" android:title="@string/menu_item_sort_name" />
+            <item android:id="@id/sort_size_desc" android:title="@string/sort_size_desc" />
+            <item android:id="@id/sort_size_asc" android:title="@string/sort_size_asc" />
+            <item android:id="@id/sort_type_asc" android:title="@string/menu_item_sort_type" />
+            <item android:id="@id/sort_date_asc" android:title="@string/menu_item_sort_date" />
+        </menu>
+    </item>
+    <item android:id="@id/sort_widget" android:visible="false" android:title="@string/menu_item_sort" android:showAsAction="never" />
+    <item android:id="@id/show_hide" android:title="@string/operation_show_sys" />
+    <item android:id="@id/show_privacy_policy" android:title="@string/operation_show_privacy_policy" />
+</menu>

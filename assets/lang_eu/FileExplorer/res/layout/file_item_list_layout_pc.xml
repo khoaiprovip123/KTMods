@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@null" android:layout_height="wrap_content" android:minHeight="@dimen/group_list_file_item_height_pc" style="@style/ListItemStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.android.fileexplorer.view.RoundedImageView android:id="@id/file_image" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/FileIconStylePhone" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginStart="@dimen/group_list_file_name_margin_start" android:layout_marginEnd="@dimen/group_list_file_name_margin_start" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/ico_go_list" app:layout_constraintStart_toEndOf="@id/file_image" app:layout_constraintTop_toTopOf="parent">
+        <com.android.fileexplorer.view.EllipsizeMiddleTextView android:id="@id/file_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 111111111111111111111111111111111111" android:maxLines="2" android:paddingEnd="@dimen/common_1_px2dp" style="@style/FileTextAppearance.FileName" />
+        <TextView android:ellipsize="end" android:id="@id/file_size" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxLines="2" style="@style/FileTextAppearance.FileInfoSize" />
+    </LinearLayout>
+    <ImageView android:id="@id/ico_go_list" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_file_list_arrow" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

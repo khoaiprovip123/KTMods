@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/manage_cloud_space" android:title="@string/manage_cloud_space" />
+    <item android:id="@id/cloud_recycle_bin" android:title="@string/cloud_recently_deleted" />
+    <item android:id="@id/pic_to_pdf" android:visible="false" android:title="@string/operation_pic_to_pdf" />
+    <item android:id="@id/usb" android:visible="false" android:title="@string/menu_item_usb" />
+    <item android:id="@id/immid_mi_drive" android:title="@string/category_midrive" />
+    <item android:id="@id/immid_ftp" android:title="@string/menu_item_ftp" />
+    <item android:id="@id/sort" android:title="@string/menu_item_sort">
+        <menu>
+            <item android:id="@id/sort_name" android:title="@string/menu_item_sort_name" />
+            <item android:id="@id/sort_size_desc" android:title="@string/sort_size_desc" />
+            <item android:id="@id/sort_size_asc" android:title="@string/sort_size_asc" />
+            <item android:id="@id/sort_type" android:title="@string/menu_item_sort_type" />
+            <item android:id="@id/sort_date" android:title="@string/menu_item_sort_date" />
+            <item android:id="@id/sort_time" android:title="@string/menu_item_sort_add_time" />
+        </menu>
+    </item>
+    <item android:id="@id/menu_item_midrop" android:title="@string/menu_item_midrop" />
+    <item android:id="@id/immid_storage" android:title="@string/imm_str_storage" />
+    <item android:id="@id/clean" android:title="@string/menu_item_cleanup" />
+    <item android:id="@id/immid_refresh" android:title="@string/operation_refresh" />
+    <item android:id="@id/immid_settings" android:title="@string/settings" />
+</menu>

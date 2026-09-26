@@ -1,5 +1,5 @@
-<#
-  packROM.ps1 — đóng gói ROM flashable + nén 7z
+﻿<#
+  packROM.ps1 — dong goi ROM flashable (copy flash scripts nguyen ban, khong overwrite)
 #>
 param(
     [switch]$Compress,
@@ -18,9 +18,8 @@ Write-Step "PACK $name"
 Ensure-Dir (Join-Path $pkg 'images')
 Ensure-Dir (Join-Path $pkg 'bin')
 
-# firmware images
-# firmware + super only (system/product/... nằm trong super — không copy lẻ)
-$skipParts = @('system.img','system_ext.img','product.img','vendor.img','odm.img','mi_ext.img')
+# firmware + super + cust (system/product/... nam trong super — khong copy le)
+$skipParts = @('system.img', 'system_ext.img', 'product.img', 'vendor.img', 'odm.img', 'mi_ext.img')
 foreach ($f in Get-ChildItem $images -Filter *.img) {
     if ($skipParts -contains $f.Name) { continue }
     $dstImg = Join-Path (Join-Path $pkg 'images') $f.Name
@@ -28,7 +27,7 @@ foreach ($f in Get-ChildItem $images -Filter *.img) {
     Write-Ok "images\$($f.Name)"
 }
 
-# fastboot/adb: tools/platform-tools → tools/bin → known local → PATH
+# fastboot/adb
 $binSrc = $null
 $cands = @(
     (Join-Path (Join-Path $Root 'tools') 'platform-tools'),
@@ -43,70 +42,30 @@ if ($binSrc) {
     Copy-Item -Recurse -Force "$binSrc\*" (Join-Path $pkg 'bin')
     Write-Ok "bin from $binSrc"
 } else {
-    foreach ($t in @('fastboot.exe','adb.exe','AdbWinApi.dll','AdbWinUsbApi.dll')) {
+    foreach ($t in @('fastboot.exe', 'adb.exe', 'AdbWinApi.dll', 'AdbWinUsbApi.dll')) {
         $c = Get-Command $t -EA 0
         if ($c) { Copy-Item -Force $c.Source (Join-Path $pkg 'bin'); Write-Ok "bin $t" }
     }
     if (-not (Get-ChildItem (Join-Path $pkg 'bin') -EA 0)) { Write-Warn 'no fastboot/adb - user must install platform-tools' }
 }
 
-# flash scripts (safe: check device + super size)
+# flash scripts: copy nguyen ban va dam bao chuan CRLF cho Windows cmd.exe
 $fmtTpl = Join-Path (Join-Path $Root 'scripts') 'flash_format_data.bat'
 $keepTpl = Join-Path (Join-Path $Root 'scripts') 'flash_keep_data.bat'
-if (Test-Path $fmtTpl) { Copy-Item -Force $fmtTpl (Join-Path $pkg 'flash_format_data.bat') }
-if (Test-Path $keepTpl) { Copy-Item -Force $keepTpl (Join-Path $pkg 'flash_keep_data.bat') }
-@'
-@echo off
-cd /d "%~dp0"
-set fastboot=bin\fastboot.exe
-echo === rom-kitchen lisa flash (format data) ===
-set /p choice=Format data and flash? [y/N]
-if /i "%choice%" neq "y" exit /B 0
-%fastboot% set_active a
-%fastboot% erase metadata
-%fastboot% erase userdata
-%fastboot% flash abl_ab images\abl.img
-%fastboot% flash aop_ab images\aop.img
-%fastboot% flash bluetooth_ab images\bluetooth.img
-%fastboot% flash cpucp_ab images\cpucp.img
-%fastboot% flash devcfg_ab images\devcfg.img
-%fastboot% flash dsp_ab images\dsp.img
-%fastboot% flash dtbo_ab images\dtbo.img
-%fastboot% flash featenabler_ab images\featenabler.img
-%fastboot% flash hyp_ab images\hyp.img
-%fastboot% flash imagefv_ab images\imagefv.img
-%fastboot% flash keymaster_ab images\keymaster.img
-%fastboot% flash modem_ab images\modem.img
-%fastboot% flash qupfw_ab images\qupfw.img
-%fastboot% flash shrm_ab images\shrm.img
-%fastboot% flash tz_ab images\tz.img
-%fastboot% flash uefisecapp_ab images\uefisecapp.img
-%fastboot% flash xbl_ab images\xbl.img
-%fastboot% flash xbl_config_ab images\xbl_config.img
-%fastboot% flash boot_ab images\boot.img
-%fastboot% flash vendor_boot_ab images\vendor_boot.img
-%fastboot% --disable-verity --disable-verification flash vbmeta_ab images\vbmeta.img
-%fastboot% --disable-verity --disable-verification flash vbmeta_system_ab images\vbmeta_system.img
-%fastboot% flash super images\super.img
-%fastboot% reboot
-pause
-'@ | Set-Content (Join-Path $pkg 'flash_format_data.bat') -Encoding ASCII
 
-@'
-@echo off
-cd /d "%~dp0"
-set fastboot=bin\fastboot.exe
-echo === keep data (cung ban 2.0.16.0) ===
-set /p choice=Continue? [y/N]
-if /i "%choice%" neq "y" exit /B 0
-%fastboot% flash boot_ab images\boot.img
-%fastboot% flash vendor_boot_ab images\vendor_boot.img
-%fastboot% --disable-verity --disable-verification flash vbmeta_ab images\vbmeta.img
-%fastboot% --disable-verity --disable-verification flash vbmeta_system_ab images\vbmeta_system.img
-%fastboot% flash super images\super.img
-%fastboot% reboot
-pause
-'@ | Set-Content (Join-Path $pkg 'flash_keep_data.bat') -Encoding ASCII
+function Copy-BatScript([string]$src, [string]$dst) {
+    if (Test-Path $src) {
+        $content = [System.IO.File]::ReadAllText($src, [System.Text.Encoding]::ASCII)
+        $crlf = $content.Replace("`r`n", "`n").Replace("`n", "`r`n")
+        [System.IO.File]::WriteAllText($dst, $crlf, [System.Text.Encoding]::ASCII)
+        Write-Ok (Split-Path $dst -Leaf)
+    } else {
+        Write-Warn "missing $src"
+    }
+}
+
+Copy-BatScript $fmtTpl (Join-Path $pkg 'flash_format_data.bat')
+Copy-BatScript $keepTpl (Join-Path $pkg 'flash_keep_data.bat')
 
 @"
 # $name
@@ -140,5 +99,5 @@ if ((-not $NoCompress) -and ($Compress -or $cfg.compress -eq '7z')) {
         if ($LASTEXITCODE -eq 0) {
             Write-Ok "archive: $([math]::Round((Get-Item $archive).Length/1GB,2)) GB"
         }
-    } else { Write-Warn '7z.exe not found — bỏ qua nén' }
+    } else { Write-Warn '7z.exe not found — skip compress' }
 }

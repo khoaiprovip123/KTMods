@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/item_view_root" android:background="@drawable/bg_widget_item" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/widget_file_add_button" android:layout_width="@dimen/us_widget_simple_app_logo_new" android:layout_height="@dimen/us_widget_simple_app_logo_new" android:src="@drawable/widget_btn_add" android:scaleType="centerCrop" android:layout_marginStart="12.0dip" />
+    <TextView android:textSize="13.0sp" android:textColor="@color/widget_tv_add_color" android:gravity="center_vertical" android:id="@id/tv_add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/widget_add_files" android:fontFamily="sans-serif" android:layout_marginStart="8.0dip" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ftp_setting_btn_width">200.0dip</dimen>
+    <dimen name="ftp_start_btn_width">407.0dip</dimen>
+    <dimen name="list_item_header_height">60.0dip</dimen>
+    <dimen name="list_item_padding">30.0dip</dimen>
+    <dimen name="server_control_content_margin_bottom">81.0dip</dimen>
+    <dimen name="server_control_wifi_state_image_margin_state">22.0dip</dimen>
+    <dimen name="server_control_wifi_state_margin_label">5.0dip</dimen>
+</resources>

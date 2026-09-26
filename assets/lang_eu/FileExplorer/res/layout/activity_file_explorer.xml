@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.EmptyTriggerRelativeLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/file_explorer_main" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.springback.view.SpringBackLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:scrollOrientation="horizontal|angle" app:scrollableView="@id/file_explorer_view_pager">
+        <com.android.fileexplorer.view.ScrollControlViewPager android:id="@id/file_explorer_view_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </miuix.springback.view.SpringBackLayout>
+    <com.android.fileexplorer.view.FabMenuFunctionLayout android:id="@id/fab_function_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:key="file" android:layout_alignParentEnd="true" />
+</com.android.fileexplorer.view.EmptyTriggerRelativeLayout>

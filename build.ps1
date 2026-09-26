@@ -1,10 +1,10 @@
-<#
+﻿<#
 .SYNOPSIS
   rom-kitchen — build custom Xiaomi lisa ROM (no root) from stock OTA + mods.
 .EXAMPLE
-  .\build.ps1 -RomUrl "https://cdnorg.d.miui.com/OS2.0.16.0.UKOCNXM/lisa-ota_full-OS2.0.16.0.UKOCNXM-user-14.0-6326c122fd.zip"
-  .\build.ps1 -OtaZip "D:\rom\ota.zip"
-  .\build.ps1 -PackOnly
+  .\build.ps1 -RomUrl "<ota-url-or-path>"
+  .\build.ps1 -OtaZip "D:\rom\ota.zip" -SkipCompress
+  .\build.ps1 -Clean -SkipCompress
 #>
 param(
     [string]$RomUrl = '',
@@ -16,7 +16,8 @@ param(
     [switch]$SkipDebloat,
     [switch]$PackOnly,
     [switch]$NoVerify,
-    [switch]$SkipCompress
+    [switch]$SkipCompress,
+    [switch]$Clean
 )
 
 . "$PSScriptRoot\scripts\tools.ps1"
@@ -38,7 +39,7 @@ $py = Get-Python
 
 if ($PackOnly) {
     Write-Step 'PACK ONLY'
-    & "$PSScriptRoot\packROM.ps1"
+    & "$PSScriptRoot\packROM.ps1" -NoCompress:$SkipCompress
     exit 0
 }
 
@@ -46,10 +47,31 @@ if ($PackOnly) {
 Write-Step '0. RESOLVE OTA'
 $payload = Join-Path $cache 'payload.bin'
 $images  = Join-Path $cache 'images'
-$cacheReady = (Test-Path $payload) -and (Test-Path (Join-Path $images 'system.img'))
 
-if ($cacheReady -and -not $OtaZip) {
-    Write-Ok 'cache ready - skip download'
+# cust.img KHONG co trong payload goc — optional (copy tu ZKOS neu co)
+$need = @(
+    'system.img', 'product.img', 'system_ext.img', 'vendor.img', 'odm.img',
+    'mi_ext.img', 'boot.img', 'vbmeta.img', 'vbmeta_system.img',
+    'vendor_boot.img', 'modem.img',
+    'abl.img', 'aop.img', 'bluetooth.img', 'cpucp.img', 'devcfg.img',
+    'dsp.img', 'dtbo.img', 'featenabler.img', 'hyp.img', 'imagefv.img',
+    'keymaster.img', 'qupfw.img', 'shrm.img', 'tz.img', 'uefisecapp.img',
+    'xbl.img', 'xbl_config.img'
+)
+$missingImages = $need | Where-Object { -not (Test-Path (Join-Path $images $_)) }
+$cacheReady = (-not $Clean) -and ($missingImages.Count -eq 0)
+
+if ($Clean) {
+    Write-Ok 'Clean: wipe work/{system,product,system_ext} + payload cache'
+    foreach ($p in @('system', 'product', 'system_ext')) {
+        $d = Join-Path $work $p
+        if (Test-Path $d) { Remove-Item -LiteralPath $d -Recurse -Force }
+    }
+    if (Test-Path $payload) { Remove-Item -Force $payload }
+}
+
+if ($cacheReady -and -not $OtaZip -and -not $Clean) {
+    Write-Ok 'cache ready (all images dumped) - skip download'
 }
 else {
     if (-not $OtaZip) {
@@ -67,7 +89,6 @@ else {
             }
             else {
                 Write-Ok "Downloading $RomUrl ..."
-                # aria2c multi-conn faster; fallback curl with resume
                 $aria = Get-Command aria2c -ErrorAction SilentlyContinue
                 if ($aria) {
                     & $aria.Source -x 8 -s 8 -k 4M --file-allocation=none --retry-wait=3 -c -d $cache -o rom_ota.zip $RomUrl
@@ -88,11 +109,13 @@ else {
 # ========== 1. Extract payload.bin ==========
 Write-Step '1. EXTRACT PAYLOAD'
 Write-Host "  Free disk: $([math]::Round((Get-PSDrive (Split-Path $Root -Qualifier).TrimEnd(':')).Free / 1GB, 1)) GB"
-if (-not (Test-Path $payload)) {
+if ($cacheReady) {
+    Write-Ok 'all images cached - skip payload extract'
+}
+elseif (-not (Test-Path $payload)) {
     if (-not $OtaZip) { Fail 'payload.bin cache miss and no OTA' }
     & $py (Join-Path $scripts 'extract_payload.py') $OtaZip $payload
     if ($LASTEXITCODE -ne 0) { Fail 'extract payload.bin failed' }
-    # free disk: delete OTA zip after payload extracted
     if ($OtaZip -and (Test-Path -LiteralPath $OtaZip) -and ($OtaZip -like '*rom_ota.zip')) {
         Remove-Item -LiteralPath $OtaZip -Force -ErrorAction SilentlyContinue
         Write-Ok 'removed rom_ota.zip (free disk)'
@@ -105,13 +128,9 @@ else {
 # ========== 2. Dump partitions ==========
 Write-Step '2. DUMP PARTITIONS'
 Ensure-Dir $images
-$need = @(
-    'system.img', 'product.img', 'system_ext.img', 'vendor.img', 'odm.img',
-    'mi_ext.img', 'boot.img', 'vbmeta.img', 'vbmeta_system.img',
-    'vendor_boot.img', 'modem.img'
-)
 $missing = $need | Where-Object { -not (Test-Path (Join-Path $images $_)) }
-if ($missing.Count -gt 0) {
+if ($Clean -or $missing.Count -gt 0) {
+    if (-not (Test-Path $payload)) { Fail 'Cannot dump: payload.bin not found' }
     $pd = Join-Path (Join-Path $toolsDir 'payload-dumper-go') 'payload-dumper-go.exe'
     if (-not (Test-Path $pd)) { $pd = Get-Tool 'payload-dumper-go.exe' }
     & $pd -o $images $payload
@@ -120,7 +139,6 @@ if ($missing.Count -gt 0) {
 else {
     Write-Ok 'images already dumped'
 }
-# free disk: payload no longer needed after dump
 if ((Test-Path $payload) -and (Test-Path (Join-Path $images 'system.img'))) {
     Remove-Item -Force $payload -ErrorAction SilentlyContinue
     Write-Ok 'removed payload.bin (free disk)'
@@ -132,10 +150,11 @@ $extract = Get-Tool 'extract.erofs.exe'
 foreach ($part in @('system', 'product', 'system_ext')) {
     $img = Join-Path $images "$part.img"
     $dst = Join-Path $work $part
-    if (Test-Path (Join-Path $dst $part)) {
+    if ((-not $Clean) -and (Test-Path (Join-Path $dst $part))) {
         Write-Ok "$part already unpacked"
         continue
     }
+    if (Test-Path $dst) { Remove-Item -LiteralPath $dst -Recurse -Force }
     Ensure-Dir $dst
     Write-Ok "extract $part.img ..."
     & $extract -i $img -o $dst -x -s -T8
@@ -197,8 +216,9 @@ if ($needPatch) {
     $apktool = Get-Apktool
     $doSecure = if ($cfg.disable_secure_flag -eq 'true') { '1' } else { '0' }
     $doCn = if ($cfg.cn_notification_fix -eq 'true') { '1' } else { '0' }
-    & $py (Join-Path $scripts 'auto_patch.py') $apktool $work $doSecure $doCn
-    if ($LASTEXITCODE -ne 0) { Write-Warn 'auto_patch.py failed' }
+    $doSig = if ($cfg.disable_signature -eq 'true') { '1' } else { '0' }
+    & $py (Join-Path $scripts 'auto_patch.py') $apktool $work $doSecure $doCn $doSig
+    if ($LASTEXITCODE -ne 0) { Fail 'auto_patch.py failed' }
 }
 
 # ========== 6. Kaorios app + props ==========
@@ -221,9 +241,16 @@ if ($cfg.install_toolbox -eq 'true') {
     $bp = Join-Path $work 'system\system\system\build.prop'
     if (Test-Path $bp) {
         $txt = Get-Content $bp -Raw
-        if ($txt -notmatch 'persist.sys.kaorios') {
-            Add-Content -LiteralPath $bp -Value "`npersist.sys.kaorios=kousei`nro.control_privapp_permissions="
-            Write-Ok 'build.prop + kaorios props'
+        $propsToAdd = @(
+            'persist.sys.kaorios=kousei'
+            'ro.control_privapp_permissions=log'
+            'ro.secureboot.lockstate=locked'
+            'ro.warranty_bit=0'
+        )
+        $append = ($propsToAdd | Where-Object { $txt -notmatch [regex]::Escape($_) }) -join "`n"
+        if ($append) {
+            Add-Content -LiteralPath $bp -Value "`n$append"
+            Write-Ok 'build.prop + bootloader lock spoof props'
         }
     }
 }
@@ -234,8 +261,13 @@ if (($cfg.add_vietnamese -eq 'true') -and (-not $SkipLang)) {
     $apktool = Get-Apktool
     $langDir = Join-Path $Root $cfg.lang_dir
     $mergePy = Join-Path $scripts 'merge_vi_eu.py'
-    & $py $mergePy $apktool $work $langDir
+    $langEuSrc = Join-Path (Join-Path $Root 'assets') 'lang_eu'
     $langEu = Join-Path $work 'lang_eu'
+    if ((Test-Path $langEuSrc) -and (-not (Test-Path $langEu))) {
+        Copy-Item -Recurse -Force $langEuSrc $langEu
+        Write-Ok 'copied assets/lang_eu'
+    }
+    & $py $mergePy $apktool $work $langDir
     if (Test-Path $langEu) {
         & $py $mergePy $apktool $work $langEu
     }
@@ -243,67 +275,80 @@ if (($cfg.add_vietnamese -eq 'true') -and (-not $SkipLang)) {
 }
 
 # ========== 8. Rebuild EROFS ==========
+# NOTE: do NOT use --all-root — it overrides fs_config uid/gid (breaks /data 1000:1000)
 Write-Step '8. REBUILD EROFS'
 $mkfs = Get-Tool 'mkfs.erofs.exe'
 $stripPy = Join-Path $scripts 'strip_fs_config.py'
+$ensurePy = Join-Path $scripts 'ensure_fs_config.py'
 foreach ($part in @('system', 'product', 'system_ext')) {
     $dir = Join-Path $work $part
     $cfgd = Join-Path $dir 'config'
-    $stripped = Join-Path $cfgd ($part + '_fs_config.stripped')
-    if (-not (Test-Path $stripped)) {
-        & $py $stripPy $cfgd $part
-    }
+    $srcDir = Join-Path $dir $part
+    & $py $ensurePy $srcDir $cfgd $part
+    & $py $stripPy $cfgd $part
     $outImg = Join-Path $images ($part + '.img')
     Write-Ok "mkfs.erofs $part ..."
     Push-Location $dir
     $fsCfg = 'config/' + $part + '_fs_config.stripped'
     $fsCtx = 'config/' + $part + '_file_contexts.stripped'
-    & $mkfs -d0 -z lz4hc,level=9 --all-root --fs-config-file="$fsCfg" --file-contexts="$fsCtx" -T0 --mkfs-time $outImg $part
+    & $mkfs -d0 -z lz4hc,level=9 --fs-config-file="$fsCfg" --file-contexts="$fsCtx" -T0 --mkfs-time $outImg $part
     $code = $LASTEXITCODE
     Pop-Location
     if ($code -ne 0) { Fail "mkfs.erofs $part failed" }
-    Write-Ok "$part.img rebuilt"
+    Write-Ok "$part.img rebuilt ($([math]::Round((Get-Item $outImg).Length/1MB,1)) MB)"
 }
 
-# ========== 9. Pack super ==========
+# ========== 9. Pack super (order MUST match stock/ZKOS: odm, product, system, system_ext, vendor, mi_ext) ==========
 Write-Step '9. PACK SUPER'
 $lpmake = Get-Tool 'lpmake.exe'
 $superOut = Join-Path $images 'super.img'
 Remove-Item -Force $superOut -ErrorAction SilentlyContinue
-$szSys  = Pad-MB (Join-Path $images 'system.img')
-$szExt  = Pad-MB (Join-Path $images 'system_ext.img')
-$szProd = Pad-MB (Join-Path $images 'product.img')
-$szVend = Pad-MB (Join-Path $images 'vendor.img')
-$szOdm  = Pad-MB (Join-Path $images 'odm.img')
-$szMi   = Pad-MB (Join-Path $images 'mi_ext.img')
+
+# pad image size to MB + small headroom (keep total under 8.5 GiB)
+function Get-PadSize([string]$path, [int]$headroomMB = 4) {
+    $s = (Get-Item -LiteralPath $path).Length
+    return [int64](([math]::Ceiling($s / 1MB) + $headroomMB) * 1MB)
+}
+
+$szOdm  = Get-PadSize (Join-Path $images 'odm.img')
+$szProd = Get-PadSize (Join-Path $images 'product.img')
+$szSys  = Get-PadSize (Join-Path $images 'system.img')
+$szExt  = Get-PadSize (Join-Path $images 'system_ext.img')
+$szVend = Get-PadSize (Join-Path $images 'vendor.img')
+$szMi   = Get-PadSize (Join-Path $images 'mi_ext.img')
 [int64]$devSize = [int64]$cfg.super_device_size
 
+$odmImg  = Join-Path $images 'odm.img'
+$prodImg = Join-Path $images 'product.img'
 $sysImg  = Join-Path $images 'system.img'
 $extImg  = Join-Path $images 'system_ext.img'
-$prodImg = Join-Path $images 'product.img'
 $vendImg = Join-Path $images 'vendor.img'
-$odmImg  = Join-Path $images 'odm.img'
 $miImg   = Join-Path $images 'mi_ext.img'
 
+# Partition order matches ZKOS/stock super (do not reorder)
 & $lpmake --metadata-size $cfg.super_metadata_size --metadata-slots $cfg.super_metadata_slots --virtual-ab `
     --device-size $devSize --super-name super `
     "--group=qti_dynamic_partitions_a:${devSize}" `
     "--group=qti_dynamic_partitions_b:${devSize}" `
+    "--partition=odm_a:none:${szOdm}:qti_dynamic_partitions_a" "--image=odm_a=$odmImg" `
+    "--partition=odm_b:none:0:qti_dynamic_partitions_b" `
+    "--partition=product_a:none:${szProd}:qti_dynamic_partitions_a" "--image=product_a=$prodImg" `
+    "--partition=product_b:none:0:qti_dynamic_partitions_b" `
     "--partition=system_a:none:${szSys}:qti_dynamic_partitions_a" "--image=system_a=$sysImg" `
     "--partition=system_b:none:0:qti_dynamic_partitions_b" `
     "--partition=system_ext_a:none:${szExt}:qti_dynamic_partitions_a" "--image=system_ext_a=$extImg" `
     "--partition=system_ext_b:none:0:qti_dynamic_partitions_b" `
-    "--partition=product_a:none:${szProd}:qti_dynamic_partitions_a" "--image=product_a=$prodImg" `
-    "--partition=product_b:none:0:qti_dynamic_partitions_b" `
     "--partition=vendor_a:none:${szVend}:qti_dynamic_partitions_a" "--image=vendor_a=$vendImg" `
     "--partition=vendor_b:none:0:qti_dynamic_partitions_b" `
-    "--partition=odm_a:none:${szOdm}:qti_dynamic_partitions_a" "--image=odm_a=$odmImg" `
-    "--partition=odm_b:none:0:qti_dynamic_partitions_b" `
     "--partition=mi_ext_a:none:${szMi}:qti_dynamic_partitions_a" "--image=mi_ext_a=$miImg" `
     "--partition=mi_ext_b:none:0:qti_dynamic_partitions_b" `
     "--output=$superOut"
 if ($LASTEXITCODE -ne 0) { Fail 'lpmake failed' }
-Write-Ok "super.img = $((Get-Item $superOut).Length) bytes"
+$superLen = (Get-Item $superOut).Length
+Write-Ok "super.img = $superLen bytes"
+if ($superLen -ne [int64]$cfg.super_device_size) {
+    Fail "super.img size mismatch: $superLen != $($cfg.super_device_size)"
+}
 
 # ========== 10. Package ==========
 Write-Step '10. PACKAGE FLASHABLE'

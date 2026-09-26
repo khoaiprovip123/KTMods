@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CardView.DayNight" parent="@style/CardView.Dark">
+        <item name="android:outlineSpotShadowColor">#ff000000</item>
+        <item name="outlineStyle">@style/BackgroundOutline.Dark</item>
+    </style>
+    <style name="Theme.FileExplorerTab" parent="@style/Theme.DayNight.Navigator">
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="bgBlurOptions">splitActionBar</item>
+        <item name="bottomSheetStyle">@style/Widget.Miuix.BottomSheet.Modal.DayNight</item>
+        <item name="miuixBottomNavigationStyle">@style/Widget.BottomNavigationView.Local</item>
+        <item name="miuixColorBottomSurface">@color/common_background_color</item>
+        <item name="recyclerViewCardStyle">@style/RecyclerViewCardStyle.DayNight</item>
+    </style>
+    <style name="Theme.PickMainNavigator" parent="@style/Theme.DayNight.Navigator">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="bgBlurOptions">splitActionBar</item>
+        <item name="bottomSheetStyle">@style/PermissionPickBottomSheetModal</item>
+        <item name="miuixColorBottomSurface">@color/common_background_color</item>
+        <item name="recyclerViewCardStyle">@style/RecyclerViewCardStyle.DayNight</item>
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.mirror.view.MirrorPictureItemView android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/mirror_icon_selected" android:background="@drawable/mirror_selected_grid_icon_bg" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintDimensionRatio="1:1" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <FrameLayout android:id="@id/fl_picture" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_margin="@dimen/mirror_item_grid_padding" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="1:1" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+            <com.android.fileexplorer.view.RoundedImageView android:id="@id/picture" android:padding="@dimen/doc_grid_stroke_width" android:layout_width="fill_parent" android:layout_height="fill_parent" app:riv_corner_radius="@dimen/mirror_recent_doc_radius" />
+        </FrameLayout>
+        <ImageView android:gravity="center_horizontal" android:id="@id/gif_tag" android:visibility="gone" android:layout_width="46.0px" android:layout_height="24.0px" android:layout_marginBottom="2.0px" android:src="@drawable/ic_gif_tag" android:layout_marginEnd="2.0px" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            <CheckBox android:theme="@style/Checkbox_NewStyle" android:id="@android:id/checkbox" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/checkbox_margin" />
+        </FrameLayout>
+        <ImageView android:id="@id/favorite_tag" android:visibility="gone" android:layout_width="@dimen/mirror_fav_item_icon_size" android:layout_height="@dimen/mirror_fav_item_icon_size" android:layout_marginTop="@dimen/mirror_fav_item_icon_margin" android:src="@drawable/ic_fav_tag" android:layout_marginEnd="@dimen/mirror_fav_item_icon_margin" app:layout_constraintEnd_toEndOf="@id/fl_picture" app:layout_constraintTop_toTopOf="@id/fl_picture" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.android.fileexplorer.mirror.view.MirrorPictureItemView>

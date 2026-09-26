@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Preference.Settings.Floating.Close" parent="@style/Theme.DayNight.FloatingWindow">
+        <item name="android:windowIsTranslucent">@bool/miuix_appcompat_window_floating</item>
+        <item name="arrowRightFillColor">@color/miuix_appcompat_arrow_right_fill_color</item>
+        <item name="preferenceTheme">@style/Theme.PreferenceOverlay.Floating.DayNight</item>
+    </style>
+    <style name="Theme.Preference.Settings.Floating.Close.File" parent="@style/Theme.Preference.Settings.Floating.Close">
+        <item name="android:windowBackground">@color/file_window_background</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fast_scroll_thumb</item>
+        <item name="actionModeStyle">@style/ActionMode.NoDivider</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionBarOverlay">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Widget.Design.TabLayout" parent="@style/Base.Widget.Design.TabLayout">
+        <item name="tabGravity">center</item>
+        <item name="tabMode">fixed</item>
+    </style>
+</resources>

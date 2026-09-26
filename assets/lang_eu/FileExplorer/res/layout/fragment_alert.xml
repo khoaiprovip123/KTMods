@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/transparent" android:paddingTop="@dimen/alert_fragment_padding_top" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="@dimen/alert_fragment_padding_horizontal" android:paddingEnd="@dimen/alert_fragment_padding_horizontal"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_alert_exclamation" />
+            <com.android.cloud.widget.RevokeReminderView android:id="@id/alert_reminder" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/alert_fragment_icon_and_reminder_gap" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:icon="@drawable/ic_start_phone" android:enabled="true" android:launchMode="singleTask" android:shortcutId="phone" android:shortcutShortLabel="@string/start_phone" android:shortcutLongLabel="@string/start_phone" android:shortcutDisabledMessage="@string/start_phone">
+        <intent android:targetPackage="com.android.fileexplorer" android:action="com.android.fileexplorer.shortcut.START_PHONE" android:targetClass="com.android.fileexplorer.FileExplorerTabActivity" />
+    </shortcut>
+    <shortcut android:icon="@drawable/ic_start_doc" android:enabled="true" android:shortcutId="doc" android:shortcutShortLabel="@string/start_doc" android:shortcutLongLabel="@string/start_doc" android:shortcutDisabledMessage="@string/start_doc">
+        <intent android:launchMode="singleTask" android:targetPackage="com.android.fileexplorer" android:action="com.android.fileexplorer.shortcut.START_DOC" android:targetClass="com.android.fileexplorer.FileExplorerTabActivity" />
+    </shortcut>
+</shortcuts>

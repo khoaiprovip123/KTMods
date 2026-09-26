@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@id/miuix_action_end_menu_group">
+        <item android:icon="@drawable/ic_actionbar_search" android:id="@id/search" android:title="@string/search_title_hint" android:contentDescription="@string/search_title_hint" android:showAsAction="always" />
+        <item android:icon="@drawable/ic_create_folder" android:id="@id/create_folder" android:title="@string/operation_create_folder" android:contentDescription="@string/operation_create_folder" android:showAsAction="always" />
+        <item android:icon="@drawable/icon_function_setting_normal" android:id="@id/view_mode" android:title="@string/func_settings" android:contentDescription="@string/func_settings" android:showAsAction="always" />
+        <item android:icon="@drawable/ic_menu_confirm" android:id="@id/pick_confirm" android:title="@string/confirm" android:contentDescription="@string/confirm" android:showAsAction="always" />
+    </group>
+</menu>

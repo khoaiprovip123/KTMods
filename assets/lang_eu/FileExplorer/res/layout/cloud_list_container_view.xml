@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.nestedheader.widget.NestedHeaderLayout android:id="@id/nested_header_layout" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent" app:headerAutoClose="false" app:headerView="@id/notify_bar" app:scrollType="offset" app:scrollableView="@id/springbacklayout" app:selfScrollFirst="false" app:stickyView="@id/sticky_view">
+        <com.android.cloud.widget.notificationbar.MessageInfoView android:id="@id/notify_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_scrollFlags="scroll" style="@style/Widget.MessageView.Guide.DayNight" />
+        <miuix.springback.view.SpringBackLayout android:id="@id/springbacklayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@android:id/list">
+            <com.android.fileexplorer.view.RefreshLoadRecyclerView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" style="@style/RecyclerView_Padding" />
+            <androidx.core.widget.NestedScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include android:visibility="gone" layout="@layout/layout_empty_view_maml" />
+                </FrameLayout>
+            </androidx.core.widget.NestedScrollView>
+            <androidx.core.widget.NestedScrollView android:id="@id/scroll" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+                <include android:id="@id/cloud_guide_layout" layout="@layout/cloud_drive_guide" />
+            </androidx.core.widget.NestedScrollView>
+            <androidx.core.widget.NestedScrollView android:id="@id/layout_permission" android:paddingBottom="@dimen/no_permission_padding_bottom" android:visibility="gone" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <include android:id="@id/no_permission_res" layout="@layout/no_permission_background" />
+                </FrameLayout>
+            </androidx.core.widget.NestedScrollView>
+        </miuix.springback.view.SpringBackLayout>
+        <FrameLayout android:id="@id/sticky_view" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/StickyViewStyle">
+            <include android:id="@id/navi_bar" layout="@layout/navigation_bar_phone_r" />
+            <include android:id="@id/cloud_pinned_header_view" android:visibility="gone" layout="@layout/pinned_header_view" />
+        </FrameLayout>
+    </miuix.nestedheader.widget.NestedHeaderLayout>
+    <RelativeLayout android:gravity="center_horizontal" android:layout_gravity="bottom" android:id="@id/ll_login" android:background="@color/button_view_background" android:paddingTop="@dimen/button_padding" android:paddingBottom="@dimen/button_padding" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/button_view_height" android:layout_marginBottom="@dimen/cloud_login_button_margin_bottom">
+        <Button android:textSize="@dimen/login_guide_summary_size" android:textColor="#e6ffffff" android:ellipsize="end" android:id="@id/action_cloud_drive_login" android:background="@drawable/common_info_button" android:layout_width="@dimen/common_begin_btn_width" android:layout_height="wrap_content" android:minHeight="@dimen/miuix_appcompat_button_height" android:text="@string/open_cloud_drive" android:maxLines="1" android:layout_alignParentBottom="true" android:fontFamily="mipro-medium" android:layout_marginStart="@dimen/common_begin_btn_margin" android:layout_marginEnd="@dimen/common_begin_btn_margin" />
+    </RelativeLayout>
+</FrameLayout>

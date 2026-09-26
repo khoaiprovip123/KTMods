@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/actionbar_search" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_actionbar_search" android:contentDescription="@string/menu_item_search" android:layout_marginEnd="@dimen/action_bar_search_margin" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/more" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_actionbar_more" android:contentDescription="@string/tab_more" />
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/common_background_color" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/fl_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip">
+        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/private_lock" />
+        <com.android.fileexplorer.view.SectorBar android:layout_gravity="center_horizontal" android:id="@id/pull_progress" android:layout_width="@dimen/private_pull_progress_width" android:layout_height="@dimen/private_pull_progress_width" app:backgroundColor="@color/transparent" app:drawStyle="STROKE" app:percentColor="#ffff9900" app:strokeWidthSize="5" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/rlv_header_content" android:layout_width="fill_parent" android:layout_height="53.0dip">
+        <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/rlv_header" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/rlv_header_arrow" android:layout_width="10.0dip" android:layout_height="10.0dip" android:src="@drawable/ptr_pulltorefresh_arrow" />
+            <ProgressBar android:id="@id/rlv_header_progressbar" android:visibility="gone" android:layout_width="11.0dip" android:layout_height="11.0dip" />
+            <TextView android:textSize="@dimen/miuix_appcompat_secondary_text_size" android:textColor="@color/text_color_tertiary" android:id="@id/rlv_header_hint_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rlv_pull_to_refresh" android:layout_marginStart="6.0dip" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/miuix_appcompat_small_text_size" android:textColor="@color/text_color_quaternary" android:layout_gravity="center_horizontal" android:id="@id/rlv_header_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="ic_action_bar_back">@drawable/miuix_action_icon_back_dark</item>
+    <item type="drawable" name="ic_action_bar_setting">@drawable/miuix_action_icon_settings_dark</item>
+    <item type="drawable" name="ic_actionbar_cancel">@drawable/miuix_action_icon_cancel_dark</item>
+    <item type="drawable" name="ic_actionbar_checked_all">@drawable/miuix_action_icon_select_all_dark</item>
+    <item type="drawable" name="ic_actionbar_unchecked_all">@drawable/miuix_action_icon_deselect_all_dark</item>
+    <item type="drawable" name="ic_info">@drawable/miuix_action_icon_info_dark</item>
+    <item type="drawable" name="ic_menu_confirm">@drawable/miuix_action_icon_confirm_dark</item>
+    <item type="drawable" name="ic_menu_copy">@drawable/miuix_action_icon_copy_dark</item>
+    <item type="drawable" name="ic_menu_decrypt">@drawable/miuix_action_icon_remove_secret_dark</item>
+    <item type="drawable" name="ic_menu_delete">@drawable/miuix_action_icon_delete_dark</item>
+    <item type="drawable" name="ic_menu_discard">@drawable/miuix_action_icon_discard_dark</item>
+    <item type="drawable" name="ic_menu_edit">@drawable/miuix_action_icon_edit_dark</item>
+    <item type="drawable" name="ic_menu_fav">@drawable/miuix_action_icon_favorite_dark</item>
+    <item type="drawable" name="ic_menu_move">@drawable/miuix_action_icon_move_dark</item>
+    <item type="drawable" name="ic_menu_paste">@drawable/miuix_action_icon_paste_dark</item>
+    <item type="drawable" name="ic_menu_remove_blacklist">@drawable/miuix_action_icon_remove_blocklist_dark</item>
+    <item type="drawable" name="ic_menu_rename">@drawable/miuix_action_icon_rename_dark</item>
+    <item type="drawable" name="ic_menu_send">@drawable/miuix_action_icon_send_dark</item>
+    <item type="drawable" name="ic_menu_unfav">@drawable/miuix_action_icon_unfavorite_dark</item>
+    <item type="drawable" name="miuix_appcompat_action_bar_navigator_switch">@drawable/miuix_action_icon_navigator_switch_dark</item>
+    <item type="drawable" name="miuix_appcompat_action_mode_title_button_cancel">@drawable/miuix_action_icon_cancel_dark</item>
+    <item type="drawable" name="miuix_appcompat_action_mode_title_button_confirm">@drawable/miuix_action_icon_immersion_confirm_dark</item>
+    <item type="drawable" name="miuix_appcompat_action_mode_title_button_delete">@drawable/miuix_action_icon_immersion_delete_dark</item>
+    <item type="drawable" name="miuix_appcompat_action_mode_title_button_deselect_all">@drawable/miuix_action_icon_deselect_all_dark</item>
+    <item type="drawable" name="miuix_appcompat_action_mode_title_button_select_all">@drawable/miuix_action_icon_select_all_dark</item>
+    <item type="drawable" name="miuix_appcompat_pairing_dialog_closable_icon">@drawable/miuix_appcompat_circle_closable_icon_dark</item>
+    <item type="drawable" name="miuix_appcompat_window_bg">@drawable/miuix_appcompat_window_bg_dark</item>
+    <item type="drawable" name="miuix_popup_window_list_item_fg">@drawable/miuix_appcompat_list_item_fg_dropdown_popup_dark</item>
+    <item type="drawable" name="navigator_icon_search">@drawable/miuix_action_icon_search_dark</item>
+    <item type="drawable" name="text_cursor">@drawable/miuix_appcompat_text_cursor_dark</item>
+</resources>

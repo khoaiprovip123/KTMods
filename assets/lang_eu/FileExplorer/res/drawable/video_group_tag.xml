@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="20.0px" android:bottom="20.0px" android:start="60.0px">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/video_group_first_layer_bg_color" />
+            <corners android:radius="@dimen/common_grid_item_radius" />
+        </shape>
+    </item>
+    <item android:top="7.0px" android:bottom="7.0px" android:start="25.0px" android:end="10.0px">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/video_group_second_layer_bg_color" />
+            <corners android:radius="@dimen/common_grid_item_radius" />
+        </shape>
+    </item>
+</layer-list>

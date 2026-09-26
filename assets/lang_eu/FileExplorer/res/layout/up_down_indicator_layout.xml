@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/up" android:background="@drawable/file_icon_3gpp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" />
+    <ImageView android:id="@id/down" android:background="@drawable/file_icon_3gpp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/up" android:importantForAccessibility="no" />
+</merge>

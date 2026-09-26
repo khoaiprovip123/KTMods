@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.fileexplorer.view.viewlarge.SubsamplingScaleImageView android:id="@id/scale_image_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ImageView android:layout_gravity="center" android:id="@id/gif_image_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ProgressBar android:layout_gravity="center" android:id="@id/pg_image_view" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminateDrawable="@drawable/progress_drawable" android:indeterminateDuration="1000" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff909090" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/image_loading_error" android:drawableTop="@drawable/ic_image_error" android:drawablePadding="48.0dip" />
+</FrameLayout>

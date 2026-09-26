@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Preference.Settings.Floating.Close" parent="@style/Theme.DayNight.FloatingWindow">
+        <item name="android:windowIsTranslucent">@bool/miuix_appcompat_window_floating</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="arrowRightFillColor">@color/miuix_appcompat_arrow_right_fill_color</item>
+        <item name="preferenceTheme">@style/Theme.PreferenceOverlay.Floating.DayNight</item>
+    </style>
+</resources>

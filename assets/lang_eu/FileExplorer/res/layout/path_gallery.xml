@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.PathGallery android:orientation="horizontal" android:id="@id/path_gallery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/phone_nav_bar_height" android:layoutDirection="locale"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/path_gallery_text_size" android:ellipsize="end" android:id="@id/first_path" android:background="@drawable/path_galley_bg" android:visibility="gone" android:maxWidth="@dimen/design_tab_max_width" android:maxLines="1" android:fontFamily="sans-serif" style="@style/PathItemTextStyleR" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/path_arrow_first" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_galley_arrow" android:layout_marginStart="6.0dip" android:layout_marginEnd="6.0dip" />
+    <com.android.fileexplorer.view.recycler.HorizontalRecyclerView android:id="@id/scroll_container" android:scrollbars="vertical" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fastScrollEnabled="true" />
+</com.android.fileexplorer.view.PathGallery>

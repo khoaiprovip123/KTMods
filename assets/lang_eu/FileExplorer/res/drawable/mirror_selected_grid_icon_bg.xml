@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/mirror_item_selected_icon_solid_bg" />
+    <stroke android:width="@dimen/mirror_item_icon_selected_stroke_width" android:color="@color/mirror_item_selected_icon_stroke_bg" />
+    <corners android:radius="@dimen/mirror_item_icon_selected_bg_radius" />
+</shape>

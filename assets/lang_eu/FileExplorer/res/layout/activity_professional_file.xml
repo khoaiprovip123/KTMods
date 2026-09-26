@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.core.widget.NestedScrollView android:id="@id/cloud_upload_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/fragment_cloud_view_content" />
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+    <FrameLayout android:id="@id/web_view_parent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <androidx.core.widget.NestedScrollView android:id="@id/nested_scroll_empty_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/empty_view_maml" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/empty_view_maml_center" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.4">
+                <miuix.androidbasewidget.widget.ProgressBar android:layout_gravity="center" android:id="@id/loading" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" />
+                <ImageView android:layout_gravity="center" android:id="@id/info_image_view" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_empty_button_info" />
+                <TextView android:textSize="@dimen/empty_message_text_size" android:textColor="@color/empty_message_text_color" android:gravity="center" android:id="@id/info_message" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/file_parse_info_message_margin_top" android:text="@string/no_file" android:importantForAccessibility="no" android:fontFamily="sans-serif" />
+            </LinearLayout>
+            <Button android:textSize="14.0sp" android:textColor="@color/empty_button_text_color" android:ellipsize="end" android:id="@id/retry" android:background="@drawable/btn_bg_empty_view_open" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:text="@string/operation_retry" android:maxLines="1" android:fontFamily="mipro-medium" android:paddingHorizontal="20.0dip" android:paddingVertical="8.5dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/empty_view_maml_center" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

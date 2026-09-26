@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/file_item_height_phone" style="@style/ListEentraceItemStylePhone"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <miuix.androidbasewidget.widget.CircleProgressBar android:id="@id/progressbar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:id="@id/file_image" android:visibility="gone" android:layout_width="35.0dip" android:layout_height="35.0dip" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="8.0dip">
+        <TextView android:textSize="14.0sp" android:ellipsize="end" android:id="@id/file_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" style="@style/FileTextAppearance.FileName" />
+        <TextView android:id="@id/file_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/file_item_info_margin_top" android:textDirection="locale" style="@style/FileTextAppearance.StorageFileSize" />
+    </LinearLayout>
+    <ImageView android:id="@id/im_arrow_right" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_file_list_arrow" android:importantForAccessibility="no" />
+</LinearLayout>

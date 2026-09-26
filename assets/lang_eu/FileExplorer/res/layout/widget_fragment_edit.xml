@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.core.widget.NestedScrollView android:id="@id/no_permission_layout" android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:id="@id/no_permission_res" layout="@layout/no_permission_background" />
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+    <miuix.recyclerview.widget.RecyclerView android:id="@id/recycler" android:background="@drawable/widget_bg_edit_recycler" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:overScrollMode="never" android:layout_marginStart="@dimen/widget_recycler_margin_side" android:layout_marginEnd="@dimen/widget_recycler_margin_side" app:layout_constraintBottom_toTopOf="@id/tv_finish" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="17.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_finish" android:background="@drawable/btn_bg_cleaner_action" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginBottom="@dimen/widget_fragment_tv_finish_margin_bottom_large" android:text="@string/widget_finish" android:layout_marginStart="28.0dip" android:layout_marginEnd="28.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

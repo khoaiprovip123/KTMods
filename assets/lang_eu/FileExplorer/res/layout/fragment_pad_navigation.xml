@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:background="@color/pad_nav_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.springback.view.SpringBackLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@id/scrollview">
+        <androidx.core.widget.NestedScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <miuix.recyclerview.widget.RecyclerView android:id="@id/recycler_view" android:paddingTop="@dimen/common_navigation_padding_top" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never" />
+                <include android:id="@id/layout_mi_drive" android:visibility="gone" layout="@layout/layout_mi_drive" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </miuix.springback.view.SpringBackLayout>
+</FrameLayout>

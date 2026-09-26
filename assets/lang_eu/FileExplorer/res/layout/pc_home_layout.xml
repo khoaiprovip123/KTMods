@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.nestedheader.widget.NestedHeaderLayout android:id="@id/nested_header_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:headerAutoClose="false" app:scrollType="offset" app:scrollableView="@id/scroll_view" app:selfScrollFirst="false" app:stickyView="@id/navigation_bar"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.springback.view.SpringBackLayout android:id="@id/scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@android:id/list">
+        <androidx.core.widget.NestedScrollView android:id="@id/nested_scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include android:id="@id/empty_view_maml" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.4" layout="@layout/layout_empty_view_maml" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+        <com.android.fileexplorer.view.RefreshLoadRecyclerView android:id="@android:id/list" android:paddingBottom="90.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" style="@style/RecyclerView_Padding" />
+    </miuix.springback.view.SpringBackLayout>
+    <include android:id="@id/navigation_bar" android:visibility="gone" layout="@layout/navigation_bar_phone_r" />
+</miuix.nestedheader.widget.NestedHeaderLayout>

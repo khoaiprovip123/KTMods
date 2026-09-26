@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_send" android:id="@id/action_send" android:title="@string/operation_send" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_edit" android:id="@id/action_editor" android:title="@string/operation_editor" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_preview_menu_download" android:id="@id/action_download" android:title="@string/operation_download" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/action_delete" android:title="@string/operation_delete" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_info" android:id="@id/action_cloud_info" android:title="@string/operation_info" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_fav" android:id="@id/action_favorite" android:title="@string/operation_favorite" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_unfav" android:id="@id/action_unfavorite" android:title="@string/operation_unfavorite" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_fav" android:id="@id/action_wallpaper" android:title="@string/operation_set_pic_wallpaper" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_fav" android:id="@id/action_gallary" android:title="@string/operation_gallary" android:showAsAction="never" />
+    <item android:id="@id/action_other_app" android:title="@string/operation_other_apps" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/action_info" android:title="@string/operation_info" android:showAsAction="never" />
+</menu>

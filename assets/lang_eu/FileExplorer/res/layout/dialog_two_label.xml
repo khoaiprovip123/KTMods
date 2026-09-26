@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/scroll" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/dialog_two_label_msg_text_size" android:textColor="@color/msg_color" android:id="@id/msg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/private_folder_update_msg" android:layout_marginStart="@dimen/dialog_two_label_margin" android:layout_marginEnd="@dimen/dialog_two_label_margin" />
+        <TextView android:textSize="@dimen/dialog_two_label_msg_summary_text_size" android:textColor="@color/msg_summary_color" android:id="@id/msg_summary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dialog_two_label_msg_summary_margin_top" android:text="@string/private_folder_update_msg_summary" android:layout_marginStart="@dimen/dialog_two_label_margin" android:layout_marginEnd="@dimen/dialog_two_label_margin" />
+    </LinearLayout>
+</ScrollView>

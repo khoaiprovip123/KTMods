@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/common_background_color" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/fl_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip">
+        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/private_lock" />
+        <com.android.fileexplorer.view.SectorBar android:layout_gravity="center_horizontal" android:id="@id/pull_progress" android:layout_width="@dimen/private_pull_progress_width" android:layout_height="@dimen/private_pull_progress_width" app:backgroundColor="@color/transparent" app:drawStyle="STROKE" app:percentColor="#ffff9900" app:strokeWidthSize="5" />
+    </FrameLayout>
+    <FrameLayout android:gravity="center" android:layout_gravity="bottom" android:id="@id/rlv_header_content" android:background="#ff002d40" android:layout_width="fill_parent" android:layout_height="@dimen/xmas_header_height">
+        <ImageView android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/general__christmas_pull_refresh_view__land" android:scaleType="fitEnd" android:contentDescription="@null" />
+        <FrameLayout android:id="@id/general__christmas_pull_refresh_view__santa_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:layout_marginStart="130.0dip">
+            <ImageView android:layout_gravity="bottom" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_marginBottom="-10.0dip" android:src="@drawable/general__christmas_pull_refresh_view__cover" android:layout_marginStart="56.0dip" />
+        </FrameLayout>
+        <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="75.0dip" android:src="@drawable/general__christmas_pull_refresh_view__deer" android:scaleType="fitEnd" android:contentDescription="@null" android:layout_marginStart="50.0dip" android:layout_marginEnd="15.0dip" />
+        <ImageView android:layout_gravity="bottom" android:id="@id/general__christmas_pull_refresh_view__snow_fade_in" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/general__christmas_pull_refresh_view__snow" android:scaleType="fitXY" />
+        <ImageView android:layout_gravity="bottom" android:id="@id/general__christmas_pull_refresh_view__snow_fade_out" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/general__christmas_pull_refresh_view__snow" android:scaleType="fitXY" />
+    </FrameLayout>
+</FrameLayout>

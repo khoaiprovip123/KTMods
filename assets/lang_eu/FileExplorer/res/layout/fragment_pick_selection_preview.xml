@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.springback.view.SpringBackLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@id/rv_preview_list">
+        <com.android.fileexplorer.adapter.recycle.BaseRecyclerView android:orientation="vertical" android:id="@id/rv_preview_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" style="@style/RecyclerView_Padding_bottom" />
+    </miuix.springback.view.SpringBackLayout>
+</FrameLayout>

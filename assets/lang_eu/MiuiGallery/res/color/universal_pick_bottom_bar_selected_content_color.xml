@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector android:exitFadeDuration="@integer/button_exit_fade_duration"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true" android:color="@color/universal_pick_bottom_bar_selected_content_color_enabled" />
+    <item android:color="@color/universal_pick_bottom_bar_selected_content_color_disabled" />
+</selector>

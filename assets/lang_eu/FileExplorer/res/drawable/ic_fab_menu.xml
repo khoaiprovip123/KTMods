@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="@dimen/fab_button_size" android:width="@dimen/fab_button_size" android:autoMirrored="true" android:viewportWidth="160.0" android:viewportHeight="160.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#00000000" android:pathData="M104.95,55.947C105.591,55.947 106.111,56.467 106.111,57.109C106.111,57.349 106.036,57.584 105.897,57.78L89.776,80.538L89.777,100.895C89.777,101.965 89.286,102.975 88.445,103.635L73.076,115.7C72.572,116.096 71.842,116.008 71.446,115.503C71.285,115.299 71.198,115.046 71.198,114.786L71.197,80.461L55.083,57.781C54.711,57.258 54.834,56.534 55.357,56.162C55.553,56.022 55.788,55.947 56.029,55.947H104.95Z" android:strokeColor="@color/fab_icon_color" android:strokeWidth="7.0" android:fillAlpha="0.6" android:fillType="evenOdd" />
+</vector>

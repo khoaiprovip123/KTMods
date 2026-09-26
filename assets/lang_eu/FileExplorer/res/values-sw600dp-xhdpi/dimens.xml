@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="category_margin_icon">14.5dip</dimen>
+    <dimen name="file_name_padding_left">15.0dip</dimen>
+    <dimen name="ftp_setting_btn_width">105.0dip</dimen>
+    <dimen name="ftp_start_btn_width">222.0dip</dimen>
+    <dimen name="group_padding_left">0.0dip</dimen>
+    <dimen name="group_padding_right">0.0dip</dimen>
+    <dimen name="group_page_padding_left">30.0dip</dimen>
+    <dimen name="group_page_padding_right">30.0dip</dimen>
+    <dimen name="miuix_appcompat_btn_to_nav_spacing">36.0dip</dimen>
+    <dimen name="path_gallery_padding_left">20.0dip</dimen>
+    <dimen name="server_control_wifi_state_image_margin_state">20.0dip</dimen>
+    <dimen name="server_control_wifi_state_margin_label">10.0dip</dimen>
+</resources>

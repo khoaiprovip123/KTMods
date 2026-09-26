@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.EmptyView android:id="@id/empty_view_maml" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:importantForAccessibility="yes"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <miuix.androidbasewidget.widget.ProgressBar android:layout_gravity="center" android:id="@id/progressbar" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:importantForAccessibility="no" />
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/empty_image_view" android:visibility="gone" android:layout_width="@dimen/empty_image_width" android:layout_height="@dimen/empty_image_height" android:layout_marginBottom="@dimen/empty_maml_margin_bottom" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/empty_msg_margin_top">
+        <TextView android:textSize="@dimen/empty_message_text_size" android:textColor="@color/empty_message_text_color" android:gravity="center" android:layout_gravity="top" android:id="@id/empty_message" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/no_file" android:importantForAccessibility="no" android:fontFamily="sans-serif" />
+        <Button android:textSize="@dimen/empty_button_text_size" android:textColor="@color/empty_button_text_color" android:ellipsize="end" android:id="@id/open" android:background="@drawable/btn_bg_empty_view_open" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="28.0dip" android:maxLines="1" android:fontFamily="mipro-medium" android:paddingHorizontal="20.0dip" android:paddingVertical="8.5dip" />
+    </LinearLayout>
+</com.android.fileexplorer.view.EmptyView>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_send" android:id="@id/action_send" android:title="@string/operation_send" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_move" android:id="@id/action_move" android:title="@string/operation_move" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_menu_delete" android:id="@id/action_delete" android:title="@string/operation_delete" android:showAsAction="always" />
+    <item android:id="@id/action_copy_clipboard" android:title="@string/operation_copy_clipboard" android:showAsAction="never" />
+    <item android:id="@id/action_copy" android:title="@string/operation_copy" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_remove_blacklist" android:id="@id/action_private" android:title="@string/make_private" android:showAsAction="never" />
+    <item android:id="@id/action_cache_to_local" android:title="@string/action_cache_to_local" android:showAsAction="never" />
+    <item android:id="@id/action_release_cache" android:title="@string/action_release_file_cache" android:showAsAction="never" />
+    <item android:id="@id/action_copy_to_local" android:title="@string/operation_cloud_copy_to_local" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_fav" android:id="@id/action_favorite" android:title="@string/operation_favorite" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_unfav" android:id="@id/action_unfavorite" android:title="@string/operation_unfavorite" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_menu_rename" android:id="@id/action_rename" android:visibility="gone" android:title="@string/operation_rename" android:showAsAction="never" />
+    <item android:id="@id/action_compress" android:title="@string/operation_compress" android:showAsAction="never" />
+    <item android:id="@id/action_add_to_desktop" android:visibility="gone" android:title="@string/add_to_desktop" android:showAsAction="never" />
+    <item android:id="@id/action_add_to_widget" android:visible="false" android:title="@string/add_to_widget" android:showAsAction="never" />
+    <item android:id="@id/action_other_app" android:title="@string/operation_other_apps" android:showAsAction="never" />
+    <item android:id="@id/action_set_wallpaper" android:title="@string/menu_set_wallpaper" android:showAsAction="never" />
+    <item android:id="@id/action_info" android:visibility="gone" android:title="@string/operation_info" android:showAsAction="never" />
+</menu>

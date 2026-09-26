@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/ll_notify_bar" android:background="@drawable/bg_notification_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/notification_bar_height" android:paddingStart="@dimen/notification_bar_padding_start" android:paddingEnd="@dimen/notification_bar_padding_end" android:layout_marginStart="@dimen/notification_bar_margin_start" android:layout_marginEnd="@dimen/notification_bar_margin_end"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="marquee" android:layout_gravity="center_vertical" android:id="@id/notification_tv" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:marqueeRepeatLimit="marquee_forever" style="@style/Cloud.NotificationBarTextStyle" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/notification_action_iv" android:layout_width="@dimen/notification_bar_cancel_icon_width" android:layout_height="@dimen/notification_bar_cancel_icon_height" android:scaleType="centerInside" />
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory>
+        <miuix.preference.TextPreference android:title="@string/pref_permission_manage_key_storage" android:key="pref_permission_manage_key_storage" android:summary="@string/function_file_operation" />
+        <miuix.preference.TextPreference android:title="@string/permission_account_title" android:key="pref_permission_manage_key_account" android:summary="@string/permission_account_desc" />
+    </PreferenceCategory>
+</PreferenceScreen>

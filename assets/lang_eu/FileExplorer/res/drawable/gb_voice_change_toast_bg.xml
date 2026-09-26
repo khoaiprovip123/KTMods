@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/gb_vc_toast_bg_radius" />
+    <stroke android:width="@dimen/gb_vc_toast_bg_stroke_width" android:color="@color/gb_vc_toast_bg_stroke_color" />
+    <solid android:color="@color/gb_vc_toast_bg_color" />
+    <padding android:left="@dimen/gb_vc_toast_padding" android:right="@dimen/gb_vc_toast_padding" />
+</shape>

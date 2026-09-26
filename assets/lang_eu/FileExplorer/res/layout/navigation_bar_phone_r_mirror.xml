@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/navigation_bar" android:paddingStart="0.0dip" style="@style/NavigationBarStylePhoneR.Mirror"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:id="@id/volume_switch_layout" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:contentDescription="@string/click_to_switch_volume" android:paddingEnd="8.0px">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/volume_switch" android:layout_width="@dimen/mirror_volume_switch_height" android:layout_height="@dimen/mirror_volume_switch_height" android:src="@drawable/ic_volume_switch_mirror" android:scaleType="centerInside" />
+        </LinearLayout>
+        <include android:layout_width="0.0dip" android:layout_height="@dimen/mirror_file_gallery_height" android:layout_weight="1.0" layout="@layout/path_gallery_mirror" />
+    </LinearLayout>
+    <View android:background="@color/divide_line_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

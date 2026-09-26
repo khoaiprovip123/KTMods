@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/activity_main" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="#ffffffff" android:gravity="center" android:background="#ffff00ff" android:layout_width="fill_parent" android:layout_height="30.0dip" android:text="I'm footView" android:layout_centerInParent="true" />
+</RelativeLayout>

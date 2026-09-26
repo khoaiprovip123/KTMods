@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ai_search_building_database">Analysing files to provide more accurate results…</string>
+    <string name="ai_search_building_database_pause">Files will be analysed on your device to provide more accurate results</string>
+    <string name="ai_search_progress">Analysing files… (%s)</string>
+    <string name="ai_search_progress_tips">"Keep your device connected to the charger. It'll analyse files faster when the screen is off."</string>
+    <string name="call_notification_hang_up_action">Hang up</string>
+    <string name="call_notification_ongoing_text">On-going call</string>
+    <string name="cancel_mi_drive_confirm_hint">"Cancelling Mi Drive services won't affect your use of other Xiaomi products and services. If you want to delete your Xiaomi Account, you can do that &lt;font color=#0097FF>&lt;a href=%1$s>here&lt;/a>&lt;/font>."</string>
+    <string name="cancel_mi_drive_success">Cancelled services successfully</string>
+    <string name="cancelled_by_user">Operation cancelled</string>
+    <string name="category_favorite">Favourites</string>
+    <string name="file_local_disk_format">Local disc (%s:)</string>
+    <string name="fmt_date_numeric_month_day">M-d</string>
+    <string name="fmt_date_numeric_year_month">M-yyyy</string>
+    <string name="fmt_date_numeric_year_month_day">M-d-yyyy</string>
+    <string name="fmt_time_24hour">"H 'o''clock'"</string>
+    <string name="fmt_time_24hour_minute">H:mm</string>
+    <string name="fmt_time_24hour_minute_second">H:mm:ss</string>
+    <string name="fmt_time_24hour_minute_second_millis">H:mm:ss.S</string>
+    <string name="menu_item_sort_add_time">"Added to favourites "</string>
+    <string name="miuix_appcompat_accessibility_finish_edit_action_mode">Exit edit mode</string>
+    <string name="miuix_appcompat_accessibility_start_edit_action_mode">Enter edit mode</string>
+    <string name="miuix_bottom_sheet_accessibility_scroll_down_to_minimized">Swipe down to minimise</string>
+    <string name="miuix_bottom_sheet_accessibility_scroll_up_to_maximized">Swipe up to maximise</string>
+    <string name="miuix_bottom_sheet_accessibility_state_maximized">Maximised</string>
+    <string name="miuix_bottom_sheet_accessibility_state_minimized">Minimised</string>
+    <string name="miuix_bottom_sheet_accessibility_switch_to_maximized">Maximise</string>
+    <string name="miuix_bottom_sheet_accessibility_switch_to_minimized">Minimise</string>
+    <string name="miuix_progressbar_loading">Loading</string>
+    <string name="month_day_format">dd MMM</string>
+    <string name="operation_add_fav">Adding to favourites…</string>
+    <string name="operation_del_fav">Removing from favourites…</string>
+    <string name="operation_favorite">Add to favourites</string>
+    <string name="operation_unfavorite">Remove from favourites</string>
+    <string name="pattern_month_day">dd/MM</string>
+    <string name="pattern_month_day_hh_mm_12">dd/MM hh:mm a</string>
+    <string name="pattern_month_day_hh_mm_24">dd/MM HH:mm</string>
+    <string name="pattern_year_month_day">dd/MM/yyyy</string>
+    <string name="pattern_year_month_day_hh_mm_12">dd/MM/yyyy hh:mm a</string>
+    <string name="pattern_year_month_day_hh_mm_24">dd/MM/yyyy HH:mm</string>
+    <string name="preference_copied">"'%1$s' copied to clipboard."</string>
+    <string name="ui_main_toast_favorite_added">Added to favourites</string>
+    <string name="ui_main_toast_favorite_removed">Removed from favourites</string>
+    <string name="ui_main_toast_operation_failed">"Couldn't remove %1$s from favourites"</string>
+    <string name="year_month_day_format">dd MMM yyyy</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yandex.mobile.ads.nativeads.NativeAdView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/category_native_common_details_grid" />
+</com.yandex.mobile.ads.nativeads.NativeAdView>

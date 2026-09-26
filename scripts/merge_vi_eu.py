@@ -16,27 +16,43 @@ MAP = [
     ('ThemeManager', 'product/product/app/MIUIThemeManager/MIUIThemeManager.apk'),
     ('MIUIPackageInstaller', 'product/product/priv-app/MIUIPackageInstaller/MIUIPackageInstaller.apk'),
     ('MiuiSystemUI', 'system_ext/system_ext/priv-app/MiuiSystemUI/MiuiSystemUI.apk'),
-    # assets/lang tags
-    ('settings', 'system_ext/system_ext/priv-app/Settings/Settings.apk'),
     ('Settings', 'system_ext/system_ext/priv-app/Settings/Settings.apk'),
-    ('fwres', 'system/system/system/framework/framework-res.apk'),
-    ('framework-res', 'system/system/system/framework/framework-res.apk'),
 ]
+
+
+def find_lang_source(base: Path, tag: str) -> Path | None:
+    candidates = [base / tag]
+    aliases = {
+        'settings': ['settings', 'Settings'],
+        'framework-res': ['framework-res', 'fwres', 'framework_res'],
+    }
+    for alt in aliases.get(tag.lower(), []):
+        candidates.append(base / alt)
+    for c in candidates:
+        if c.is_dir():
+            for sub in ['res/values-vi', 'values-vi']:
+                vi_dir = c / sub
+                if vi_dir.is_dir():
+                    return vi_dir
+    return None
+
 
 for tag, rel in MAP:
     apk = work / rel
-    vi = lang_eu / tag / 'res' / 'values-vi'
-    if not vi.exists():
-        vi = lang_eu / tag / 'values-vi'
     if not apk.exists():
-        print('skip', tag, 'target missing'); continue
-    if not vi.exists():
-        print('skip', tag, 'values-vi missing'); continue
+        continue
+    vi = find_lang_source(lang_eu, tag)
+    if not vi:
+        continue
     out = work / f'vi_{tag}'
     if out.exists():
         shutil.rmtree(out, ignore_errors=True)
     print('decode', tag, '...')
-    subprocess.check_call([java, '-jar', apktool, 'd', '-q', '-f', '-s', '-o', str(out), str(apk)])
+    try:
+        subprocess.check_call([java, '-jar', apktool, 'd', '-q', '-f', '-s', '-o', str(out), str(apk)])
+    except subprocess.CalledProcessError as e:
+        print(tag, 'DECODE FAIL — skip', e)
+        continue
     res = out / 'res'
     dst = res / 'values-vi'
     if dst.exists():

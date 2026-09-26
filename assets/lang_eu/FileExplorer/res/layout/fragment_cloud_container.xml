@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/layout_content" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="24.0sp" android:gravity="center" android:id="@id/text_download" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="下载" />
+    <TextView android:textSize="24.0sp" android:gravity="center" android:id="@id/text_upload" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="上传" />
+    <TextView android:textSize="24.0sp" android:gravity="center" android:id="@id/text_sync" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="同步" />
+    <TextView android:textSize="24.0sp" android:gravity="center" android:id="@id/text_online" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="在线地址" />
+    <TextView android:textSize="24.0sp" android:gravity="center" android:id="@id/text_rename" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="重命名" />
+</LinearLayout>

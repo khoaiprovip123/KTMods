@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.navigator.bottomnavigation.BottomNavigationView android:id="@id/miuix_bottom_navigation_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:miuixLayoutStyle="wide_land"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

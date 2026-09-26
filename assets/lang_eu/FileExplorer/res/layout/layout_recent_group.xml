@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:gravity="center_vertical" android:id="@id/group_header" android:tag="group_header" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/group_header_height" android:layoutDirection="locale"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:ellipsize="end" android:id="@id/tv_date" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constrainedWidth="true" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@id/message" app:layout_constraintHorizontal_bias="0.0" app:layout_constraintHorizontal_chainStyle="packed" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/GroupHeaderTitle" />
+    <FrameLayout android:id="@id/message" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <RelativeLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/secondary_total_count" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/GroupHeaderTitle" />
+            <ImageView android:id="@id/iv_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_recent_expand_collapse" android:layout_alignTop="@id/secondary_total_count" android:layout_alignBottom="@id/secondary_total_count" android:layout_marginStart="4.0dip" android:layout_toEndOf="@id/secondary_total_count" />
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/fab_menu_item_text_size" android:textColor="@color/text_color_select_all" android:gravity="center" android:id="@id/select_all" android:background="@drawable/select_all_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="62.0dip" android:minHeight="@dimen/select_all_textview_height" android:text="@string/miuix_appcompat_select_all" android:paddingHorizontal="11.0dip" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

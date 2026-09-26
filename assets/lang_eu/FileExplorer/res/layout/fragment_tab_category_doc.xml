@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/file_browse_frame" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/content_margin_top"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.nestedheader.widget.NestedHeaderLayout android:id="@id/nested_header_layout" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent" app:headerAutoClose="false" app:headerView="@id/header" app:scrollType="offset" app:scrollableView="@id/view_pager" app:selfScrollFirst="false" app:stickyView="@id/sticky_layout">
+        <View android:id="@id/header" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <com.android.fileexplorer.view.ScrollControlViewPager android:id="@id/view_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <LinearLayout android:orientation="vertical" android:id="@id/sticky_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/miuix_theme_margin_base">
+            <miuix.miuixbasewidget.widget.FilterSortView2 android:id="@id/tab_layout" android:layout_width="fill_parent" android:layout_height="@dimen/tab_layout_height" android:layout_marginHorizontal="24.0dip" />
+            <FrameLayout android:id="@id/doc_sticky_layout" android:layout_width="fill_parent" android:layout_height="@dimen/group_header_height" />
+        </LinearLayout>
+    </miuix.nestedheader.widget.NestedHeaderLayout>
+</FrameLayout>

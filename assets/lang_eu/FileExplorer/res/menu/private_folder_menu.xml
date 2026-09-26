@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_menu_move" android:id="@id/paste_confirm" android:title="@string/operation_move" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_discard" android:id="@id/paste_cancel" android:title="@string/operation_cancel" android:showAsAction="ifRoom" />
+    <item android:id="@id/add_files" android:title="@string/add_private_files" android:showAsAction="never" />
+    <item android:id="@id/new_folder" android:title="@string/operation_create_folder" app:showAsAction="never" />
+    <item android:id="@id/refresh" android:title="@string/operation_refresh" app:showAsAction="never" />
+    <item android:id="@id/reset_password" android:visible="false" android:title="@string/reset_password" app:showAsAction="never" />
+</menu>

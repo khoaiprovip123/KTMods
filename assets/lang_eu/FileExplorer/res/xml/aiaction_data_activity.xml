@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actions>
+    <action clear-top="true" deploy-property="static" execution="foreground" sync-flag="0" sync-timeout="-1" type="urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/searchByFileName]:0:1.0" />
+    <action clear-top="true" deploy-property="static" execution="foreground" sync-flag="0" sync-timeout="-1" type="urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/searchByCategory]:0:1.0" />
+    <action clear-top="true" deploy-property="static" execution="foreground" sync-flag="0" sync-timeout="-1" type="urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/searchByAppName]:0:1.0" />
+    <action clear-top="true" deploy-property="static" execution="foreground" sync-flag="0" sync-timeout="-1" type="urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/openFile]:0:1.0" />
+    <action clear-top="true" deploy-property="static" execution="foreground" sync-flag="0" sync-timeout="-1" type="urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/copyFile]:0:1.0" />
+    <action clear-top="true" deploy-property="static" execution="foreground" sync-flag="0" sync-timeout="-1" type="urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/moveFile]:0:1.0" />
+    <action clear-top="true" deploy-property="static" execution="foreground" sync-flag="0" sync-timeout="-1" type="urn:aiot-spec-v3:com.mi.phones:action:[com.android.fileexplorer/file/deleteFile]:0:1.0" />
+</actions>

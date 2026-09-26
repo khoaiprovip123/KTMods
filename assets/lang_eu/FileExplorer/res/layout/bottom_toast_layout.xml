@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.ToastTextView android:id="@id/bottom_toast" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="28.0dip" toast:background="@drawable/toast_bg_bottom" toast:textGravity="center" style="@style/ToastTextStyle"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:toast="http://schemas.android.com/apk/res-auto" />

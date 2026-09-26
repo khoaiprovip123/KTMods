@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="@dimen/ic_menu_size" android:width="@dimen/ic_menu_size" android:autoMirrored="true" android:viewportWidth="74.0" android:viewportHeight="74.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#00000000" android:pathData="M20,14L53,14A6,6 0,0 1,59 20L59,53A6,6 0,0 1,53 59L20,59A6,6 0,0 1,14 53L14,20A6,6 0,0 1,20 14z" android:strokeColor="@color/menu_icon_color" android:strokeWidth="5.0" />
+    <path android:fillColor="@color/menu_icon_color" android:pathData="M32,20L35,20A1,1 0,0 1,36 21L36,24A1,1 0,0 1,35 25L32,25A1,1 0,0 1,31 24L31,21A1,1 0,0 1,32 20z" />
+    <path android:fillColor="@color/menu_icon_color" android:pathData="M37,25L40,25A1,1 0,0 1,41 26L41,29A1,1 0,0 1,40 30L37,30A1,1 0,0 1,36 29L36,26A1,1 0,0 1,37 25z" />
+    <path android:fillColor="@color/menu_icon_color" android:pathData="M32,30L35,30A1,1 0,0 1,36 31L36,34A1,1 0,0 1,35 35L32,35A1,1 0,0 1,31 34L31,31A1,1 0,0 1,32 30z" />
+    <path android:fillColor="@color/menu_icon_color" android:pathData="M37,35L40,35A1,1 0,0 1,41 36L41,39A1,1 0,0 1,40 40L37,40A1,1 0,0 1,36 39L36,36A1,1 0,0 1,37 35z" />
+</vector>

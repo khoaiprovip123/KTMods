@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:id="@id/scroll" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <RelativeLayout android:id="@id/rl_login_contain" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <ImageView android:id="@id/guide_image_view" android:layout_width="207.0dip" android:layout_height="134.0dip" android:src="@drawable/cloud_drive_guide_image" android:scaleType="fitXY" android:adjustViewBounds="true" />
+                <TextView android:textSize="@dimen/login_guide_title_size" android:textColor="@color/cloud_guide_title_text_color" android:ellipsize="end" android:gravity="center" android:id="@id/guide_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/login_guide_title_margin_top" android:text="@string/cloud_guide_title_text" android:maxLines="1" android:fontFamily="mipro-medium" />
+                <TextView android:textSize="@dimen/login_guide_summary_size" android:textColor="@color/cloud_drive_guide_summary" android:gravity="center" android:id="@id/guide_summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/login_guide_summary_margin_top" android:text="@string/cloud_guide_summary_text" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

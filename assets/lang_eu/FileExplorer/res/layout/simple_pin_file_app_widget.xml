@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/widget_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingHorizontal="12.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/no_data_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/add_data_image" android:layout_width="@dimen/us_widget_simple_app_logo_new" android:layout_height="@dimen/us_widget_simple_app_logo_new" android:src="@drawable/widget_add_file_logo" />
+        <TextView android:textSize="12.0sp" android:textColor="@color/widget_tv_add_color" android:id="@id/add_data_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/widget_choose_file" android:fontFamily="mipro-regular" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/list_view_root" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_list_1" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="12.0dip" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/ll_list_2" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="12.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+</FrameLayout>

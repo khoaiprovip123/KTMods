@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="14.0dip" android:width="14.0dip" android:viewportWidth="14.0" android:viewportHeight="14.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/phone_storage_title_color" android:pathData="M8.77,0.82C8.668,0.719 8.504,0.719 8.402,0.82L3.105,6.118C3.103,6.12 3.1,6.121 3.099,6.123L2.406,6.816L2.373,6.857C2.306,6.958 2.317,7.095 2.406,7.184L3.099,7.877C3.1,7.878 3.102,7.878 3.104,7.88L8.402,13.18C8.504,13.281 8.668,13.281 8.77,13.18L9.463,12.487C9.564,12.385 9.564,12.22 9.463,12.119L4.344,7L9.463,1.881C9.564,1.779 9.564,1.615 9.463,1.513L8.77,0.82Z" />
+</vector>

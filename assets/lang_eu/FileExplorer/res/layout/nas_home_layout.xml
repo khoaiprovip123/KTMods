@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<miuix.nestedheader.widget.NestedHeaderLayout android:id="@id/nested_header_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:headerAutoClose="false" app:headerView="@id/header_view" app:scrollType="offset" app:scrollableView="@id/scroll_view" app:selfScrollFirst="false" app:stickyView="@id/sticky_view"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.springback.view.SpringBackLayout android:id="@id/scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@android:id/list">
+        <com.android.fileexplorer.view.RefreshLoadRecyclerView android:id="@android:id/list" android:paddingBottom="90.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" style="@style/RecyclerView_Padding" />
+        <androidx.core.widget.NestedScrollView android:id="@id/nested_scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include android:id="@id/empty_view_maml" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.4" layout="@layout/layout_empty_view_maml" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </miuix.springback.view.SpringBackLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/header_view" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include android:id="@id/file_category_header" layout="@layout/layout_home_file_category_head_bar" />
+        <miuix.recyclerview.widget.RecyclerView android:id="@id/file_category_entries" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never" app:layout_scrollFlags="scroll" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/sticky_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/group_header_height">
+        <TextView android:textSize="@dimen/storage_file_size" android:textColor="@color/phone_storage_title_color" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nas_description" android:layout_centerVertical="true" android:importantForAccessibility="yes" android:fontFamily="sans-serif" android:layout_marginStart="@dimen/file_storage_tv_margin_left" />
+        <ImageView android:id="@id/create_folder" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_home_file_create" android:layout_centerVertical="true" android:contentDescription="@string/create_folder" android:layout_marginEnd="@dimen/file_grid_horizontal_margin" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</miuix.nestedheader.widget.NestedHeaderLayout>

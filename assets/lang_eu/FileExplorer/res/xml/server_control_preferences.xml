@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/server_control_advanced_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.preference.CheckBoxPreference android:title="@string/stay_awake_title" android:key="stayAwake" android:summary="@string/stay_awake_summary" android:defaultValue="true" />
+    <PreferenceCategory android:title="@string/server_control_charset">
+        <miuix.preference.SingleChoicePreferenceCategory android:key="single_choice" app:cardGroupEnabled="false">
+            <miuix.preference.SingleChoicePreference android:persistent="false" android:title="@string/utf8_title" android:key="pref_charset_utf8" android:summary="@string/utf8_summary" />
+            <miuix.preference.SingleChoicePreference android:persistent="false" android:title="@string/gbk_title" android:key="pref_charset_gbk" android:summary="@string/gbk_summary" />
+            <miuix.preference.SingleChoicePreference android:persistent="false" android:title="@string/big5_title" android:key="pref_charset_big5" android:summary="@string/big5_summary" />
+        </miuix.preference.SingleChoicePreferenceCategory>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/ftp_transfer_secure">
+        <androidx.preference.Preference android:selectAllOnFocus="true" android:maxLength="5" android:title="@string/ftp_port_number" android:key="portNum" android:summary="2121" android:inputType="number" />
+        <androidx.preference.CheckBoxPreference android:title="@string/ftp_anonymous_login" android:key="anonymous_login" android:defaultValue="true" android:disableDependentsState="true" />
+        <androidx.preference.Preference android:title="@string/ftp_username_and_passworld" android:key="pref_ftp_account" android:dependency="anonymous_login" />
+    </PreferenceCategory>
+</PreferenceScreen>

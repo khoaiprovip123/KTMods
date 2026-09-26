@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="abbrev_a_hour_ago">
+        <item quantity="other">%d час назад</item>
+    </plurals>
+    <plurals name="abbrev_half_hour_ago">
+        <item quantity="other">Полчаса назад</item>
+    </plurals>
+    <plurals name="abbrev_in_a_hour">
+        <item quantity="other">Через %d час</item>
+    </plurals>
+    <plurals name="abbrev_in_half_hour">
+        <item quantity="other">Через полчаса</item>
+    </plurals>
+    <plurals name="abbrev_in_less_than_one_minute">
+        <item quantity="other">Сейчас</item>
+    </plurals>
+    <plurals name="abbrev_in_num_minutes">
+        <item quantity="other">Через %d мин.</item>
+        <item quantity="one">Через %d мин.</item>
+    </plurals>
+    <plurals name="abbrev_less_than_one_minute_ago">
+        <item quantity="other">Только что</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="other">%d мин. назад</item>
+        <item quantity="one">%d мин. назад</item>
+    </plurals>
+    <plurals name="add_max_shortcut_count">
+        <item quantity="other">Вы можете добавить до %d папок</item>
+        <item quantity="one">Вы можете добавить до %d папки</item>
+        <item quantity="few">Вы можете добавить до %d папок</item>
+        <item quantity="many">Вы можете добавить до %d папок</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">%1$d дней назад</item>
+        <item quantity="one">%1$d день назад</item>
+        <item quantity="few">%1$d дня назад</item>
+    </plurals>
+    <plurals name="delete_cload_nas_files">
+        <item quantity="other">Удалить %1$d выбранных объектов со всех устройств, из облака и из Xiaomi SmartStorage? Вы сможете восстановить недавно удаленные объекты в Xiaomi Cloud и приложении Xiaomi SmartStorage.</item>
+        <item quantity="one">Удалить %1$d выбранный объект со всех устройств, из облака и из Xiaomi SmartStorage? Вы сможете восстановить недавно удаленные объекты в Xiaomi Cloud и приложении Xiaomi SmartStorage.</item>
+        <item quantity="few">Удалить %1$d выбранных объекта со всех устройств, из облака и из Xiaomi SmartStorage? Вы сможете восстановить недавно удаленные объекты в Xiaomi Cloud и приложении Xiaomi SmartStorage.</item>
+        <item quantity="many">Удалить %1$d выбранных объектов со всех устройств, из облака и из Xiaomi SmartStorage? Вы сможете восстановить недавно удаленные объекты в Xiaomi Cloud и приложении Xiaomi SmartStorage.</item>
+    </plurals>
+    <plurals name="delete_cloud_files">
+        <item quantity="other">Удалить %1$d файлов со всех устройств и из облака? Файлы Mi Drive можно восстановить из Корзины.</item>
+        <item quantity="one">Удалить %1$d файл со всех устройств и из облака? Файлы Mi Drive можно восстановить из Корзины.</item>
+        <item quantity="few">Удалить %1$d файла со всех устройств и из облака? Файлы Mi Drive можно восстановить из Корзины.</item>
+    </plurals>
+    <plurals name="delete_files">
+        <item quantity="other">Удалить %1$d файлов?</item>
+        <item quantity="one">Удалить %1$d файл?</item>
+        <item quantity="few">Удалить %1$d файла?</item>
+    </plurals>
+    <plurals name="delete_files_confirm">
+        <item quantity="other">Удалить %1$d файлов</item>
+        <item quantity="one">Удалить %1$d файл</item>
+        <item quantity="few">Удалить %1$d файла</item>
+    </plurals>
+    <plurals name="delete_folders">
+        <item quantity="other">Удалить %1$d папок?</item>
+        <item quantity="one">Удалить %1$d папку?</item>
+        <item quantity="few">Удалить %1$d папки?</item>
+    </plurals>
+    <plurals name="delete_folders_confirm">
+        <item quantity="other"> и %1$d папок?</item>
+        <item quantity="one"> и %1$d папку?</item>
+        <item quantity="few"> и %1$d папки?</item>
+    </plurals>
+    <plurals name="delete_nas_files">
+        <item quantity="other">Удалить %1$d выбранных объектов со всех устройств и из Xiaomi SmartStorage? Вы сможете восстановить недавно удалённые объекты в приложении Xiaomi SmartStorage.</item>
+        <item quantity="one">Удалить %1$d выбранный объект со всех устройств и из Xiaomi SmartStorage? Вы сможете восстановить недавно удалённые объекты в приложении Xiaomi SmartStorage.</item>
+        <item quantity="few">Удалить %1$d выбранные объекты со всех устройств и из Xiaomi SmartStorage? Вы сможете восстановить недавно удалённые объекты в приложении Xiaomi SmartStorage.</item>
+        <item quantity="many">Удалить %1$d выбранных объектов со всех устройств и из Xiaomi SmartStorage? Вы сможете восстановить недавно удалённые объекты в приложении Xiaomi SmartStorage.</item>
+    </plurals>
+    <plurals name="delete_pc_files">
+        <item quantity="other">Удалить безвозвратно %2$d файлов из %1$s?</item>
+        <item quantity="one">Удалить безвозвратно %2$d файл из %1$s?</item>
+        <item quantity="few">Удалить безвозвратно %2$d файла из %1$s?</item>
+        <item quantity="many">Удалить безвозвратно %2$d файлов из %1$s?</item>
+    </plurals>
+    <plurals name="directory_item_count">
+        <item quantity="other">%d объектов</item>
+        <item quantity="one">%d объект</item>
+        <item quantity="few">%d объекта</item>
+    </plurals>
+    <plurals name="file_count">
+        <item quantity="other">%1$d объектов</item>
+        <item quantity="one">%1$d объект</item>
+        <item quantity="few">%1$d объекта</item>
+    </plurals>
+    <plurals name="file_fail_count">
+        <item quantity="other">Не удалось передать %s объектов</item>
+        <item quantity="one">Не удалось передать %s объект</item>
+        <item quantity="few">Не удалось передать %s объекта</item>
+        <item quantity="many">Не удалось передать %s объектов</item>
+    </plurals>
+    <plurals name="file_num_content">
+        <item quantity="other">%2$d файлов, включая %1$s</item>
+        <item quantity="one">%2$d файл, включая %1$s</item>
+        <item quantity="few">%2$d файла, включая %1$s</item>
+        <item quantity="many">%2$d файлов, включая %1$s</item>
+    </plurals>
+    <plurals name="file_success_count">
+        <item quantity="other">Переданы %s объектов</item>
+        <item quantity="one">Передан %s объект</item>
+        <item quantity="few">Переданы %s объекта</item>
+        <item quantity="many">Переданы %s объектов</item>
+    </plurals>
+    <plurals name="follow_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> подписчиков</item>
+        <item quantity="one">&lt;font color=#fc7050>%d&lt;/font> подписчик</item>
+        <item quantity="few">&lt;font color=#fc7050>%d&lt;/font> подписчика</item>
+    </plurals>
+    <plurals name="found_new_files">
+        <item quantity="other">Найдено %1$d новых файлов</item>
+        <item quantity="one">Найден %1$d новый файл</item>
+        <item quantity="few">Найдено %1$d новых файла</item>
+    </plurals>
+    <plurals name="gems">
+        <item quantity="other">%1$s драг. камней</item>
+        <item quantity="one">%1$s драг. камень</item>
+        <item quantity="few">%1$s драг. камня</item>
+    </plurals>
+    <plurals name="in_a_hour">
+        <item quantity="other">Через час</item>
+    </plurals>
+    <plurals name="in_half_hour">
+        <item quantity="other">Через полчаса</item>
+    </plurals>
+    <plurals name="in_less_than_one_minute">
+        <item quantity="other">Сейчас</item>
+    </plurals>
+    <plurals name="in_num_minutes">
+        <item quantity="other">через %d минут</item>
+        <item quantity="one">через 1 минуту</item>
+        <item quantity="few">через %d минуты</item>
+    </plurals>
+    <plurals name="items_picture">
+        <item quantity="other">(%1$d объектов)</item>
+        <item quantity="one">(%1$d объект)</item>
+        <item quantity="few">(%1$d объекта)</item>
+    </plurals>
+    <plurals name="less_than_one_minute_ago">
+        <item quantity="other">Только что</item>
+    </plurals>
+    <plurals name="mins_ago">
+        <item quantity="other">%1$d минут назад</item>
+        <item quantity="one">%1$d минуту назад</item>
+        <item quantity="few">%1$d минуты назад</item>
+    </plurals>
+    <plurals name="miuix_appcompat_items_selected">
+        <item quantity="other">Выбрано %d объектов</item>
+        <item quantity="one">Выбран %d объект</item>
+        <item quantity="few">Выбрано %d объекта</item>
+    </plurals>
+    <plurals name="more_gems">
+        <item quantity="other">Соберите ещё &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> драг. камней, чтобы принять участие в розыгрыше.</item>
+        <item quantity="one">Соберите ещё &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> драг. камень, чтобы принять участие в розыгрыше.</item>
+        <item quantity="few">Соберите ещё &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> драг. камня, чтобы принять участие в розыгрыше.</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d новых уведомлений</item>
+        <item quantity="one">%d новое уведомление</item>
+        <item quantity="few">%d новых уведомления</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_fail">
+        <item quantity="other">Не удалось синхронизировать %1$s файлов</item>
+        <item quantity="one">Не удалось синхронизировать %1$s файл</item>
+        <item quantity="few">Не удалось синхронизировать %1$s файла</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_success">
+        <item quantity="other">"Синхронизировано %1$s файлов | "</item>
+        <item quantity="one">"Синхронизирован %1$s файл | "</item>
+        <item quantity="few">"Синхронизировано %1$s файла | "</item>
+    </plurals>
+    <plurals name="notification_title_syncing_with_count_no_network">
+        <item quantity="other">Ожидание подключения к сети. Осталось файлов: %1$s.</item>
+        <item quantity="one">Ожидание подключения к сети. Осталось файлов: %1$s.</item>
+    </plurals>
+    <plurals name="numSelectedFile">
+        <item quantity="other">Выбрано: %1$d</item>
+        <item quantity="one">Выбрано: %1$d</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d минут назад</item>
+        <item quantity="one">1 минуту назад</item>
+        <item quantity="few">%d минуты назад</item>
+    </plurals>
+    <plurals name="number_of_comment_flow">
+        <item quantity="other">%1$s комментариев</item>
+        <item quantity="one">%1$s комментарий</item>
+        <item quantity="few">%1$s комментария</item>
+    </plurals>
+    <plurals name="original_user_days">
+        <item quantity="other">• &lt;font color=#fc7050>%1$d&lt;/font> дней</item>
+        <item quantity="one">• &lt;font color=#fc7050>%1$d&lt;/font> день</item>
+        <item quantity="few">• &lt;font color=#fc7050>%1$d&lt;/font> день</item>
+    </plurals>
+    <plurals name="original_user_fans">
+        <item quantity="other">• You got &lt;font color=#fc7050>%1$s&lt;/font> подписчиков!</item>
+        <item quantity="one">• You got &lt;font color=#fc7050>%1$s&lt;/font> подписчик!</item>
+        <item quantity="few">• You got &lt;font color=#fc7050>%1$s&lt;/font> подписчика!</item>
+    </plurals>
+    <plurals name="original_user_play_1">
+        <item quantity="other">• Вы загрузили &lt;font color=#fc7050>%1$s&lt;/font> видео.</item>
+        <item quantity="one">• Вы загрузили &lt;font color=#fc7050>%1$s&lt;/font> видео.</item>
+    </plurals>
+    <plurals name="original_user_play_2">
+        <item quantity="other">Вы сделали счастливыми &lt;font color=#fc7050>%1$s&lt;/font> человек!</item>
+        <item quantity="one">Вы сделали счастливым &lt;font color=#fc7050>%1$s&lt;/font> человека!</item>
+        <item quantity="few">Вы сделали счастливыми &lt;font color=#fc7050>%1$s&lt;/font> человека!</item>
+    </plurals>
+    <plurals name="pick_max_count">
+        <item quantity="other">Нельзя выбрать более %1$s объектов</item>
+        <item quantity="one">Нельзя выбрать более %1$s объекта</item>
+        <item quantity="few">Нельзя выбрать более %1$s объектов</item>
+        <item quantity="many">Нельзя выбрать более %1$s объектов</item>
+    </plurals>
+    <plurals name="preview_pick_count">
+        <item quantity="other">Предпросмотр (%1$s/%2$s)</item>
+        <item quantity="one">Предпросмотр (%1$s/%2$s)</item>
+        <item quantity="few">Предпросмотр (%1$s/%2$s)</item>
+        <item quantity="many">Предпросмотр (%1$s/%2$s)</item>
+    </plurals>
+    <plurals name="privacy_revoke_numbers_talkback">
+        <item quantity="other">Отозвать (%d)</item>
+        <item quantity="one">Отозвать (%d)</item>
+        <item quantity="few">Отозвать (%d)</item>
+        <item quantity="many">Отозвать (%d)</item>
+    </plurals>
+    <plurals name="remote_video_update">
+        <item quantity="other">Найдено %1$s новых видео</item>
+        <item quantity="one">Найдено %1$s новое видео</item>
+    </plurals>
+    <plurals name="search_head_hint_all">
+        <item quantity="other">Результаты поиска (%1$d элементов)</item>
+        <item quantity="one">Результаты поиска (%1$d элемент)</item>
+        <item quantity="two">Результаты поиска (%1$d элемента)</item>
+    </plurals>
+    <plurals name="search_head_hint_app">
+        <item quantity="other">%2$d объектов из \"%1$s\"</item>
+        <item quantity="one">%2$d объект из \"%1$s\"</item>
+        <item quantity="few">%2$d объекта из \"%1$s\"</item>
+    </plurals>
+    <plurals name="search_head_hint_file">
+        <item quantity="other">%2$d объектов с текстом \"%1$s\"</item>
+        <item quantity="one">%2$d объект с текстом \"%1$s\"</item>
+        <item quantity="few">%2$d объекта с текстом \"%1$s\"</item>
+    </plurals>
+    <plurals name="search_head_hint_tag">
+        <item quantity="other">%2$d объектов с меткой \"%1$s\"</item>
+        <item quantity="one">%2$d объект с меткой \"%1$s\"</item>
+        <item quantity="few">%2$d объекта с меткой \"%1$s\"</item>
+    </plurals>
+    <plurals name="tap_share_send_fail_with_too_many">
+        <item quantity="other">Не удалось отправить. Выбрано более %d объектов.</item>
+        <item quantity="one">Не удалось отправить. Выбрано более %d объекта.</item>
+        <item quantity="few">Не удалось отправить. Выбрано более %d объектов.</item>
+        <item quantity="many">Не удалось отправить. Выбрано более %d объектов.</item>
+    </plurals>
+    <plurals name="text_group_count">
+        <item quantity="other">%d объектов</item>
+        <item quantity="one">%d объект</item>
+        <item quantity="few">%d объекта</item>
+    </plurals>
+    <plurals name="total_topic_num">
+        <item quantity="other">%1$s тем</item>
+        <item quantity="one">%1$s тем</item>
+    </plurals>
+    <plurals name="total_user_num">
+        <item quantity="other">%1$s человек</item>
+        <item quantity="one">%1$s человек</item>
+        <item quantity="few">%1$s человек</item>
+    </plurals>
+    <plurals name="user_sign_limt">
+        <item quantity="other">Можно ввести %d символов</item>
+        <item quantity="one">Можно ввести %d символ</item>
+        <item quantity="few">Можно ввести %d символа</item>
+    </plurals>
+    <plurals name="video_ad_download_tip">
+        <item quantity="other"> Загрузок</item>
+        <item quantity="zero"> Загрузок</item>
+        <item quantity="one"> Загрузок</item>
+        <item quantity="two"> Загрузок</item>
+        <item quantity="few"> Загрузок</item>
+        <item quantity="many"> Загрузок</item>
+    </plurals>
+    <plurals name="video_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> видео</item>
+        <item quantity="one">&lt;font color=#fc7050>%d&lt;/font> видео</item>
+    </plurals>
+    <plurals name="video_items">
+        <item quantity="other"> %1$d элементов</item>
+        <item quantity="zero"> %1$d элементов</item>
+        <item quantity="one"> %1$d элемент</item>
+        <item quantity="two"> %1$d элемента</item>
+        <item quantity="few"> %1$d элемента</item>
+        <item quantity="many"> %1$d элементов</item>
+    </plurals>
+    <plurals name="video_play_num">
+        <item quantity="other">%1$s просмотров</item>
+        <item quantity="zero">%1$s просмотров</item>
+        <item quantity="one">%1$s просмотр</item>
+        <item quantity="two">%1$s просмотра</item>
+        <item quantity="few">%1$s просмотра</item>
+        <item quantity="many">%1$s просмотров</item>
+    </plurals>
+    <plurals name="video_publish_watchable_hint">
+        <item quantity="other">Получите ещё %1$d подписчиков для повышения статуса​</item>
+        <item quantity="one">Получите ещё %1$d подписчика для повышения статуса</item>
+    </plurals>
+</resources>

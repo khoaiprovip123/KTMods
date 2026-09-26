@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="16.0dip" android:width="18.0dip" android:viewportWidth="18.0" android:viewportHeight="16.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/mirror_top_navigation_icon_color_normal" android:pathData="M4,1.5996C4,1.0473 4.4477,0.5996 5,0.5996H17C17.5523,0.5996 18,1.0473 18,1.5996C18,2.1519 17.5523,2.5996 17,2.5996H5C4.4477,2.5996 4,2.1519 4,1.5996Z" />
+    <path android:fillColor="@color/mirror_top_navigation_icon_color_normal" android:pathData="M4,8C4,7.4477 4.4477,7 5,7H17C17.5523,7 18,7.4477 18,8C18,8.5523 17.5523,9 17,9H5C4.4477,9 4,8.5523 4,8Z" />
+    <path android:fillColor="@color/mirror_top_navigation_icon_color_normal" android:pathData="M5,13.4004C4.4477,13.4004 4,13.8481 4,14.4004C4,14.9527 4.4477,15.4004 5,15.4004H17C17.5523,15.4004 18,14.9527 18,14.4004C18,13.8481 17.5523,13.4004 17,13.4004H5Z" />
+    <path android:fillColor="@color/mirror_top_navigation_icon_color_normal" android:pathData="M2.5,1.5508C2.5,2.2411 1.9404,2.8008 1.25,2.8008C0.5596,2.8008 0,2.2411 0,1.5508C0,0.8604 0.5596,0.3008 1.25,0.3008C1.9404,0.3008 2.5,0.8604 2.5,1.5508Z" />
+    <path android:fillColor="@color/mirror_top_navigation_icon_color_normal" android:pathData="M2.5,7.95C2.5,8.6404 1.9404,9.2 1.25,9.2C0.5596,9.2 0,8.6404 0,7.95C0,7.2596 0.5596,6.7 1.25,6.7C1.9404,6.7 2.5,7.2596 2.5,7.95Z" />
+    <path android:fillColor="@color/mirror_top_navigation_icon_color_normal" android:pathData="M1.25,15.6008C1.9404,15.6008 2.5,15.0411 2.5,14.3508C2.5,13.6604 1.9404,13.1008 1.25,13.1008C0.5596,13.1008 0,13.6604 0,14.3508C0,15.0411 0.5596,15.6008 1.25,15.6008Z" />
+</vector>

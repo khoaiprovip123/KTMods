@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/group_item_margin" android:paddingEnd="@dimen/group_item_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.android.fileexplorer.view.RoundedImageView android:layout_gravity="center_vertical" android:id="@id/category_icon" android:layout_width="@dimen/file_item_icon_size" android:layout_height="@dimen/file_item_icon_size" android:scaleType="centerCrop" app:riv_corner_radius="@dimen/common_grid_item_radius" />
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:minHeight="@dimen/file_group_item_normal__height" android:layout_weight="1.0" android:layout_marginStart="@dimen/normal_title_margin_start">
+        <TextView android:ellipsize="end" android:id="@id/file_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:textDirection="locale" style="@style/GroupFileNameTextStyle" />
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <TextView android:id="@id/modified_time" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/FileTextAppearance.FileSize" />
+            <View android:id="@id/file_separator" android:background="@color/file_size_color" android:visibility="gone" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="3.0dip" android:layout_marginBottom="3.0dip" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip" />
+            <TextView android:id="@id/file_size" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/FileTextAppearance.FileSize" />
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox android:theme="@style/Checkbox_NewStyle" android:layout_gravity="center_vertical" android:id="@android:id/checkbox" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="fitCenter" android:layout_marginStart="15.0dip" />
+</LinearLayout>

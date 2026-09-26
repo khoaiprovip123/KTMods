@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="directory_item_count">
+        <item quantity="other">%d items</item>
+        <item quantity="one">%d items</item>
+    </plurals>
+    <plurals name="file_count">
+        <item quantity="other">%1$d items</item>
+        <item quantity="one">%1$d item</item>
+    </plurals>
+    <plurals name="search_head_hint_all">
+        <item quantity="other">Results (%1$d pages)</item>
+        <item quantity="one">Results (%1$d page)</item>
+    </plurals>
+    <plurals name="search_head_hint_app">
+        <item quantity="other">App \"%1$s\" related files (%2$d items)</item>
+        <item quantity="one">App \"%1$s\" related files (%2$d item)</item>
+    </plurals>
+    <plurals name="search_head_hint_tag">
+        <item quantity="other">Tag \"%1$s\" related files (%2$d items)</item>
+        <item quantity="one">Tag \"%1$s\" related files (%2$d item)</item>
+    </plurals>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/split_line" android:layout_width="fill_parent" android:layout_height="@dimen/column_split_item_margin_height" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff8c93b0" android:id="@id/title_view" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="@dimen/column_item_margin_top" android:layout_marginBottom="@dimen/column_item_margin_bottom" android:layout_below="@id/split_line" android:layout_marginStart="@dimen/column_item_margin_start" />
+</RelativeLayout>

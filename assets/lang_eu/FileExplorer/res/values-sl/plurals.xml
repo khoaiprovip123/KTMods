@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="abbrev_a_hour_ago">
+        <item quantity="other">pred 1 uro</item>
+    </plurals>
+    <plurals name="abbrev_half_hour_ago">
+        <item quantity="other">Pred pol ure</item>
+    </plurals>
+    <plurals name="abbrev_in_a_hour">
+        <item quantity="other">Čez 1 uro</item>
+    </plurals>
+    <plurals name="abbrev_in_half_hour">
+        <item quantity="other">Čez pol ure</item>
+    </plurals>
+    <plurals name="abbrev_in_less_than_one_minute">
+        <item quantity="other">Takoj</item>
+    </plurals>
+    <plurals name="abbrev_in_num_minutes">
+        <item quantity="other">čez %d min</item>
+        <item quantity="one">čez 1 min</item>
+    </plurals>
+    <plurals name="abbrev_less_than_one_minute_ago">
+        <item quantity="other">Pravkar</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="other">pred %d min</item>
+        <item quantity="one">pred 1 min</item>
+    </plurals>
+    <plurals name="add_max_shortcut_count">
+        <item quantity="other">Dodate lahko največ %d map</item>
+        <item quantity="one">Dodate lahko največ %d mapo</item>
+        <item quantity="two">Dodate lahko največ %d mapi</item>
+        <item quantity="few">Dodate lahko največ %d mape</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">pred %1$d dnevi</item>
+        <item quantity="one">pred %1$d dnevom</item>
+    </plurals>
+    <plurals name="delete_cload_nas_files">
+        <item quantity="other">Ali želite izbrisati %1$d izbranih elementov v vseh napravah, oblaku in Xiaomi SmartStorage? Nedavno izbrisane elemente boste lahko obnovili v aplikacijah Xiaomi Cloud in Xiaomi SmartStorage.</item>
+        <item quantity="one">Ali želite izbrisati %1$d izbrani element v vseh napravah, oblaku in Xiaomi SmartStorage? Nedavno izbrisane elemente boste lahko obnovili v aplikacijah Xiaomi Cloud in Xiaomi SmartStorage.</item>
+        <item quantity="two">Ali želite izbrisati %1$d izbrana elementa v vseh napravah, oblaku in Xiaomi SmartStorage? Nedavno izbrisane elemente boste lahko obnovili v aplikacijah Xiaomi Cloud in Xiaomi SmartStorage.</item>
+        <item quantity="few">Ali želite izbrisati %1$d izbrane elemente v vseh napravah, oblaku in Xiaomi SmartStorage? Nedavno izbrisane elemente boste lahko obnovili v aplikacijah Xiaomi Cloud in Xiaomi SmartStorage.</item>
+    </plurals>
+    <plurals name="delete_cloud_files">
+        <item quantity="other">Želite izbrisati %1$d datotek iz vseh svojih naprav in oblaka? Datoteke Mi Drive je mogoče obnoviti iz nedavno izbrisanih stvari.</item>
+        <item quantity="one">Želite izbrisati %1$d datoteko iz vseh svojih naprav in oblaka? Datoteke Mi Drive je mogoče obnoviti iz nedavno izbrisanih stvari.</item>
+    </plurals>
+    <plurals name="delete_files">
+        <item quantity="other">Izbrišem %1$d datotek?</item>
+        <item quantity="one">Izbrišem %1$d datoteko?</item>
+    </plurals>
+    <plurals name="delete_files_confirm">
+        <item quantity="other">Izbrišem %1$d datotek</item>
+        <item quantity="one">Izbrišem %1$d datoteko</item>
+    </plurals>
+    <plurals name="delete_folders">
+        <item quantity="other">Izbrišem %1$d map?</item>
+        <item quantity="one">Izbrišem %1$d mapo?</item>
+    </plurals>
+    <plurals name="delete_folders_confirm">
+        <item quantity="other">" in %1$d map?"</item>
+        <item quantity="one">" in %1$d mapo?"</item>
+    </plurals>
+    <plurals name="delete_nas_files">
+        <item quantity="other">Ali želite izbrisati %1$d izbranih elementov v vseh napravah in Xiaomi SmartStorage? Nedavno izbrisane elemente boste lahko obnovili v aplikaciji Xiaomi SmartStorage.</item>
+        <item quantity="one">Ali želite izbrisati %1$d izbrani element v vseh napravah in Xiaomi SmartStorage? Nedavno izbrisane elemente boste lahko obnovili v aplikaciji Xiaomi SmartStorage.</item>
+        <item quantity="two">Ali želite izbrisati %1$d izbrana elementa v vseh napravah in Xiaomi SmartStorage? Nedavno izbrisane elemente boste lahko obnovili v aplikaciji Xiaomi SmartStorage.</item>
+        <item quantity="few">Ali želite izbrisati %1$d izbrane elemente v vseh napravah in Xiaomi SmartStorage? Nedavno izbrisane elemente boste lahko obnovili v aplikaciji Xiaomi SmartStorage.</item>
+    </plurals>
+    <plurals name="delete_pc_files">
+        <item quantity="other">Želite trajno izbrisati %2$d datotek od %1$s zdaj?</item>
+        <item quantity="one">Želite trajno izbrisati %2$d datoteko od %1$s zdaj?</item>
+        <item quantity="two">Želite trajno izbrisati %2$d datoteki od %1$s zdaj?</item>
+        <item quantity="few">Želite trajno izbrisati %2$d datoteke od %1$s zdaj?</item>
+    </plurals>
+    <plurals name="directory_item_count">
+        <item quantity="other">%d stvari</item>
+        <item quantity="one">%d stvar</item>
+    </plurals>
+    <plurals name="file_count">
+        <item quantity="other"> %1$d stvari</item>
+        <item quantity="one"> %1$d stvar</item>
+    </plurals>
+    <plurals name="file_fail_count">
+        <item quantity="other">%s elementov ni bilo mogoče prenesti</item>
+        <item quantity="one">%s elementa ni bilo mogoče prenesti</item>
+        <item quantity="two">%s elementov ni bilo mogoče prenesti</item>
+        <item quantity="few">%s elementov ni bilo mogoče prenesti</item>
+    </plurals>
+    <plurals name="file_num_content">
+        <item quantity="other">%2$d datotek, vključno z %1$s</item>
+        <item quantity="one">%2$d datoteka, vključno z %1$s</item>
+        <item quantity="two">%2$d datoteki, vključno z %1$s</item>
+        <item quantity="few">%2$d datoteke, vključno z %1$s</item>
+    </plurals>
+    <plurals name="file_success_count">
+        <item quantity="other">Prenesenih %s elementov</item>
+        <item quantity="one">Prenesen %s element</item>
+        <item quantity="two">Prenesena %s elementa</item>
+        <item quantity="few">Preneseni %s elementi</item>
+    </plurals>
+    <plurals name="follow_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> sledilcev</item>
+        <item quantity="one">&lt;font color=#fc7050>%d&lt;/font> sledilec</item>
+    </plurals>
+    <plurals name="found_new_files">
+        <item quantity="other">Najdeno novih datotek: %1$d</item>
+        <item quantity="one">Najdena %1$d nova datoteka</item>
+    </plurals>
+    <plurals name="gems">
+        <item quantity="other">%1$s draguljev</item>
+        <item quantity="one">%1$s dragulj</item>
+    </plurals>
+    <plurals name="in_a_hour">
+        <item quantity="other">Čez 1 uro</item>
+    </plurals>
+    <plurals name="in_half_hour">
+        <item quantity="other">Čez pol ure</item>
+    </plurals>
+    <plurals name="in_less_than_one_minute">
+        <item quantity="other">Takoj</item>
+    </plurals>
+    <plurals name="in_num_minutes">
+        <item quantity="other">čez %d min</item>
+        <item quantity="one">čez 1 minuto</item>
+    </plurals>
+    <plurals name="items_picture">
+        <item quantity="other"> (%1$d stvari)</item>
+        <item quantity="one"> (%1$d stvar)</item>
+    </plurals>
+    <plurals name="less_than_one_minute_ago">
+        <item quantity="other">Pravkar</item>
+    </plurals>
+    <plurals name="mins_ago">
+        <item quantity="other">Pred %1$d min</item>
+        <item quantity="one">Pred %1$d min</item>
+    </plurals>
+    <plurals name="miuix_appcompat_items_selected">
+        <item quantity="other">izbrano %d stvari</item>
+        <item quantity="one">izbrana %d stvar</item>
+    </plurals>
+    <plurals name="more_gems">
+        <item quantity="other">Zberite &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> več draguljev za sodelovanje v žrebanju za srečo.</item>
+        <item quantity="one">Zberite &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> več draguljev za sodelovanje v žrebanju za srečo.</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">Nova obvestila: %d</item>
+        <item quantity="one">%d novo obvestilo</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_fail">
+        <item quantity="other">Ne morem sinhronizirati %1$s datotek</item>
+        <item quantity="one">Ne morem sinhronizirati %1$s datoteke</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_success">
+        <item quantity="other">"Sinhronizirano %1$s datotek | "</item>
+        <item quantity="one">"Sinhronizirana %1$s datoteka | "</item>
+    </plurals>
+    <plurals name="notification_title_syncing_with_count_no_network">
+        <item quantity="other">Čakanje na omrežno povezavo. %1$s preostalih datotek.</item>
+        <item quantity="one">Čakanje na omrežno povezavo. %1$s preostala datoteka.</item>
+    </plurals>
+    <plurals name="numSelectedFile">
+        <item quantity="other">Izbrano %1$d stvari</item>
+        <item quantity="one">Izbrana %1$d stvar</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">pred %d min</item>
+        <item quantity="one">pred 1 minuto</item>
+    </plurals>
+    <plurals name="number_of_comment_flow">
+        <item quantity="other">%1$s komentarjev</item>
+        <item quantity="one">%1$s komentar</item>
+    </plurals>
+    <plurals name="original_user_days">
+        <item quantity="other">" • &lt;font color=#fc7050>%1$d&lt;/font> dni"</item>
+        <item quantity="one">" • &lt;font color=#fc7050>%1$d&lt;/font> dan"</item>
+    </plurals>
+    <plurals name="original_user_fans">
+        <item quantity="other">" • Imate &lt;font color=#fc7050>%1$s&lt;/font> sledilcev!"</item>
+        <item quantity="one">" • Imate &lt;font color=#fc7050>%1$s&lt;/font> sledilca!"</item>
+    </plurals>
+    <plurals name="original_user_play_1">
+        <item quantity="other">" • Naložili ste &lt;font color=#fc7050>%1$s&lt;/font> videov. "</item>
+        <item quantity="one">" • Naložili ste &lt;font color=#fc7050>%1$s&lt;/font> video. "</item>
+    </plurals>
+    <plurals name="original_user_play_2">
+        <item quantity="other">Osrečili ste &lt;font color=#fc7050>%1$s&lt;/font> oseb!</item>
+        <item quantity="one">Osrečili ste &lt;font color=#fc7050>%1$s&lt;/font> osebo!</item>
+    </plurals>
+    <plurals name="pick_max_count">
+        <item quantity="other">Ni mogoče izbrati več kot %1$s elementov</item>
+        <item quantity="one">Ni mogoče izbrati več kot %1$s element</item>
+        <item quantity="two">Ni mogoče izbrati več kot %1$s elementa</item>
+        <item quantity="few">Ni mogoče izbrati več kot %1$s elemente</item>
+    </plurals>
+    <plurals name="preview_pick_count">
+        <item quantity="other">Predogledov (%1$s/%2$s)</item>
+        <item quantity="one">Predogled (%1$s/%2$s)</item>
+        <item quantity="two">Predogleda (%1$s/%2$s)</item>
+        <item quantity="few">Predogledi (%1$s/%2$s)</item>
+    </plurals>
+    <plurals name="privacy_revoke_numbers_talkback">
+        <item quantity="other">Dvig (%d)</item>
+        <item quantity="one">Dvig (%d)</item>
+        <item quantity="two">Dvig (%d)</item>
+        <item quantity="few">Dvig (%d)</item>
+    </plurals>
+    <plurals name="remote_video_update">
+        <item quantity="other">Najdeno %1$s novih videov</item>
+        <item quantity="one">Najden %1$s nov video</item>
+    </plurals>
+    <plurals name="search_head_hint_all">
+        <item quantity="other">Rezultat iskanja (%1$d stvari)</item>
+        <item quantity="one">Rezultat iskanja (%1$d stvar)</item>
+    </plurals>
+    <plurals name="search_head_hint_app">
+        <item quantity="other">Datoteke, povezane z aplikacijo %1$s (%2$d stvari)</item>
+        <item quantity="one">Datoteke, povezane z aplikacijo %1$s (%2$d stvar)</item>
+    </plurals>
+    <plurals name="search_head_hint_file">
+        <item quantity="other">%1$s povezanih datotek (%2$d stvari)</item>
+        <item quantity="one">%1$s povezanih datotek (%2$d stvar)</item>
+    </plurals>
+    <plurals name="search_head_hint_tag">
+        <item quantity="other">Označi sorodne datoteke %1$s (%2$d stvari)</item>
+        <item quantity="one">Označi sorodne datoteke %1$s (%2$d stvar)</item>
+    </plurals>
+    <plurals name="tap_share_send_fail_with_too_many">
+        <item quantity="other">Ni bilo mogoče poslati. Izbranih več kot %d elementov.</item>
+        <item quantity="one">Ni bilo mogoče poslati. Izbran več kot %d element.</item>
+        <item quantity="two">Ni bilo mogoče poslati. Izbrana več kot %d elementa.</item>
+        <item quantity="few">Ni bilo mogoče poslati. Izbrani več kot %d elementi.</item>
+    </plurals>
+    <plurals name="text_group_count">
+        <item quantity="other">%d stvari</item>
+        <item quantity="one">%d stvar</item>
+    </plurals>
+    <plurals name="total_topic_num">
+        <item quantity="other">%1$s tem</item>
+        <item quantity="one">%1$s tema</item>
+    </plurals>
+    <plurals name="total_user_num">
+        <item quantity="other">Oseb: %1$s</item>
+        <item quantity="one">%1$s oseba</item>
+    </plurals>
+    <plurals name="user_sign_limt">
+        <item quantity="other">Lahko vpišete %d znakov</item>
+        <item quantity="one">Lahko vpišete %d znak</item>
+    </plurals>
+    <plurals name="video_ad_download_tip">
+        <item quantity="other">Prenosov</item>
+        <item quantity="one">Prenos</item>
+    </plurals>
+    <plurals name="video_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> videoposnetkov</item>
+        <item quantity="one">&lt;font color=#fc7050>%d&lt;/font> videoposnetek</item>
+    </plurals>
+    <plurals name="video_items">
+        <item quantity="other"> %1$d stvari</item>
+        <item quantity="one"> %1$d stvar</item>
+    </plurals>
+    <plurals name="video_play_num">
+        <item quantity="other">%1$s predvajano</item>
+        <item quantity="one">%1$s predvajano</item>
+    </plurals>
+    <plurals name="video_publish_watchable_hint">
+        <item quantity="other">Pridobite %1$d sledilcev da nadgradite svoj status​</item>
+        <item quantity="one">Pridobite %1$d sledilca da nadgradite svoj status</item>
+    </plurals>
+</resources>

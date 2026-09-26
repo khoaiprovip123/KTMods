@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="abbrev_a_hour_ago">
+        <item quantity="other">%d گھنٹہ پہلے</item>
+        <item quantity="one">%d گھنٹہ پہلے</item>
+    </plurals>
+    <plurals name="abbrev_half_hour_ago">
+        <item quantity="other">آدھا گھنٹہ قبل</item>
+        <item quantity="one">آدھا گھنٹہ قبل</item>
+    </plurals>
+    <plurals name="abbrev_in_a_hour">
+        <item quantity="other">%d گھنٹہ میں</item>
+        <item quantity="one">%d گھنٹہ میں</item>
+    </plurals>
+    <plurals name="abbrev_in_half_hour">
+        <item quantity="other">آدھا گھنٹہ میں</item>
+        <item quantity="one">آدھا گھنٹہ میں</item>
+    </plurals>
+    <plurals name="abbrev_in_less_than_one_minute">
+        <item quantity="other">فوراً</item>
+        <item quantity="one">فوراً</item>
+    </plurals>
+    <plurals name="abbrev_in_num_minutes">
+        <item quantity="other">%d منٹ میں</item>
+        <item quantity="one">%d منٹ میں</item>
+    </plurals>
+    <plurals name="abbrev_less_than_one_minute_ago">
+        <item quantity="other">ابھی ابھی</item>
+        <item quantity="one">ابھی ابھی</item>
+    </plurals>
+    <plurals name="abbrev_num_minutes_ago">
+        <item quantity="other">%d منٹ پہلے</item>
+        <item quantity="one">%d منٹ پہلے</item>
+    </plurals>
+    <plurals name="add_max_shortcut_count">
+        <item quantity="other">آپ %d فولڈر تک شامل کر سکتے ہیں</item>
+        <item quantity="one">آپ %d فولڈر تک شامل کر سکتے ہیں</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="other">%1$d دنوں پہلے</item>
+        <item quantity="one">%1$d دن پہلے</item>
+    </plurals>
+    <plurals name="delete_cload_nas_files">
+        <item quantity="other">منتخب کردہ %1$d آئٹمز کو سبھی ڈیوائسز، کلاؤڈ اور Xiaomi SmartStorage سے حذف کریں؟ آپ Xiaomi Cloud اور Xiaomi SmartStorage ایپ میں حالیہ حذف کردہ آئٹم کو بحال کر سکیں گے۔</item>
+        <item quantity="one">منتخب کردہ %1$d آئٹم کو سبھی ڈیوائسز، کلاؤڈ اور Xiaomi SmartStorage سے حذف کریں؟ آپ Xiaomi Cloud اور Xiaomi SmartStorage ایپ میں حالیہ حذف کردہ آئٹم کو بحال کر سکیں گے۔</item>
+    </plurals>
+    <plurals name="delete_cloud_files">
+        <item quantity="other">اپنے تمام ڈیوائسز اور کلاؤڈ سے %1$d فائلیں حذف کریں؟ Mi ڈرائیو فائلیں آپ کے حالیہ حذف کردہ آئٹمز سے بحال کی جا سکتی ہیں۔</item>
+        <item quantity="one">اپنے تمام ڈیوائسز اور کلاؤڈ سے %1$d فائل حذف کریں؟ Mi ڈرائیو فائلیں آپ کے حالیہ حذف کردہ آئٹمز سے بحال کی جا سکتی ہیں۔</item>
+    </plurals>
+    <plurals name="delete_files">
+        <item quantity="other">%1$d فائلیں حذف کریں؟</item>
+        <item quantity="one">%1$d فائل حذف کریں؟</item>
+    </plurals>
+    <plurals name="delete_files_confirm">
+        <item quantity="other">%1$d فائلیں حذف کریں</item>
+        <item quantity="one">%1$d فائل حذف کریں</item>
+    </plurals>
+    <plurals name="delete_folders">
+        <item quantity="other">%1$d فولڈر حذف کریں؟</item>
+        <item quantity="one">%1$d فولڈر حذف کریں؟</item>
+    </plurals>
+    <plurals name="delete_folders_confirm">
+        <item quantity="other">" اور %1$d فولڈرز؟"</item>
+        <item quantity="one">" اور %1$d فولڈر؟"</item>
+    </plurals>
+    <plurals name="delete_nas_files">
+        <item quantity="other">منتخب کردہ %1$d آئٹمز کو سبھی ڈیوائسز اور Xiaomi SmartStorage سے حذف کریں؟ آپ Xiaomi SmartStorage ایپ میں حالیہ حذف کردہ آئٹم کو بحال کر سکیں گے۔</item>
+        <item quantity="one">منتخب کردہ %1$d آئٹم کو سبھی ڈیوائسز اور Xiaomi SmartStorage سے حذف کریں؟ آپ Xiaomi SmartStorage ایپ میں حالیہ حذف کردہ آئٹم کو بحال کر سکیں گے۔</item>
+    </plurals>
+    <plurals name="delete_pc_files">
+        <item quantity="other">ابھی %1$s سے %2$d فائلیں مستقل طور پر حذف کریں؟</item>
+        <item quantity="one">ابھی %1$s سے %2$d فائل مستقل طور پر حذف کریں؟</item>
+    </plurals>
+    <plurals name="directory_item_count">
+        <item quantity="other">%d آئٹم</item>
+        <item quantity="one">%d آئٹم</item>
+    </plurals>
+    <plurals name="file_count">
+        <item quantity="other"> %1$d آئٹمز</item>
+        <item quantity="one">%1$d آئٹم</item>
+    </plurals>
+    <plurals name="file_fail_count">
+        <item quantity="other">%s آئٹم منتقل نہیں کیاے جا سکے</item>
+        <item quantity="one">%s آئٹم منتقل نہیں کیا جا سکا</item>
+    </plurals>
+    <plurals name="file_num_content">
+        <item quantity="other">%1$s سمیت %2$d فائلیں</item>
+        <item quantity="one">%1$s سمیت %2$d فائل</item>
+    </plurals>
+    <plurals name="file_success_count">
+        <item quantity="other">%s آئٹمز منتقل کیے گئے</item>
+        <item quantity="one">%s آئٹم منتقل کیا گیا</item>
+    </plurals>
+    <plurals name="follow_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> فالوورز</item>
+        <item quantity="one">&lt;font color=#fc7050>%d&lt;/font> فالوور</item>
+    </plurals>
+    <plurals name="found_new_files">
+        <item quantity="other">%1$d نئی فائلیں ملیں</item>
+        <item quantity="one">%1$d نئی فائل ملی</item>
+    </plurals>
+    <plurals name="gems">
+        <item quantity="other">%1$s جواہرات</item>
+        <item quantity="one">%1$s جوہر</item>
+    </plurals>
+    <plurals name="in_a_hour">
+        <item quantity="other">1 گھنٹہ میں</item>
+        <item quantity="one">1 گھنٹہ میں</item>
+    </plurals>
+    <plurals name="in_half_hour">
+        <item quantity="other">آدھا گھنٹہ میں</item>
+        <item quantity="one">آدھا گھنٹہ میں</item>
+    </plurals>
+    <plurals name="in_less_than_one_minute">
+        <item quantity="other">فوری طور پر</item>
+        <item quantity="one">فوراً</item>
+    </plurals>
+    <plurals name="in_num_minutes">
+        <item quantity="other">%d منٹ میں</item>
+        <item quantity="one">1 منٹ میں</item>
+    </plurals>
+    <plurals name="items_picture">
+        <item quantity="other"> (%1$d آئٹمز)</item>
+        <item quantity="one"> (%1$d آئٹم)</item>
+    </plurals>
+    <plurals name="less_than_one_minute_ago">
+        <item quantity="other">ابھی ابھی</item>
+        <item quantity="one">ابھی ابھی</item>
+    </plurals>
+    <plurals name="mins_ago">
+        <item quantity="other">%1$d منٹ قبل</item>
+        <item quantity="one">%1$d منٹ قبل</item>
+    </plurals>
+    <plurals name="miuix_appcompat_items_selected">
+        <item quantity="other">%d آئٹمز منتخب کیے گئے</item>
+        <item quantity="one">%d آئٹم منتخب کیا گیا</item>
+    </plurals>
+    <plurals name="more_gems">
+        <item quantity="other">لکی ڈرا میں حصہ لینے کے لیے &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> مزید جواہرات اکٹھا کریں۔</item>
+        <item quantity="one">لکی ڈرا میں حصہ لینے کے لیے &lt;font color=#fc7050>&lt;b>%d&lt;/b>&lt;/font> مزید جواہرات اکٹھا کریں۔</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_fail">
+        <item quantity="other">%1$s فائلیں مطابقت پذیر نہیں کی جا سکیں</item>
+        <item quantity="one">%1$s فائل مطابقت پذیر نہیں کی جا سکی</item>
+    </plurals>
+    <plurals name="notification_message_sync_result_success">
+        <item quantity="other">"%1$s فائلیں مطابقت پذیر کی گئیں| "</item>
+        <item quantity="one">"%1$s فائل مطابقت پذیر کی گئی| "</item>
+    </plurals>
+    <plurals name="notification_title_syncing_with_count_no_network">
+        <item quantity="other">نیٹ ورک کنکشن کا انتظار کر رہا ہے۔ %1$s فائلیں باقی۔</item>
+        <item quantity="one">نیٹ ورک کنکشن کا انتظار کر رہا ہے۔ %1$s فائل باقی۔</item>
+    </plurals>
+    <plurals name="numSelectedFile">
+        <item quantity="other">منتخب کردہ %1$d آئٹمز</item>
+        <item quantity="one">منتخب کردہ %1$d آئٹم</item>
+    </plurals>
+    <plurals name="num_minutes_ago">
+        <item quantity="other">%d منٹ قبل</item>
+        <item quantity="one">1 منٹ پہلے</item>
+    </plurals>
+    <plurals name="number_of_comment_flow">
+        <item quantity="other">%1$s تبصرے</item>
+        <item quantity="one">%1$s تبصرہ</item>
+    </plurals>
+    <plurals name="original_user_days">
+        <item quantity="other">" • &lt;font color=#fc7050>%1$d&lt;/font> دن"</item>
+        <item quantity="one">" • &lt;font color=#fc7050>%1$d&lt;/font> دن"</item>
+    </plurals>
+    <plurals name="original_user_fans">
+        <item quantity="other">" • آپ کے &lt;font color=#fc7050>%1$s&lt;/font> فالوورز ہیں!"</item>
+        <item quantity="one">" • آپ کے &lt;font color=#fc7050>%1$s&lt;/font> فالوور ہیں!"</item>
+    </plurals>
+    <plurals name="original_user_play_1">
+        <item quantity="other">" • آپ نے &lt;font color=#fc7050>%1$s&lt;/font> ویڈیوز اپ لوڈ کیں۔ "</item>
+        <item quantity="one">" • آپ نے &lt;font color=#fc7050>%1$s&lt;/font> ویڈیو اپ لوڈ کی۔ "</item>
+    </plurals>
+    <plurals name="original_user_play_2">
+        <item quantity="other">آپ نے &lt;font color=#fc7050>%1$s&lt;/font> لوگوں کو خوش کیا!</item>
+        <item quantity="one">آپ نے &lt;font color=#fc7050>%1$s&lt;/font> شخص کو خوش کیا!</item>
+    </plurals>
+    <plurals name="pick_max_count">
+        <item quantity="other">%1$s آئٹم سے زیادہ منتخب نہیں کر سکتے</item>
+        <item quantity="one">%1$s آئٹم سے زیادہ منتخب نہیں کر سکتے</item>
+    </plurals>
+    <plurals name="preview_pick_count">
+        <item quantity="other">پری ویو (%1$s/%2$s)</item>
+        <item quantity="one">پری ویو (%1$s/%2$s)</item>
+    </plurals>
+    <plurals name="privacy_revoke_numbers_talkback">
+        <item quantity="other">واپس لیں (%d)</item>
+        <item quantity="one">واپس لیں (%d)</item>
+    </plurals>
+    <plurals name="remote_video_update">
+        <item quantity="other">%1$s نئی ویڈیوز ملیں</item>
+        <item quantity="one">%1$s نئی ویڈیو ملی</item>
+    </plurals>
+    <plurals name="search_head_hint_all">
+        <item quantity="other">نتائج (%1$d صفحات)</item>
+        <item quantity="one">نتائج (%1$d صفحہ)</item>
+    </plurals>
+    <plurals name="search_head_hint_app">
+        <item quantity="other">ایپ \"%1$s\" متعلقہ فائلیں (%2$d آئٹمز)</item>
+        <item quantity="one">ایپ \"%1$s\" متعلقہ فائلیں (%2$d آئٹم)</item>
+    </plurals>
+    <plurals name="search_head_hint_file">
+        <item quantity="other">\"%1$s\" پر مشتمل فائلیں (%2$d آئٹمز)</item>
+        <item quantity="one">\"%1$s\" پر مشتمل فائلیں (%2$d آئٹم)</item>
+    </plurals>
+    <plurals name="search_head_hint_tag">
+        <item quantity="other">ٹیگ \"%1$s\" متعلقہ فائلیں (%2$d آئٹمز)</item>
+        <item quantity="one">ٹیگ \"%1$s\" متعلقہ فائلیں (%2$d آئٹم)</item>
+    </plurals>
+    <plurals name="tap_share_send_fail_with_too_many">
+        <item quantity="other">بھیجا نہیں جا سکا۔ %d سے زیادہ آئٹم منتخب کیے گئے۔</item>
+        <item quantity="one">بھیجا نہیں جا سکا۔ %d سے زیادہ آئٹم منتخب کیا گیا۔</item>
+    </plurals>
+    <plurals name="text_group_count">
+        <item quantity="other">%d آئٹمز</item>
+        <item quantity="one">%d آئٹم</item>
+    </plurals>
+    <plurals name="total_topic_num">
+        <item quantity="other">%1$s موضوعات</item>
+        <item quantity="one">%1$s موضوع</item>
+    </plurals>
+    <plurals name="total_user_num">
+        <item quantity="other">%1$s لوگ</item>
+        <item quantity="one">%1$s شخص</item>
+    </plurals>
+    <plurals name="user_sign_limt">
+        <item quantity="other">آپ %d حروف درج کر سکتے ہیں</item>
+        <item quantity="one">آپ %d حرف درج کر سکتے ہیں</item>
+    </plurals>
+    <plurals name="video_ad_download_tip">
+        <item quantity="other"> ڈاؤن لوڈ</item>
+        <item quantity="one"> ڈاؤن لوڈ</item>
+    </plurals>
+    <plurals name="video_count">
+        <item quantity="other">&lt;font color=#fc7050>%d&lt;/font> ویڈیوز</item>
+        <item quantity="one">&lt;font color=#fc7050>%d&lt;/font> ویڈیو</item>
+    </plurals>
+    <plurals name="video_items">
+        <item quantity="other"> %1$d آئٹمز</item>
+        <item quantity="one"> %1$d آئٹم</item>
+    </plurals>
+    <plurals name="video_play_num">
+        <item quantity="other">%1$s ویو</item>
+        <item quantity="one">%1$s ویو</item>
+    </plurals>
+    <plurals name="video_publish_watchable_hint">
+        <item quantity="other">اپنی حیثیت اپ گریڈ کرنے کے لیے %1$d مزید فالوورز حاصل کریں</item>
+        <item quantity="one">اپنی حیثیت اپ گریڈ کرنے کے لیے %1$d مزید فالوور حاصل کریں</item>
+    </plurals>
+</resources>

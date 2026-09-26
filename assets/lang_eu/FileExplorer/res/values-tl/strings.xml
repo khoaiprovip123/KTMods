@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_home_description">Mag-navigate sa home</string>
+    <string name="abc_action_bar_up_description">Mag-navigate pataas</string>
+    <string name="abc_action_mode_done">Tapos na</string>
+    <string name="abc_capital_off">I-OFF</string>
+    <string name="abc_capital_on">I-ON</string>
+    <string name="abc_search_hint">Maghanap…</string>
+    <string name="abc_searchview_description_clear">I-clear ang query</string>
+    <string name="abc_searchview_description_search">Maghanap</string>
+    <string name="abc_searchview_description_submit">Isumite ang query</string>
+    <string name="abc_searchview_description_voice">Paghahanap gamit ang boses</string>
+    <string name="abc_toolbar_collapse_description">I-collapse</string>
+    <string name="bottomsheet_action_collapse">I-collapse ang bottom sheet</string>
+    <string name="bottomsheet_action_expand">I-expand ang bottom sheet</string>
+    <string name="bottomsheet_action_expand_halfway">I-expand hanggang gitna</string>
+    <string name="bottomsheet_drag_handle_clicked">Na-double tap ang handle sa pag-drag</string>
+    <string name="bottomsheet_drag_handle_content_description">I-drag ang handle</string>
+    <string name="calendar_date_picker_a11y_next_month">Lumipat sa susunod na buwan</string>
+    <string name="calendar_date_picker_a11y_prev_month">Lumipat sa nakaraang buwan</string>
+    <string name="call_notification_answer_action">Sagutin</string>
+    <string name="call_notification_decline_action">Tanggihan</string>
+    <string name="call_notification_hang_up_action">Ibaba</string>
+    <string name="call_notification_incoming_text">Papasok na tawag</string>
+    <string name="call_notification_ongoing_text">Kasalukuyang tawag</string>
+    <string name="call_notification_screening_text">Nagsi-screen ng papasok na tawag</string>
+    <string name="common_google_play_services_unknown_issue">Nagkakaproblema ang %1$s sa mga serbisyo ng Google Play. Pakisubukang muli.</string>
+    <string name="copy">Kopyahin</string>
+    <string name="fmt_date_long_year_month">MMMM, yyyy</string>
+    <string name="fmt_date_numeric_month_day">M-d</string>
+    <string name="fmt_date_numeric_year_month">yyyy-M</string>
+    <string name="fmt_date_numeric_year_month_day">yyyy-M-d</string>
+    <string name="fmt_date_short_year_month">MMM, yyyy</string>
+    <string name="fmt_time_12hour_minute_pm">h:mma</string>
+    <string name="fmt_time_24hour">"H 'o''clock'"</string>
+    <string name="fmt_time_24hour_minute">H:mm</string>
+    <string name="fmt_time_24hour_minute_second">H:mm:ss</string>
+    <string name="fmt_time_24hour_minute_second_millis">H:mm:ss.S</string>
+    <string name="not_set">Hindi nakatakda</string>
+    <string name="preference_copied">Nakopya sa clipboard ang \"%1$s.\"</string>
+    <string name="search_menu_title">Maghanap</string>
+    <string name="v7_preference_off">NAKA-OFF</string>
+    <string name="v7_preference_on">NAKA-ON</string>
+</resources>

@@ -15,4 +15,5 @@ product|priv-app/MIUIPackageInstaller/MIUIPackageInstaller.apk|MiuiPackageInstal
 product|app/MIUIThemeManager/MIUIThemeManager.apk|MIUIThemeManager.apk|1
 product|app/MIUIFrequentPhrase/MIUIFrequentPhrase.apk|MIUIFrequentPhrase.apk|1
 product|overlay/GestureLineOverlay.apk|GestureLineOverlay.apk|0
-system|system/priv-app/PackageInstaller/PackageInstaller.apk|GooglePackageInstaller.apk|1
+product|app/LatinImeGoogle/LatinImeGoogle.apk|LatinImeGoogle.apk|1
+# system|system/priv-app/PackageInstaller/PackageInstaller.apk|GooglePackageInstaller.apk|1

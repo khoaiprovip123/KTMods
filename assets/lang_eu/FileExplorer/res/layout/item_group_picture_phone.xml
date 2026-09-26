@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingBottom="@dimen/pic_group_vertical_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:importantForAccessibility="no" android:paddingStart="@dimen/group_item_margin" android:paddingEnd="@dimen/group_item_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/pic_layout1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/item_group_picture_layout" />
+    <include android:id="@id/pic_layout2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="@dimen/pic_margin_horizontal" layout="@layout/item_group_picture_layout" />
+    <include android:id="@id/pic_layout3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="@dimen/pic_margin_horizontal" layout="@layout/item_group_picture_layout" />
+    <include android:id="@id/pic_layout4" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="@dimen/pic_margin_horizontal" layout="@layout/item_group_picture_layout" />
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="0" android:drawable="@drawable/push101" />
+    <item android:duration="50" android:drawable="@drawable/push84" />
+    <item android:duration="50" android:drawable="@drawable/push85" />
+    <item android:duration="50" android:drawable="@drawable/push86" />
+    <item android:duration="50" android:drawable="@drawable/push87" />
+    <item android:duration="50" android:drawable="@drawable/push88" />
+    <item android:duration="50" android:drawable="@drawable/push89" />
+    <item android:duration="50" android:drawable="@drawable/push90" />
+    <item android:duration="50" android:drawable="@drawable/push91" />
+    <item android:duration="50" android:drawable="@drawable/push92" />
+    <item android:duration="50" android:drawable="@drawable/push93" />
+    <item android:duration="50" android:drawable="@drawable/push94" />
+    <item android:duration="50" android:drawable="@drawable/push95" />
+    <item android:duration="50" android:drawable="@drawable/push96" />
+    <item android:duration="50" android:drawable="@drawable/push97" />
+    <item android:duration="50" android:drawable="@drawable/push98" />
+    <item android:duration="50" android:drawable="@drawable/push99" />
+    <item android:duration="50" android:drawable="@drawable/push100" />
+    <item android:duration="50" android:drawable="@drawable/push101" />
+</animation-list>

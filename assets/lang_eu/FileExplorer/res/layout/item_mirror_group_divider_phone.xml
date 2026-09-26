@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:importantForAccessibility="no"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:layout_gravity="bottom" android:background="@color/mirror_divider_line_color" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/mirror_divider_margin_top" android:layout_marginStart="@dimen/mirror_item_grid_padding" />
+</FrameLayout>

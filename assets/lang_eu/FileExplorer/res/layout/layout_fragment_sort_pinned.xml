@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.EmptyTriggerRelativeLayout android:id="@id/parent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/common_fragment_margin_top"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.springback.view.SpringBackLayout android:id="@id/springbacklayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="vertical|angle" app:scrollableView="@android:id/list">
+        <androidx.core.widget.NestedScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include android:visibility="gone" layout="@layout/layout_empty_view_maml" />
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+        <com.android.fileexplorer.view.indicator.RecentRecyclerView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="ifContentScrolls" style="@style/Category_RecyclerView_Padding" />
+    </miuix.springback.view.SpringBackLayout>
+</com.android.fileexplorer.view.EmptyTriggerRelativeLayout>

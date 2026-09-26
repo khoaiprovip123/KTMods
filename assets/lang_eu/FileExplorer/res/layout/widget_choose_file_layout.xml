@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/miuix_theme_margin_base"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <miuix.springback.view.SpringBackLayout android:id="@id/springbacklayout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:scrollOrientation="horizontal" app:scrollableView="@id/category_list">
+        <androidx.core.widget.NestedScrollView android:id="@id/no_permission_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <include android:id="@id/no_permission_res" layout="@layout/no_permission_background" />
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+        <miuix.recyclerview.widget.RecyclerView android:id="@id/category_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/more_category_view_margin_horizontal" android:layout_marginRight="@dimen/more_category_view_margin_horizontal" android:overScrollMode="never" />
+    </miuix.springback.view.SpringBackLayout>
+</FrameLayout>

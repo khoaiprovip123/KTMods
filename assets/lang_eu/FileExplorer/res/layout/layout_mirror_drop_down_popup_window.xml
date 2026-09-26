@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.miui.support.cardview.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mirror_dialog_card_elevation" android:layout_marginBottom="@dimen/mirror_dialog_card_elevation" android:layout_marginStart="@dimen/mirror_dialog_card_elevation" app:cardBackgroundColor="@color/white" app:cardCornerRadius="@dimen/mirror_navigation_icon_radius" app:cardElevation="@dimen/mirror_dialog_card_elevation" style="@style/CardView.Light.Mirror.PopupWindow">
+        <ListView android:id="@id/lv_drop_down" android:layout_width="@dimen/mirror_drop_down_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mirror_drop_down_padding_top_bottom" android:layout_marginBottom="@dimen/mirror_drop_down_padding_top_bottom" />
+    </com.miui.support.cardview.CardView>
+    <com.miui.support.cardview.CardView android:id="@id/cl_sub_drop_down" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mirror_sub_drop_down_item_margin_top" android:alpha="0.0" android:layout_marginStart="@dimen/mirror_sub_drop_down_margin_start" android:layout_marginEnd="@dimen/mirror_dialog_card_elevation" app:cardBackgroundColor="@color/white" app:cardCornerRadius="@dimen/mirror_navigation_icon_radius" app:cardElevation="@dimen/mirror_dialog_card_elevation" style="@style/CardView.Light.Mirror.PopupWindow">
+        <ListView android:id="@id/lv_sub_drop_down" android:layout_width="@dimen/mirror_drop_down_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mirror_drop_down_padding_top_bottom" android:layout_marginBottom="@dimen/mirror_drop_down_padding_top_bottom" />
+    </com.miui.support.cardview.CardView>
+</LinearLayout>

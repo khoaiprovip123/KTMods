@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.EmptyTriggerRelativeLayout android:id="@id/file_explorer_main" android:background="@color/mirror_navigation_bg_color" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.android.fileexplorer.mirror.view.MirrorTopNavigationView android:id="@id/mirror_top_navigation" android:paddingTop="@dimen/mirror_navigation_margin_top" android:paddingBottom="@dimen/mirror_navigation_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+    <FrameLayout android:id="@id/mirror_side_bar_layout" android:layout_width="@dimen/mirror_side_bar_width" android:layout_height="fill_parent" android:layout_below="@id/mirror_top_navigation" android:paddingStart="@dimen/mirror_side_bar_padding_start_end" android:paddingEnd="@dimen/mirror_side_bar_padding_start_end" android:layout_alignParentStart="true">
+        <com.android.fileexplorer.mirror.view.MirrorSidebarRecyclerView android:id="@id/mirror_side_bar" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <com.android.fileexplorer.view.RoundFrameLayout android:id="@id/mirror_content" android:background="@drawable/mirror_content_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/mirror_top_navigation" android:paddingStart="@dimen/mirror_content_padding_start_end" android:paddingEnd="@dimen/mirror_content_padding_start_end" android:layout_marginEnd="@dimen/mirror_content_margin_end" android:layout_toEndOf="@id/mirror_side_bar_layout" />
+</com.android.fileexplorer.view.EmptyTriggerRelativeLayout>

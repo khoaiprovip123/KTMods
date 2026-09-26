@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.fileexplorer.view.PhoneGroupHeaderView android:id="@id/header_container" android:background="@color/common_background_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layoutDirection="locale" android:paddingStart="@dimen/group_item_margin" android:paddingEnd="@dimen/group_item_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/header_title_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/group_layout_height">
+        <FrameLayout android:id="@id/fl_app_icon" android:padding="5.0dip" android:visibility="gone" android:layout_width="@dimen/group_icon_width" android:layout_height="@dimen/group_icon_height">
+            <ImageView android:id="@id/app_icon" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+            <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/app_icon_cover" android:scaleType="fitXY" />
+        </FrameLayout>
+        <LinearLayout android:gravity="start|center" android:orientation="horizontal" android:id="@id/title_text_layout" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:ellipsize="middle" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="200.0dip" style="@style/GroupHeaderTitle" />
+            <TextView android:id="@id/time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textDirection="locale" style="@style/GroupHeaderTitle" />
+        </LinearLayout>
+        <FrameLayout android:layout_width="@dimen/select_all_bg_width" android:layout_height="@dimen/select_all_bg_height" android:layout_marginStart="6.0dip">
+            <TextView android:textColor="@color/group_header_text_color" android:layout_gravity="end|center" android:id="@id/group_file_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="10.0dip" android:drawableEnd="@drawable/ic_doc_header_arrow" style="@style/GroupHeaderTitle" />
+            <TextView android:textSize="@dimen/secondary_text_size" android:gravity="center" android:id="@id/select_text" android:background="@drawable/group_select_bg" android:visibility="gone" android:layout_width="@dimen/select_all_bg_width" android:layout_height="@dimen/select_all_bg_height" android:text="@string/text_select_all" android:maxLines="1" android:fontFamily="sans-serif" />
+        </FrameLayout>
+    </LinearLayout>
+    <View android:id="@id/divider_bottom" android:background="@color/divider_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/header_title_layout" />
+</com.android.fileexplorer.view.PhoneGroupHeaderView>

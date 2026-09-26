@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_confirm" android:id="@id/pick_confirm" android:title="@string/confirm" android:showAsAction="ifRoom" />
+    <item android:icon="@drawable/ic_menu_discard" android:id="@id/pick_cancel" android:title="@string/cancel" android:showAsAction="ifRoom" />
+</menu>

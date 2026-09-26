@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/item_background_phone" android:layout_width="fill_parent" android:layout_height="@dimen/layout_more_tag_count_height" android:paddingStart="@dimen/layout_margin_start" android:paddingEnd="@dimen/layout_margin_start"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="@dimen/app_tag_list_icon_size" android:layout_height="@dimen/app_tag_list_icon_size">
+        <com.android.fileexplorer.view.RoundedImageView android:id="@id/icon" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" app:riv_corner_radius="8.0dip" />
+    </FrameLayout>
+    <RelativeLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="@dimen/app_tag_name_size" android:textColor="@color/text_color_primary" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:fontFamily="sans-serif" android:textDirection="locale" android:layout_marginStart="@dimen/tag_name_margin_start_length" />
+        <TextView android:textSize="@dimen/app_tag_summary_size" android:textColor="@color/text_color_summary" android:id="@id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/name" android:fontFamily="sans-serif" android:textDirection="locale" android:layout_marginStart="@dimen/tag_name_margin_start_length" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/app_tag_count_size" android:textColor="@color/text_color_tertiary" android:id="@id/count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_file_list_arrow" />
+</LinearLayout>

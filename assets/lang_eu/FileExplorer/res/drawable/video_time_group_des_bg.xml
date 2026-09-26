@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:bottomLeftRadius="@dimen/video_time_radius" android:bottomRightRadius="@dimen/video_time_radius" />
+    <solid android:color="@color/color_video_content_bg" />
+</shape>

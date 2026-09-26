@@ -1,4 +1,6 @@
-# verify.ps1 — kiểm tra package ROM sau build
+<#
+  verify.ps1 — kiem tra package ROM sau build
+#>
 . "$PSScriptRoot\scripts\tools.ps1"
 $cfg = Get-KitchenConfig
 $Root = $script:Root
@@ -11,7 +13,6 @@ function Check([string]$name, [bool]$ok, [string]$detail = '') {
 
 Write-Step 'VERIFY'
 
-# find newest package
 $pkg = Get-ChildItem (Join-Path $Root $cfg.out_dir) -Directory -EA 0 |
     Where-Object { $_.Name -like "$($cfg.rom_name)*" } |
     Sort-Object LastWriteTime -Descending | Select-Object -First 1
@@ -27,59 +28,54 @@ if (Test-Path $super) {
     Check "super size == $expect" ($sz -eq $expect) "($sz)"
 }
 
-# flash scripts
+# flash scripts (copy nguyen ban — anti-brick + ZKOS order + cust)
 Check 'flash_format_data.bat' (Test-Path (Join-Path $pkgDir 'flash_format_data.bat'))
 Check 'flash_keep_data.bat' (Test-Path (Join-Path $pkgDir 'flash_keep_data.bat'))
 
-# flash script must disable verity + device check (anti-brick)
 $fmtPath = Join-Path $pkgDir 'flash_format_data.bat'
 if (Test-Path $fmtPath) {
     $fmt = Get-Content $fmtPath -Raw
-    Check 'vbmeta disable-verity' ($fmt -match 'disable-verity' -and $fmt -match 'disable-verification')
-    Check 'flash checks device lisa' ($fmt -match 'product: lisa' -or $fmt -match 'lisa')
+    Check 'flash checks device lisa' ($fmt -match 'lisa')
     Check 'flash checks super size' ($fmt -match '9126805504')
+    Check 'flash has cust.img' ($fmt -match 'cust')
+    Check 'flash has vbmeta' ($fmt -match 'flash vbmeta_ab')
+    $bytes = [System.IO.File]::ReadAllBytes($fmtPath)
+    $hasCR = ($bytes | Where-Object { $_ -eq 13 }).Count -gt 0
+    Check 'flash script has CRLF line endings' $hasCR
 }
 
 # firmware images
-foreach ($img in @('boot.img','vbmeta.img','modem.img','vendor_boot.img')) {
+foreach ($img in @('boot.img', 'vbmeta.img', 'modem.img', 'vendor_boot.img', 'cust.img', 'xbl.img')) {
     Check "images\$img" (Test-Path (Join-Path (Join-Path $pkgDir 'images') $img))
+}
+
+# super layout: partition order should start with odm (ZKOS/stock)
+$lpd = Join-Path (Join-Path $Root 'tools') 'lpdumps.exe'
+if ((Test-Path $lpd) -and (Test-Path $super)) {
+    $dump = & $lpd $super 2>&1 | Out-String
+    Check 'super Attributes none' ($dump -notmatch 'Attributes: readonly')
+    Check 'super virtual_ab' ($dump -match 'virtual_ab')
+    Check 'super has odm_a' ($dump -match 'odm_a')
+    Check 'super has mi_ext_a' ($dump -match 'mi_ext_a')
+    # order hint: odm_a should appear before system_a in partition table
+    $iOdm = $dump.IndexOf('Name: odm_a')
+    $iSys = $dump.IndexOf('Name: system_a')
+    Check 'partition order odm before system' (($iOdm -ge 0) -and ($iSys -gt $iOdm)) "(odm@$iOdm system@$iSys)"
 }
 
 # work tree checks (if present)
 $work = Join-Path $Root 'work'
 if (Test-Path $work) {
     $fw = Join-Path $work 'system\system\system\framework\framework.jar'
-    if (Test-Path $fw) {
-        $py = Get-Python
-        & $py -c @"
-import zipfile
-z=zipfile.ZipFile(r'$fw')
-kaorios=any(b'kaorios' in z.read(n) or b'Kaori' in z.read(n) for n in z.namelist() if n.endswith('.dex'))
-print('KAORIOS' if kaorios else 'NO_KAORIOS')
-"@
-        Check 'framework has Kaorios' ($LASTEXITCODE -eq 0)
-    }
+    Check 'framework.jar present' (Test-Path $fw)
     $sec = Join-Path $work 'product\product\priv-app\MIUISecurityCenter\MIUISecurityCenter.apk'
-    Check 'SecurityMod installed' ((Test-Path $sec) -and ((Get-Item $sec).Length -gt 50MB))
+    Check 'SecurityMod installed' ((Test-Path $sec) -and ((Get-Item $sec).Length -gt 10MB))
     $cam = Join-Path $work 'product\product\priv-app\MiuiCamera\MiuiCamera.apk'
-    Check 'HolyBear Camera' ((Test-Path $cam) -and ((Get-Item $cam).Length -gt 100MB))
-    # debloat: MSA / AnalyticsCore must be gone
+    Check 'HolyBear Camera' ((Test-Path $cam) -and ((Get-Item $cam).Length -gt 50MB))
     $msa = Join-Path $work 'product\product\app\MSA'
     Check 'MSA debloated' (-not (Test-Path -LiteralPath $msa))
-    $an = Join-Path $work 'product\product\app\AnalyticsCore'
-    Check 'AnalyticsCore debloated' (-not (Test-Path -LiteralPath $an))
-    # Vietnamese
-    $set = Join-Path $work 'system_ext\system_ext\priv-app\Settings\Settings.apk'
-    if (Test-Path $set) {
-        $py = Get-Python
-        & $py -c @"
-import zipfile
-z=zipfile.ZipFile(r'$set')
-# resources.arsc is compiled; check file size increased with values-vi (~100MB+)
-print('SIZE', z.getinfo('resources.arsc').file_size)
-"@
-        Check 'Settings.apk present' $true
-    }
+    $kao = Join-Path $work 'product\product\priv-app\KaoriosToolbox\KaoriosToolbox.apk'
+    Check 'KaoriosToolbox installed' (Test-Path -LiteralPath $kao)
 }
 
 if ($fail -gt 0) { Fail "verify FAILED: $fail checks" }

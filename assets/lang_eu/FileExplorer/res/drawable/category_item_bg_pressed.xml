@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <padding android:left="@dimen/pad_category_item_padding" android:right="@dimen/pad_category_item_padding" />
+    <corners android:radius="@dimen/file_entrance_view_radius" />
+    <solid android:color="@color/pad_nav_select_color" />
+</shape>

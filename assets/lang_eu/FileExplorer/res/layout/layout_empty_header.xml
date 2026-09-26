@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/empty_header_layout" android:layout_width="fill_parent" android:layout_height="124.69998dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:id="@id/empty_header_tv" android:layout_width="wrap_content" android:layout_height="fill_parent" android:maxLines="2" style="@style/empty_file_list_hint_style" />
+    <View android:background="@color/background_divide" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+</LinearLayout>

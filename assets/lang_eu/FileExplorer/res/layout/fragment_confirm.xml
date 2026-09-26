@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/transparent" android:paddingTop="@dimen/confirm_fragment_padding_top" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="@dimen/confirm_fragment_padding_horizontal" android:paddingEnd="@dimen/confirm_fragment_padding_horizontal"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="28.0dip" android:layout_above="@id/ll_confirm_hint">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.android.cloud.widget.RevokeReminderView android:id="@id/confirm_reminder" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_confirm_hint" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="28.0dip" android:layout_above="@id/ll_confirm_button">
+        <ImageView android:layout_gravity="top" android:paddingBottom="42.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_hint_tick" />
+        <TextView android:textSize="@dimen/confirm_hint_text_size" android:textColor="@color/confirm_hint_text_color" android:id="@id/tv_confirm_hint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="@dimen/confirm_hint_text_line_spacing" android:fontFamily="sans-serif-medium" android:layout_marginStart="@dimen/confirm_hint_icon_and_text_gap" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/ll_confirm_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:id="@id/btn_confirm" style="@style/Cloud.BottomActionButtonManualStyle" />
+    </LinearLayout>
+</RelativeLayout>
